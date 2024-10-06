@@ -1,9 +1,10 @@
-import * as THREE from 'three';
-import { GLTFLoader } from '../three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from '../three/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from '../three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from '../three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from '../three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import * as THREE from 'https://unpkg.com/three@0.154.0/build/three.module.js';
+import { GLTFLoader } from 'https://unpkg.com/three@0.154.0/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.154.0/examples/jsm/controls/OrbitControls.js';
+import { EffectComposer } from 'https://unpkg.com/three@0.154.0/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'https://unpkg.com/three@0.154.0/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'https://unpkg.com/three@0.154.0/examples/jsm/postprocessing/UnrealBloomPass.js';
+
 import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
 
 const Mustang3D = document.getElementById('mustang');
