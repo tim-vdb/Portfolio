@@ -1,0 +1,390 @@
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/pygame-tiled.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@1,500&family=Galindo&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/cassetete.png" type="image/x-icon">
+    <title>Portfolio Timothée Van Den Bosch</title>
+    <script type="module">
+        const canvas = document.getElementById("canvas");
+        
+        // Fonction pour mettre à jour la taille du canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            window.iw = window.innerWidth;
+            window.ih = window.innerHeight;
+        }
+    
+        // Redimensionne le canvas à la taille de la fenêtre actuelle
+        resizeCanvas();
+    
+        // Ajoute un écouteur d'événements pour redimensionner le canvas lorsque la fenêtre change de taille
+        window.addEventListener('resize', resizeCanvas);
+    </script>
+    <script src="JS/CODE3D.js" type="module"></script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <header>
+        <div id="div_sticky">
+            <button class="btn_iframes_close">Ne plus Intéragir</button>
+        </div>
+        <ion-icon name="menu" id="MenuBurger_enable"></ion-icon>
+        <a href="#"><ion-icon name="arrow-up" id="btnTop"></ion-icon></a>
+        <div id="first">
+            <div id="moi_barre">
+                <div id="flip_div">
+                    <div id="div_moi">
+                        <img src="images/Photo_Pro_avecOutline.webp" alt="Photo de profil de Timothée Van Den Bosch"
+                            id="moi">
+                        <p>Timothée VDB</p>
+                    </div>
+                    <div id="div_cassetete">
+                        <img src="images/cassetete.png" alt="" id="cassetete">
+                        <p>Pseudo : Cassetete </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divLeft_nav">
+            <nav>
+
+                <ol>
+                    <li>
+                        <div>
+                            <ion-icon name="Home" class="nav_icon"></ion-icon>
+                            <a href="index.html" class="nav_links" id>Home</a>
+                        </div>
+                    </li>
+                    <li class="container_links">
+                        <div>
+                            <ion-icon name="layers"></ion-icon>
+                            <p class="nav_links">Projects</p>
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </div>
+                        <ul id="Projects_container">
+                            <li class="container_links">
+                                <div>
+                                    <ion-icon name="code-slash"></ion-icon>
+                                    <p class="nav_links">Coding Projects</p>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <img src="images/Iconduck - La Cissonière.svg" alt="">
+                                            <a href="lacissoniere.html" class="nav_links">La Cissonière</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="Quantix_Horizon/images/Logo_Quantix.svg" alt="">
+                                            <a href="quantix_horizon.html" class="nav_links">Quantix Horizon</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/logo_2final.svg" alt="">
+                                            <a href="chocospace.html" class="nav_links">ChocoSpace</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/GraceGloire.svg" alt="">
+                                            <a href="graceetgloire.html" class="nav_links">Grâce et Gloire</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/github/icon_minecraft.svg" alt="">
+                                            <a href="Wiki-MC-SB.html" class="nav_links">Wiki Minecraft Skyblock</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/pygame_wireframe.svg" alt="">
+                                            <img id="Tiled_logo" src="images/Tiled_wireframe.svg" alt="">
+                                            <a href="pygame-tiled.html" class="nav_links">Pygame & Tiled</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="container_links">
+                                <div>
+                                    <ion-icon name="cube-outline"></ion-icon>
+                                    <p class="nav_links">3D & Design</p>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </div>
+                                <ul>
+                                    <li class="container_links">
+                                        <div>
+                                            <img src="images/Adobe_Suite/Iconduck - Adobe Suite.svg" alt="">
+                                            <p class="nav_links">Adobe Suite</p>
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_photoshop.svg" alt="">
+                                                    <a href="Photoshop.html" class="nav_links">Photoshop</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_illustrator.svg"
+                                                        alt="">
+                                                    <a href="Illustrator.html" class="nav_links">Illustrator</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_xd.svg" alt="">
+                                                    <a href="XD.html" class="nav_links">XD</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/Blender/icon_blender_software.svg" alt="">
+                                            <a href="Blender.html" class="nav_links">Blender 3D</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <ion-icon name="logo-wordpress"></ion-icon>
+                                    <a href="Wordpress.html" class="nav_links">WordPress</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="school-sharp"></ion-icon>
+                            <a href="Formation.html" class="nav_links">Formation</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="chatbubbles"></ion-icon>
+                            <a href="#Contacts" class="nav_links">Contacts</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="reader-outline"></ion-icon>
+                            <a href="mentions-legales.html" class="nav_links">Mentions Légales</a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div id="moi_orange">
+            <h1>Timothée</h1>
+            <h1>Van Den Bosch</h1>
+        </div>
+        <!-- <div id="icon_header_top">
+                    <ion-icon name="language-outline" id="language" class="change-color"></ion-icon>
+                    <ion-icon name="sunny-outline" id="icon_dark-mode" class="change-color"></ion-icon>
+                </div> -->
+
+
+        <!-- <div id="div_language" class="interface_language">
+                <ul>
+                    <li>
+                        <a href="" id="fr_lang">Français</a>
+                    </li>
+                    <li>
+                        <a href="" id="en_lang">Anglais</a>
+                    </li>
+
+                </ul>
+                <div id="font_size">
+                    <ion-icon name="caret-back-circle-outline" id="small" class="btn_letter"></ion-icon>
+                    <p>A</p>
+                    <ion-icon name="caret-forward-circle-outline" id="big" class="btn_letter"></ion-icon>
+                </div>
+                <div id="div_apply">
+                    <button id="btn_apply">Appliquer</button>
+                </div>
+            </div>
+
+            <link rel="icon" type="image/png" href="">
+            <div id="border_bottom_header"></div> -->
+
+        <!-- <img src="images/scroll-long-down.234x512.png" id="scroll-long-down" alt=""> -->
+    </header>
+
+        <main>
+            <div class="parallax">
+                <h1>Projet À Bon Port</h1>
+            </div>
+            <div class="content content_hidden">
+
+                <section id="section_1">
+                    <div id="logo_couleur">
+                        <h2 class="context">Projet à l'aide de Pygame et Tiled</h2>
+                        <a href="https://www.pygame.org/docs/" target="_blank"><img src="images/pygame_logo.webp"
+                                alt="Logo de librairie pygame">
+
+                        </a>
+                        <a href="https://www.mapeditor.org" target="_blank"><img src="images/tiled-logo-header.png"
+                                alt="Logo du logiciel Tiled">
+                        </a>
+
+                    </div>
+
+                    <h2 class="context">À Bon Port</h2>
+                    <button id="button_audio">Clique pour activer l'audio 😆</button>
+                    <p>
+                        Ce projet est en réalité un jeu conçu par un groupe de <span class="orange">4
+                            personnes</span>.Ce
+                        projet final bonus de fin
+                        d'année n'a pu être fini à temps en classe de Terminale en spécialité NSI (
+                        Numérique-Science-Informatique).
+                        Nous nous sommes chacun occupé de plusieurs tâches. Pour ma part, je me suis occupé d'une partie
+                        du
+                        code et
+                        des maps (cartes) du jeu. Le restant du code nous le devons à <span class="orange">Lilien
+                            Sarrazin</span>. Les dessins des
+                        bateaux à <span class="orange">Lisa Galle</span>
+                        , et enfin le son à <span class="orange">Mattéo cucinota</span>.
+
+                    </p>
+                </section>
+                <section id="section_2">
+
+                    <div class="courbe_1">
+                        <div id="vector_1">
+                            <img src="images/pygame/Vector_1.svg" alt="Première vague" id="vague_1">
+                            <img src="images/pygame/bateau_marchand.png" id="bateau_marchand"
+                                alt="Bateau marchand qui navigue sur la première vague et deuxième vague">
+                            <!-- <img src="images/pygame/Bateau_2_a_bon_port_(1).webp" id="bateau_pirate_1"
+                            alt="Bateau pirate qui navigue sur la première vague et deuxième vague"> -->
+                            <div id="bateau_pirate_1">
+
+                            </div>
+                        </div>
+                        <div id="vector_2">
+                            <img src="images/pygame/Vector_2.svg" alt="Deuxième vague" id="vague_2">
+                        </div>
+
+                    </div>
+                </section>
+                <section id="section_3">
+                    <h2>Le Jeu</h2>
+                    <p>
+                        Nous avons décidé de partir sur une base de jeu 2D en quadrillage. Le principe du jeu est de
+                        transporter de la marchandise d'un port A à un port B avec, bien sur, des obstacles sur le
+                        terrain :
+                        des bateaux de pirates !!!
+                    </p>
+                    <h3>
+                        Première version de carte du jeu :
+                    </h3>
+                    <p>
+                        Les cartes ont été faite à partir de Tiled. Ce logiciel permet de récupérer les tuiles des
+                        créateurs
+                        de contenu, permettant de faire des cartes. Et ainsi je les ai récupérer pour les assembler via
+                        ce
+                        logiciel.
+                    </p>
+                    <div class="centrer">
+                        <img src="images/pygame/premiere_carte_a_bon_port.png" alt="Premiere carte à bon port">
+
+                    </div>
+                </section>
+                <section id="section_4">
+                    <div id="vague_3">
+                        <img src="images/pygame/Bateau_3_a_bon_port.png" alt="Deuxième bateau pirate"
+                            id="bateau_pirate_2">
+                        <div id="hiddenBar">H</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                        <div class="marée">O</div>
+                    </div>
+
+                </section>
+                <section id="section_5">
+                    <div class="centrer">
+                        <h3>Musique du Jeu</h3>
+
+                        <audio controls controlsList="nodownload" src="jeu.mp3" id="musique_jeu"></audio>
+
+                        <h3>Musique de Victoire</h3>
+                        <audio controls controlsList="nodownload" src="gagne.wav"></audio>
+
+                        <h3>Musique de Défaite</h3>
+
+                        <audio controls controlsList="nodownload" src="loser.wav"></audio>
+                    </div>
+                    <h3>Version finale de la carte :</h3>
+                    <p>Les textures de la map viennent de <a href="https://itch.io">Itch.io</a>, du pack Beach Tileset
+                        and
+                        Asset Expansion Pack 32x32
+                        Pixels.</p>
+                    <div class="centrer">
+                        <h4>Sans Bordure</h4>
+                        <img src="images/pygame/map_final_pygame_jeu_bateau-683x1024.png"
+                            alt="Carte finale du jeu à bon port">
+                        <h4>Avec Bordure</h4>
+                        <img src="images/pygame/map_final_bordure.png"
+                            alt="Carte finale du jeu à bon port avec bordure">
+                    </div>
+
+                </section>
+            </div>
+        </main>
+    <footer>
+        <h2 id="Contacts">Contacts</h2>
+        <div id="icon_contact">
+
+            <a href="https://github.com/NectorCassetete/" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+            <a href="https://www.instagram.com/vantimothee/" target="_blank"><ion-icon
+                    name="logo-instagram"></ion-icon></a>
+            <a href="https://discord.com/users/457538401407729679" target="_blank"><ion-icon
+                    name="logo-discord"></ion-icon></a>
+            <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiElMLW-5uEAxWlVKQEHbheDe8QFnoECBcQAQ&url=https%3A%2F%2Ffr.linkedin.com%2Fin%2Ftimoth%25C3%25A9e-van-den-bosch-097146292&usg=AOvVaw3sTRdDOyKxGpsIlhPTp7NU&opi=89978449"
+                target="_blank"><ion-icon name="logo-linkedin"></ion-icon></a>
+            <a href="mailto: timothee.vandenbosch@my-digital-school.org" target="_blank"><ion-icon
+                    name="mail-outline"></ion-icon></a>
+
+
+        </div>
+        <div class="copyright">
+            <p>Copyright of Timothée VDB</p>
+            <p>Powered by Timothée VDB</p>
+        </div>
+    </footer>
+
+    <script src="JS/main_new.js"></script>
+    <!-- <script src="mainAvecAdobeSuite.js"></script>
+    <script src="main.js"></script> -->
+    <script src="pygame-tiled.js"></script>
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

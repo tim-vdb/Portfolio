@@ -1,0 +1,823 @@
+/* --------------------------Main Pygame-Tiled------------------- */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content_hidden {
+    margin-top: 10svh;
+}
+
+main {
+    margin-top: 20px;
+}
+
+.parallax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--marron_foncé);
+    background-image: url('images/pygame/map_final_pygame_jeu_bateau-683x1024.png');
+    background-size: cover;
+    background-position: center;
+    background-position: center top;
+    height: 100vh;
+    /* Ajustez la hauteur selon vos besoins */
+    background-attachment: fixed;
+}
+
+main #section_1 {
+    width: 80%;
+    margin-bottom: 50px;
+}
+
+main #section_1 #button_audio {
+    background-color: var(--beige);
+    color: var(--marron_foncé);
+    font-family: 'Galindo', sans-serif !important;
+    border-radius: 20px;
+    border: 2px solid var(--marron_foncé);
+    font-size: calc(0.8rem + 0.5vw);
+    animation: anim_audio 2s infinite ease-in-out alternate;
+
+}
+
+main #section_1 #button_audio:hover {
+    background-color: var(--marron_foncé);
+    color: var(--beige);
+    border-radius: 20px;
+    border: 2px solid var(--beige);
+    cursor: url("images/curseur_pointer_logo_grand.png"), auto;
+}
+
+@keyframes anim_audio {
+    from {
+        box-shadow: 1px 1px 20px var(--beige);
+    }
+
+    to {
+        box-shadow: none;
+    }
+}
+
+main #section_1 #logo_couleur img {
+    object-fit: contain;
+    width: 150px;
+    height: 150px;
+}
+
+main #section_1 #logo_couleur a {
+    cursor: url('images/curseur_pointer_logo_grand.png'), auto;
+    width: 15%;
+    padding: 20px;
+    text-decoration: none;
+}
+
+main #section_2 {
+    width: 100%;
+}
+
+main #section_2 .courbe_1 {
+    width: 100%;
+}
+
+main #section_2 .courbe_1:first-child {
+    width: 100%;
+    margin-bottom: -10px;
+}
+
+main #section_2 .courbe_1 #vector_1 {
+    width: 100%;
+    position: relative;
+}
+
+main #section_2 .courbe_1 #vector_1 #vague_1 {
+    width: 100%;
+}
+
+main #section_2 .courbe_1 #bateau_marchand {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 16svw;
+}
+
+.show_aperçu#bateau_marchand {
+    opacity: 1;
+    animation: bateau_marchand_1 15s infinite ease-out forwards;
+}
+
+.show_aperçu#bateau_pirate_1 {
+    animation:
+        bateau_marchand_1 15s infinite ease-out 5s forwards,
+        batPirate 3s infinite ease-in-out;
+}
+
+.show_aperçu#bateau_pirate_1::before {
+    animation: boulet-canon_1 10s 1 7s ease-in-out;
+}
+
+.show_aperçu#bateau_pirate_1::after {
+    animation: boulet-canon_2 12s 1 6.5s ease-in-out;
+}
+
+#bateau_pirate_1 {
+    position: absolute;
+    border-radius: 2svw;
+    opacity: 0;
+    left: 0;
+    width: 16svw;
+    height: 20svh;
+    transition: box-shadow 1.5s;
+    background-image: url("images/pygame/Bateau_2_a_bon_port_(1).webp");
+    background-size: cover;
+    background-position: center;
+}
+
+#bateau_pirate_1::before {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    background-image: url('images/pygame/boulet_de_canon.png');
+    background-size: cover;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+#bateau_pirate_1::after {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    background-image: url('images/pygame/boulet_de_canon.png');
+    background-size: cover;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes boulet-canon_1 {
+    0% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateY(400px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        box-shadow: none;
+    }
+
+    60% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateX(700px) translateY(180px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px) translateY(0);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes boulet-canon_2 {
+    0% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateY(600px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        box-shadow: none;
+    }
+
+    60% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateX(500px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes batPirate {
+    0% {
+        box-shadow: inset 10em 10em 10em rgba(255, 0, 0, 0.209), 1px 1px 20em rgba(255, 0, 0, 0.7);
+    }
+
+    50% {
+        box-shadow: none;
+    }
+
+    100% {
+        box-shadow: inset 10em 10em 10em rgba(255, 0, 0, 0.209), 1px 1px 20em rgba(255, 0, 0, 0.7);
+    }
+}
+
+@keyframes bateau_marchand_1 {
+    0% {
+        top: 30%;
+        transform: translate(-100%) rotate(-30deg);
+        opacity: 0;
+    }
+
+    4% {
+        top: 0%;
+        transform: translate(20%) rotate(-20deg);
+        opacity: 1;
+    }
+
+    8% {
+        top: -20%;
+        transform: translate(100%) rotate(-10deg);
+
+    }
+
+    12% {
+        top: 0%;
+        transform: translate(180%) rotate(20deg);
+
+    }
+
+    16% {
+        top: 20%;
+        transform: translate(230%) rotate(10deg);
+
+    }
+
+    20% {
+        top: 35%;
+        transform: translate(300%) rotate(0deg);
+
+
+    }
+
+    24% {
+        /* top: 40%;
+        transform: translate(350%) rotate(5deg); */
+        top: 45%;
+        transform: translate(400%) rotate(0deg);
+
+    }
+
+    28% {
+        top: 50%;
+        transform: translate(500%) rotate(0deg);
+        opacity: 1;
+    }
+
+    32% {
+        top: 55%;
+        transform: translate(750%) rotate(-2deg);
+        opacity: 0;
+    }
+
+    34% {
+        top: 130%;
+        transform: translate(650%) rotate(210deg);
+    }
+
+    36% {
+        top: 130%;
+        transform: translate(550%) rotate(210deg);
+        opacity: 0;
+
+    }
+
+    40% {
+        top: 110%;
+        transform: translate(490%) rotate(200deg);
+        opacity: 1;
+    }
+
+    44% {
+        top: 110%;
+        transform: translate(460%) rotate(175deg);
+        opacity: 1;
+    }
+
+    48% {
+        top: 110%;
+        transform: translate(440%) rotate(155deg);
+        opacity: 1;
+    }
+
+    52% {
+        top: 120%;
+        transform: translate(430%) rotate(145deg);
+        opacity: 1;
+    }
+
+    56% {
+        top: 130%;
+        transform: translate(400%) rotate(145deg);
+        opacity: 1;
+    }
+
+    60% {
+        top: 140%;
+        transform: translate(340%) rotate(165deg);
+        opacity: 1;
+    }
+
+    64% {
+        top: 140%;
+        transform: translate(310%) rotate(175deg);
+        opacity: 1;
+    }
+
+    68% {
+        top: 140%;
+        transform: translate(280%) rotate(185deg);
+        opacity: 1;
+    }
+
+    72% {
+        top: 140%;
+        transform: translate(250%) rotate(185deg);
+        opacity: 1;
+    }
+
+    76% {
+        top: 135%;
+        transform: translate(220%) rotate(185deg);
+        opacity: 1;
+    }
+
+    80% {
+        top: 135%;
+        transform: translate(190%) rotate(185deg);
+        opacity: 1;
+    }
+
+    84% {
+        top: 130%;
+        transform: translate(160%) rotate(185deg);
+        opacity: 1;
+    }
+
+    88% {
+        top: 130%;
+        transform: translate(100%) rotate(185deg);
+        opacity: 1;
+    }
+
+    92% {
+        top: 125%;
+        transform: translate(40%) rotate(185deg);
+        opacity: 1;
+    }
+
+    94% {
+        top: 120%;
+        transform: translate(10%) rotate(185deg);
+        opacity: 1;
+    }
+
+    96% {
+        top: 120%;
+        transform: translate(-10%) rotate(180deg);
+        opacity: 1;
+    }
+
+    98% {
+        top: 120%;
+        transform: translate(-100%) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        top: 120%;
+        transform: translate(-100%) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+
+main #section_3 {
+    width: 80%;
+}
+
+main #section_3 img {
+    width: 75%;
+    margin-bottom: 150px
+}
+
+main #section_4 {
+    width: 100%;
+    margin-bottom: 50px
+}
+
+main #section_4 #vague_3 {
+    height: 100px;
+    width: 100%;
+    background-color: var(--beige);
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+main #section_4 #vague_3 #hiddenBar {
+    width: 100%;
+    height: 80%;
+    color: transparent;
+    transform: translateY(100px);
+    z-index: 1000;
+    background-color: var(--marron_foncé);
+    position: absolute;
+}
+
+main #section_4 #vague_3 #bateau_pirate_2 {
+    position: absolute;
+    left: 0;
+    bottom: 2svh;
+    width: 12svw;
+    opacity: 1;
+    /* border-bottom: 10px solid blue;
+    border-top: 10px solid transparent;
+    border-left: 30px solid transparent;
+    border-radius: 10px; */
+}
+
+main #section_4 #vague_3 .marée {
+    left: 0;
+    top: 100%;
+    width: 200px;
+    height: 140px;
+    background-color: blue;
+    box-shadow: inset 5px 15px 2em -10px lightskyblue, 15px 5px 0.5em blue;
+    color: transparent;
+    border-radius: 20% 80% 0 0;
+}
+
+@keyframes marée {
+    0% {
+        transform: translateY(55px);
+    }
+
+    50% {
+        transform: translateY(-10px);
+    }
+
+    100% {
+        transform: translateY(55px);
+    }
+}
+
+.show_petitBat {
+    opacity: 1 !important;
+    animation: petit_bat 5s infinite ease-in-out;
+}
+
+/* petit_bat 3s , truc du bas 0.5s, 15 elements, 150ms */
+@keyframes petit_bat {
+    0% {
+        left: 100%;
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        left: -13%;
+        transform: rotate(0);
+
+    }
+}
+
+main #section_5 {
+    margin-top: 50px;
+    width: 80%;
+}
+
+main .centrer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+main #section_5 img {
+    width: 75%;
+    margin-bottom: 100px
+}
+
+main a {
+    color: var(--beige);
+    cursor: url('images/curseur_pointer_logo_grand.png'), auto;
+}
+
+main #section_5 audio {
+    cursor: url('images/curseur_pointer_logo_grand.png'), auto;
+    width: 75%;
+    height: 5svh;
+}
+
+main #section_2 .courbe_1 #vector_2 {
+    width: 100%;
+}
+
+main #section_2 .courbe_1 #vector_2 img {
+    width: 100%;
+    /* filter: brightness(95%); */
+}
+
+/* @media screen and (max-width: 1500px) {
+    .a_test {
+        font-size: 20px !important;
+    }
+
+    main #section_2 .courbe_1 #vector_1 #bateau_marchand {
+        width: 240px;
+    }
+
+    main #section_2 .courbe_1 #vector_1 #bateau_pirate_1 {
+        width: 250px;
+        height: 150;
+        border-radius: 50px;
+    }
+
+    main #section_4 #vague_3 #bateau_pirate_2 {
+        width: 200px;
+        top: -100%;
+    }
+
+    svg {
+        width: 50px;
+        height: 50px;
+    }
+
+    header nav ul li ion-icon {
+        font-size: 50px;
+    }
+
+    ion-icon#icon_dark-mode {
+        width: 45px;
+        height: 45px;
+    }
+
+    ion-icon#language {
+        width: 50px;
+        height: 45px;
+    }
+
+    header nav .nav_icon_py {
+        width: 45px;
+        height: 50px;
+    }
+
+    #div_language {
+        height: 60vh;
+    }
+} */
+
+/* @media screen and (min-width:780px) and (max-width: 1100px) {
+    main #section_2 .courbe_1 #vector_1 #bateau_marchand {
+        width: 140px;
+    }
+
+    main #section_2 .courbe_1 #vector_1 #bateau_pirate_1 {
+        width: 140px;
+        height: 80;
+        border-radius: 50px;
+    }
+
+    main #section_4 #vague_3 #bateau_pirate_2 {
+        width: 150px;
+        top: -75%;
+    }
+} */
+
+/* @media screen and (max-width: 780px) {
+    main #section_2 .courbe_1 #vector_1 #bateau_marchand {
+        width: 120px;
+    }
+
+    main #section_2 .courbe_1 #vector_1 #bateau_pirate_1 {
+        width: 120px;
+    }
+} */
+
+/* @media screen and (min-width:700px) and (max-width: 780px) {
+    main #section_2 .courbe_1 #vector_1 #bateau_marchand {
+        width: 120px;
+    }
+
+    main #section_2 .courbe_1 #vector_1 #bateau_pirate_1 {
+        width: 120px;
+        height: 70;
+        border-radius: 50px;
+    }
+
+    main #section_4 #vague_3 #bateau_pirate_2 {
+        width: 100px;
+        top: -50%;
+    }
+} */
+
+/* @media screen and (min-width: 600px) and (max-width: 700px) {
+    main #section_2 .courbe_1 #vector_1 #bateau_marchand {
+        width: 100px;
+    }
+
+    main #section_2 .courbe_1 #vector_1 #bateau_pirate_1 {
+        width: 100px;
+        height: 50;
+        border-radius: 50px;
+    }
+
+
+    main #section_4 #vague_3 #bateau_pirate_2 {
+        width: 100px;
+        top: -50%;
+    }
+} */
+
+/* @media screen and (max-width: 600px) {
+    main #section_2 .courbe_1 #vector_1 #bateau_marchand {
+        width: 75px;
+    }
+
+    main #section_2 .courbe_1 #vector_1 #bateau_pirate_1 {
+        width: 90px;
+        height: 50;
+        border-radius: 50px;
+    }
+
+    main #section_4 #vague_3 #bateau_pirate_2 {
+        width: 100px;
+        top: -50%;
+    }
+
+    main section {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        text-align: center;
+    }
+
+    main #section_1 #logo_couleur img {
+        object-fit: contain;
+        width: 200px;
+    }
+
+    footer {
+        font-size: 14px;
+    }
+} */
+
+.orange {
+    color: var(--orange_font);
+}
+
+@media (max-width: 1000px) {
+    main #section_1 #logo_couleur {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    main #section_1 #logo_couleur a {
+        cursor: url('images/curseur_pointer_logo_grand.png'), auto;
+        width: auto;
+        padding: 20px;
+        text-decoration: none;
+    }
+
+    main #section_1 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 50px;
+
+    }
+
+    main #section_2 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    main #section_3 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+    }
+
+    main #section_4 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 50px
+    }
+
+    main #section_5 {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 50px
+    }
+
+    p {
+        text-align: center;
+        width: 80%;
+    }
+
+    h1 {
+        font-size: calc(1rem + 1.5vw);
+        text-align: center;
+    }
+
+    h2 {
+        font-size: calc(1rem + 0.7vw);
+        text-align: center;
+        width: 80%;
+    }
+
+    h3 {
+        font-size: calc(1rem + 0.7vw);
+        text-align: center;
+        width: 80%;
+    }
+}

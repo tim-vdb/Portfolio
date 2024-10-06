@@ -1,0 +1,341 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/visualiseur_coding.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@1,500&family=Galindo&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/cassetete.png" type="image/x-icon">
+    <title>Portfolio Timothée Van Den Bosch</title>
+    <script type="module">
+        const canvas = document.getElementById("canvas");
+        
+        // Fonction pour mettre à jour la taille du canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            window.iw = window.innerWidth;
+            window.ih = window.innerHeight;
+        }
+    
+        // Redimensionne le canvas à la taille de la fenêtre actuelle
+        resizeCanvas();
+    
+        // Ajoute un écouteur d'événements pour redimensionner le canvas lorsque la fenêtre change de taille
+        window.addEventListener('resize', resizeCanvas);
+    </script>
+    <script src="JS/CODE3D.js" type="module"></script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <header>
+        <div id="div_sticky">
+            <button class="btn_iframes_close">Ne plus Intéragir</button>
+        </div>
+        <ion-icon name="menu" id="MenuBurger_enable"></ion-icon>
+        <a href="#"><ion-icon name="arrow-up" id="btnTop"></ion-icon></a>
+        <div id="first">
+            <div id="moi_barre">
+                <div id="flip_div">
+                    <div id="div_moi">
+                        <img src="images/Photo_Pro_avecOutline.webp" alt="Photo de profil de Timothée Van Den Bosch"
+                            id="moi">
+                        <p>Timothée VDB</p>
+                    </div>
+                    <div id="div_cassetete">
+                        <img src="images/cassetete.png" alt="" id="cassetete">
+                        <p>Pseudo : Cassetete </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divLeft_nav">
+            <nav>
+
+                <ol>
+                    <li>
+                        <div>
+                            <ion-icon name="Home" class="nav_icon"></ion-icon>
+                            <a href="index.html" class="nav_links" id>Home</a>
+                        </div>
+                    </li>
+                    <li class="container_links">
+                        <div>
+                            <ion-icon name="layers"></ion-icon>
+                            <p class="nav_links">Projects</p>
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </div>
+                        <ul id="Projects_container">
+                            <li class="container_links">
+                                <div>
+                                    <ion-icon name="code-slash"></ion-icon>
+                                    <p class="nav_links">Coding Projects</p>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <img src="images/Iconduck - La Cissonière.svg" alt="">
+                                            <a href="lacissoniere.html" class="nav_links">La Cissonière</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="Quantix_Horizon/images/Logo_Quantix.svg" alt="">
+                                            <a href="quantix_horizon.html" class="nav_links">Quantix Horizon</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/logo_2final.svg" alt="">
+                                            <a href="chocospace.html" class="nav_links">ChocoSpace</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/GraceGloire.svg" alt="">
+                                            <a href="graceetgloire.html" class="nav_links">Grâce et Gloire</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/github/icon_minecraft.svg" alt="">
+                                            <a href="Wiki-MC-SB.html" class="nav_links">Wiki Minecraft Skyblock</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/pygame_wireframe.svg" alt="">
+                                            <img id="Tiled_logo" src="images/Tiled_wireframe.svg" alt="">
+                                            <a href="pygame-tiled.html" class="nav_links">Pygame & Tiled</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="container_links">
+                                <div>
+                                    <ion-icon name="cube-outline"></ion-icon>
+                                    <p class="nav_links">3D & Design</p>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </div>
+                                <ul>
+                                    <li class="container_links">
+                                        <div>
+                                            <img src="images/Adobe_Suite/Iconduck - Adobe Suite.svg" alt="">
+                                            <p class="nav_links">Adobe Suite</p>
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_photoshop.svg" alt="">
+                                                    <a href="Photoshop.html" class="nav_links">Photoshop</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_illustrator.svg"
+                                                        alt="">
+                                                    <a href="Illustrator.html" class="nav_links">Illustrator</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_xd.svg" alt="">
+                                                    <a href="XD.html" class="nav_links">XD</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/Blender/icon_blender_software.svg" alt="">
+                                            <a href="Blender.html" class="nav_links">Blender 3D</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <ion-icon name="logo-wordpress"></ion-icon>
+                                    <a href="Wordpress.html" class="nav_links">WordPress</a>
+                                </div>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="school-sharp"></ion-icon>
+                            <a href="Formation.html" class="nav_links">Formation</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="chatbubbles"></ion-icon>
+                            <a href="#Contacts" class="nav_links">Contacts</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="reader-outline"></ion-icon>
+                            <a href="mentions-legales.html" class="nav_links">Mentions Légales</a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div id="moi_orange">
+            <h1>Timothée</h1>
+            <h1>Van Den Bosch</h1>
+        </div>
+        <!-- <div id="icon_header_top">
+                    <ion-icon name="language-outline" id="language" class="change-color"></ion-icon>
+                    <ion-icon name="sunny-outline" id="icon_dark-mode" class="change-color"></ion-icon>
+                </div> -->
+
+
+        <!-- <div id="div_language" class="interface_language">
+                <ul>
+                    <li>
+                        <a href="" id="fr_lang">Français</a>
+                    </li>
+                    <li>
+                        <a href="" id="en_lang">Anglais</a>
+                    </li>
+
+                </ul>
+                <div id="font_size">
+                    <ion-icon name="caret-back-circle-outline" id="small" class="btn_letter"></ion-icon>
+                    <p>A</p>
+                    <ion-icon name="caret-forward-circle-outline" id="big" class="btn_letter"></ion-icon>
+                </div>
+                <div id="div_apply">
+                    <button id="btn_apply">Appliquer</button>
+                </div>
+            </div>
+
+            <link rel="icon" type="image/png" href="">
+            <div id="border_bottom_header"></div> -->
+
+        <!-- <img src="images/scroll-long-down.234x512.png" id="scroll-long-down" alt=""> -->
+    </header>
+
+    <main id="Partiel_WP">
+        <div class="content content_hidden">
+            <section id="section_1">
+                <h2>Projet de Partiel via WordPress</h2>
+                <img src="images/Wordpress/lycée_accueil_1.png" alt="">
+                <p>
+                    Nous avons entrepris un projet de refonte de site web en groupe de 4 pour notre première semaine de
+                    partiel. Notre mission était de moderniser le site d'un lycée en actualisant ses
+                    éléments de communication essentiels.
+                    Nous nous occuperons principalement de la partie développement du site web.
+                </p>
+
+                <p>
+                    Dans notre groupe, nous étions deux développeurs, nous avons alors travaillé ensemble pour le site
+                    web tant dis que les deux autres membres du groupe était plus accès Marketing et Design.
+                </p>
+
+                <p>Nous nous sommes donc occupé de la partie arborescence du site web, des Wireframes, des maquettes du
+                    site web et enfin la création du site sur WordPress via le builder Elementor. Nous avons choisi
+                    WordPress plutôt que le code, car avec le temps que nous disposions et pour un premier projet de
+                    partiel, nous avions préféré de jouer sur la sécurité au niveau du temps demandé.
+                    Bien que notre domaine se reflète davantage sur le code. Il a été préférable de ne pas viser trop
+                    haut en tant qu'étudiant en première année.
+                </p>
+                <p>
+                    En effet avec le temps que nous disposions (c'est-à-dire moins de 4 jours et demi), il nous a été
+                    demandé de faire 3 pages sur les 49 pages du lycée que nous avions choisi.
+                </p>
+                <h2>L'Arborescence :</h2>
+                <img src="images/Wordpress/figma.webp" alt="">
+                <h2>Les Wireframes et Maquettes :</h2>
+                <p>Nous avons fait les Wireframes et les maquettes sur Adobe XD et pour les formats Desktop et
+                    Mobile.
+                </p>
+                <img src="images/Wordpress/Maquettes_Wireframes.webp" alt="">
+
+                <h2>Création du site web</h2>
+                <p>Nous avons donc fait les 3 pages du site web via WordPress.</p>
+
+                <h3>La Page d'Accueil :</h3>
+                <video controls id="video_1" loop playsinline autoplay controlslist="nodownload">
+                    <source src="/images/Wordpress/Page Accueil.mp4" type="video/mp4">
+                    <!-- Ajoutez plus de sources pour une compatibilité étendue -->
+                    Your browser does not support the video tag.
+                </video>
+
+                <h3>La Page Baccalauréat :</h3>
+                <video controls id="video_1" loop playsinline autoplay controlslist="nodownload">
+                    <source src="/images/Wordpress/BAC.mp4" type="video/mp4">
+                    <!-- Ajoutez plus de sources pour une compatibilité étendue -->
+                    Your browser does not support the video tag.
+                </video>
+
+                <h3>La Page Prépa Hypokhâgne Khâgne :</h3>
+                <video controls id="video_1" loop playsinline autoplay controlslist="nodownload">
+                    <source src="/images/Wordpress/prépa.mp4" type="video/mp4">
+                    <!-- Ajoutez plus de sources pour une compatibilité étendue -->
+                    Your browser does not support the video tag.
+                </video>
+                <h4>Le Pied de Page :</h4>
+                <img src="images/Wordpress/footer_accueil.png" alt="">
+            </section>
+
+        </div>
+    </main>
+    <footer>
+        <h2 id="Contacts">Contacts</h2>
+        <div id="icon_contact">
+
+            <a href="https://github.com/NectorCassetete/" target="_blank">
+                <div>
+                    <ion-icon name="logo-github"></ion-icon>
+                    <p>Mon Github</p>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/vantimothee/" target="_blank">
+                <div>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <p>Mon Instagram</p>
+                </div>
+            </a>
+            <a href="https://discord.com/users/457538401407729679" target="_blank">
+                <div>
+                    <ion-icon name="logo-discord"></ion-icon>
+                    <p>Mon Discord</p>
+                </div>
+            </a>
+            <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiElMLW-5uEAxWlVKQEHbheDe8QFnoECBcQAQ&url=https%3A%2F%2Ffr.linkedin.com%2Fin%2Ftimoth%25C3%25A9e-van-den-bosch-097146292&usg=AOvVaw3sTRdDOyKxGpsIlhPTp7NU&opi=89978449"
+                target="_blank">
+                <div>
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                    <p>Mon LinkedIn</p>
+                </div>
+            </a>
+            <a href="mailto: timothee.vandenbosch@my-digital-school.org" target="_blank">
+                <div>
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <p>Envoyez un Mail</p>
+                </div>
+            </a>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2024 Timothée Van Den Bosch Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="JS/main_new.js"></script>
+    <!-- <script src="mainAvecAdobeSuite.js"></script>
+    <script src="main.js"></script> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>

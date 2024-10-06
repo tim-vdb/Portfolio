@@ -1,0 +1,180 @@
+/* --------------------------Main Github--------------------------- */
+.content {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+.content_hidden {
+    margin-top: 10svh;
+}
+
+h1 {
+    text-align: center;
+    font-size: calc(1rem + 1.5vw);
+}
+
+.parallax {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: var(--beige);
+    background-image: url('images/github/Capture-decran-2023-11-24-115829.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center bottom 200%;
+    height: 100vh;
+    /* Ajustez la hauteur selon vos besoins */
+    background-attachment: fixed;
+}
+
+main #section_1 {
+    width: 80%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+main #section_1 p {
+    text-align: center;
+}
+
+main #section_1 div,
+main #section_1 a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 20px 5px;
+}
+
+main #section_1 img {
+    max-width: 50%;
+    border-radius: 5%;
+}
+
+main #section_1 a {
+    cursor: url("images/curseur_pointer_logo_grand.png"), auto;
+}
+
+
+main #section_1 #case_github {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 75%;
+    padding: 30px;
+    border-top: 5px solid var(--orange_font);
+    border-bottom: 5px solid var(--orange_font);
+}
+
+main #section_1 #div_btn_site {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row;
+    width: 100%;
+    padding: 0;
+}
+
+main #section_1 #site_web {
+    background-color: var(--beige);
+    color: var(--marron_foncé);
+    border-radius: 20px;
+    border: 2px solid var(--marron_foncé);
+    font-size: 22px;
+    font-family: 'Galindo', sans-serif !important;
+    animation: anim_btn_shadow 2s infinite ease-in-out alternate;
+    text-decoration: none;
+}
+
+@keyframes anim_btn_shadow {
+    from {
+        box-shadow: 1px 1px 20px var(--beige);
+    }
+
+    to {
+        box-shadow: none;
+    }
+}
+
+main #section_1 #site_web:hover {
+    background-color: var(--marron_foncé);
+    color: var(--beige);
+    border-radius: 20px;
+    border: 2px solid var(--beige);
+}
+
+main #section_2 #nuage {
+    width: 100%;
+}
+
+main #section_3 {
+    width: 80%;
+}
+
+main #section_3 #titre_coffre {
+    display: flex;
+    align-items: center;
+    left: 100%;
+}
+
+main #section_3 .orange {
+    color: var(--orange_font);
+}
+
+main #section_3 h3 {
+    margin-top: 100px;
+}
+
+@media (max-width: 1000px) {
+    .parallax {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: var(--beige);
+        background-image: url('images/github/Capture-decran-2023-11-24-115829.png');
+        background-size: cover;
+        background-repeat: no-repeat;
+        background-position: right 20% top;
+        height: 50vh;
+        /* Ajustez la hauteur selon vos besoins */
+        background-attachment: fixed;
+    }
+
+    main #section_1 {
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+    .content_hidden {
+        margin-top: 0svh;
+    }
+
+    main #section_1 #div_btn_site {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        padding: 0;
+    }
+
+    main p,
+    h3 {
+        text-align: center;
+    }
+
+    main #section_3 #titre_coffre {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+    }
+
+}

@@ -1,0 +1,85 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/bg_quantix.webp);
+    color: white;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 2px white solid;
+}
+
+h1,
+h2 {
+    font-family: "moby", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: white;
+    text-align: center;
+}
+
+p {
+    font-family: "kallisto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    text-align: center;
+    background-color: black;
+}
+
+#logo_header {
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+}
+
+header div {
+    width: 25%;
+}
+
+nav {
+    width: 25%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    color: white;
+    font-family: "kallisto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+form {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+margin-top: 50px;
+font-family: "kallisto", sans-serif;
+font-weight: 300;
+font-style: normal;
+}
+
+form button {
+margin-top: 50px;
+font-family: "kallisto", sans-serif;
+font-weight: 300;
+font-style: normal;
+}

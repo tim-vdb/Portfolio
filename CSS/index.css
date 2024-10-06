@@ -1,0 +1,27 @@
+/* --------------------------Main Index--------------------------- */
+#section_1 {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 15px;
+    width: 90%;
+}
+
+#description_main {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+}
+
+#description_main .orange {
+    color: var(--new_color_orange);
+}
+
+#description_main p img {
+    border-radius: 20px;
+    margin-left: 10px;
+    margin-right: 5px;
+    width: 120px;
+}

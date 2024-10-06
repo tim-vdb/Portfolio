@@ -1,0 +1,436 @@
+body {
+    margin: 0;
+    padding: 0;
+    background-image: url(images/bg_quantix.webp);
+    overflow-x: hidden;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+    border: 2px white solid;
+    background-color: black;
+}
+
+#banner {
+width: 100%;
+height: 54%;
+background-image: url(images/Banner-01.jpg);
+background-size: cover;
+background-repeat: no-repeat;
+background-position: center;
+}
+
+section {
+    padding: 50px;
+    margin-top: 200px;
+}
+
+.aperçu_gauche,
+.aperçu_droite,
+.aperçu_vaisseau {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    opacity: 0;
+    filter: blur(5px);
+    border-radius: 30px;
+}
+
+.aperçu_gauche {
+    transform: translateX(-20%);
+
+    transition: all 1.5s;
+}
+
+.aperçu_droite {
+    transform: translateX(20%);
+    transition: all 1.5s;
+}
+
+.aperçu_vaisseau {
+    animation: 7s vaisseau ease-in-out;
+    transition: all 1.5s;
+}
+
+.aperçu_cryo {
+    animation: 5s cryo ease-in-out forwards;
+    transition: all 1.5s;
+}
+
+.aperçu_opra {
+    animation: 10s Planet infinite ease-in-out;
+    transition: all 1.5s;
+}
+
+.show_aperçu {
+    opacity: 1;
+    filter: blur(0);
+    transform: translateX(0);
+}
+
+@keyframes vaisseau {
+    0% {
+        transform: scale(0) translateX(100vw);
+    }
+
+    50% {
+        transform: scale(1) translateX(0px);
+    }
+
+    100% {
+        transform: scale(1) translateX(0vw);
+    }
+}
+
+@keyframes cryo {
+    0% {
+        transform: scale(0) translateX(-50vw);
+    }
+
+    100% {
+        transform: scale(3) translateX(0vw);
+    }
+}
+
+@keyframes Planet {
+    0% {
+        transform: scale(0) translateX(130vw);
+    }
+
+    50% {
+        transform: scale(1) translateX(0px);
+    }
+
+    100% {
+        transform: scale(0) translateX(-130vw);
+    }
+}
+
+@keyframes spaceship {
+    0% {
+        left: 70%;
+        top: 25%;
+        transform: scale(0);
+    }
+
+    25% {
+        transform: scale(0.5) rotate(-20deg);
+        left: 45%;
+        top: 10%;
+    }
+
+    50% {
+        transform: rotate(-80deg); 
+        left: 30%;
+        
+    }
+
+    75% {
+        transform: scale(1) rotate(-30deg);
+        left: 10%;
+        top: 50%;
+    }
+
+    100% {
+        transform: scale(1) rotate(-40deg);
+        left:-20%;
+        top: 60%;
+    }
+}
+
+#Spaceship {
+    width: 300px;
+    height: 300px;
+    transform: scale(0);
+    position: absolute;
+    object-fit: contain;
+    animation: spaceship 8s infinite ease-in-out;
+}
+
+section#first_section {
+margin-top: 0px;
+}
+
+h1 {
+    font-family: "moby", sans-serif;
+    font-weight: 400;
+    font-style: normal;
+    text-align: center;
+    color: white;
+    text-align: center;
+}
+
+h2,
+h3, p {
+    font-family: "kallisto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    color: white;
+    text-align: center;
+}
+
+p {
+    line-height: 1.5;
+}
+
+
+#pres_vaisseau {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+width: 70svw;
+}
+
+nav {
+    width: 25%;
+}
+
+ul {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0;
+}
+
+li {
+    list-style-type: none;
+}
+
+li a {
+    color: white;
+    font-family: "kallisto", sans-serif;
+    font-weight: 300;
+    font-style: normal;
+    margin: 0px 10px;
+    text-decoration: none;
+}
+
+#div_logo {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+#div_logo p {
+width: 50%;
+}
+
+#cryo {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    display: none;
+}
+
+div#Opra_anim {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+#Opra {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+    display: none;
+}
+
+header div {
+    width: 25%;
+}
+
+#logo_header {
+    width: 150px;
+    height: 50px;
+    object-fit: contain;
+}
+
+#logo_main {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+
+#number_section {
+    padding: 0 !important;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 30svh;
+}
+
+.number {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 150px;
+    height: 150px;
+    margin: 0px 100px;
+}
+
+.number h3 {
+    text-align: center;
+}
+
+div#h2_cryo {
+width: 50px;
+height: 50px;
+background-color: black;
+}
+
+div#ville {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+div#maisons {
+display: flex;
+justify-content: center;
+align-items: center;
+flex-direction: column;
+}
+
+#maisons img:first-child {
+margin-top: 30svh;
+}
+
+#maisons img {
+    width: 90svw;
+    height: 100svh;
+    object-fit: cover;
+    margin-bottom: 30svh;
+}
+
+#maisons img:last-child {
+    margin-bottom: 0svh;
+    }
+
+#poster {
+    max-width: 500px;
+    max-height: 500px;
+    object-fit: contain;
+    border: 5px solid white;
+    margin-right: 50px;
+}
+
+section#ville p {
+    margin-top: 0;
+}
+
+div#td {
+display: flex;
+justify-content: center;
+align-items: center;
+}
+
+#img_tourelle {
+    width: 300px;
+    height: 200px;
+    object-fit: contain;
+}
+#img_dôme {
+    width: 400px;
+    height: 400px;
+    object-fit: contain;
+}
+
+#img_créature1 {
+    width: 300px;
+    height: 300px;
+    object-fit: contain;
+}
+#img_créature2 {
+    width: 300px;
+    height: 300px;
+    margin-left: 50px;
+    object-fit: contain;
+}
+
+#feature_city {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 50svw;
+}
+
+#section_vaisseau {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+#section_vaisseau p {
+width: 75%;
+}
+
+#section_navettes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    margin-top: 0;
+}
+
+#navette {
+    width: 800px;
+    max-height: 800px;
+    object-fit: contain;
+    display: none;
+}
+
+footer {
+    width: 100%;
+    border-bottom: none;
+    border-radius: 20px;
+    margin-bottom: 20px;
+}
+
+footer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+footer nav {
+    width: 100%;
+    margin: 10px 0;
+}
+
+footer ul {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    padding: 0;
+}
+
+footer li {
+    list-style-type: none;
+}
+
+footer a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    font-family: "kallisto", sans-serif;
+    font-style: normal;
+}
+
+footer p {
+    color: white;
+    margin: 0;
+    width: 50% !important;
+    text-align: center;
+}
