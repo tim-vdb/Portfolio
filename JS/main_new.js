@@ -67,7 +67,7 @@ waitForPageLoadAndDelay(LoaderDelay).then(() => {
     
     // Charger le script pour la Mustang après suppression du loader
     const mustangScript = document.createElement("script");
-    mustangScript.src = "./JS/Mustang3D.js";
+    mustangScript.src = "JS/Mustang3D.js";
     mustangScript.type = "module";
     document.body.appendChild(mustangScript);
 });
