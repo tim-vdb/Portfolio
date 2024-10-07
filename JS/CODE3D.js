@@ -1,50 +1,17 @@
-async function loadModules() {
-    // Importer THREE
-    const THREE = await import('https://unpkg.com/three@0.168.0/build/three.module.js');
-    console.log(THREE, "THREE");
-
-    // Importer GLTFLoader
-    const { GLTFLoader } = await import('https://unpkg.com/three@0.168.0/examples/jsm/loaders/GLTFLoader.js');
-    console.log(GLTFLoader, "GLTFLoader");
-
-    // Importer OrbitControls
-    const { OrbitControls } = await import('https://unpkg.com/three@0.168.0/examples/jsm/controls/OrbitControls.js');
-    console.log(OrbitControls, "OrbitControls");
-
-    // Importer EffectComposer
-    const { EffectComposer } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/EffectComposer.js');
-    console.log(EffectComposer, "EffectComposer");
-
-    // Importer RenderPass
-    const { RenderPass } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/RenderPass.js');
-    console.log(RenderPass, "RenderPass");
-
-    // Importer UnrealBloomPass
-    const { UnrealBloomPass } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/UnrealBloomPass.js');
-    console.log(UnrealBloomPass, "UnrealBloomPass");
-
-    // Importer ShaderPass
-    const { ShaderPass } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/ShaderPass.js');
-    console.log(ShaderPass, "ShaderPass");
-}
-
-// Appeler la fonction pour charger les modules
-loadModules().catch(err => console.error('Erreur lors du chargement des modules :', err));
-
-// import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js';
+// import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.150.0/build/three.module.js';
 // console.log(THREE, "THREE");
-// import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/loaders/GLTFLoader.js';
-// console.log(GLTFLoader, "GLTFLoader");
-// import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/controls/OrbitControls.js';
-// console.log(OrbitControls, "OrbitControls");
-// import { EffectComposer } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/EffectComposer.js';
-// console.log(EffectComposer, "EffectComposer");
-// import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/RenderPass.js';
-// console.log(RenderPass, "RenderPass");
-// import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/UnrealBloomPass.js';
-// console.log(UnrealBloomPass, "UnrealBloomPass");
-// import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/ShaderPass.js';
-// console.log(ShaderPass, "ShaderPass");
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.150.0/examples/jsm/loaders/GLTFLoader.js';
+console.log(GLTFLoader, "GLTFLoader");
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.150.0/examples/jsm/controls/OrbitControls.js';
+console.log(OrbitControls, "OrbitControls");
+import { EffectComposer } from 'https://cdn.jsdelivr.net/npm/three@0.150.0/examples/jsm/postprocessing/EffectComposer.js';
+console.log(EffectComposer, "EffectComposer");
+import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/RenderPass.js';
+console.log(RenderPass, "RenderPass");
+import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.150.0/examples/jsm/postprocessing/UnrealBloomPass.js';
+console.log(UnrealBloomPass, "UnrealBloomPass");
+import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.150.0/examples/jsm/postprocessing/ShaderPass.js';
+console.log(ShaderPass, "ShaderPass");
 // const KirschShader = {
 //     uniforms: {
 //         'tDiffuse': { value: null },
