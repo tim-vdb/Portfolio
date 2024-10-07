@@ -60,16 +60,16 @@ waitForPageLoadAndDelay(LoaderDelay).then(() => {
     body.style.overflow = "auto"; // Réactive le défilement
 
     // Afficher le canvas de la Mustang après suppression du loader
-    const Mustang3D = document.getElementById("mustang");
-    if (Mustang3D) {
-        Mustang3D.style.display = "block"; // Affiche le canvas de la Mustang
-    }
+    // const Mustang3D = document.getElementById("mustang");
+    // if (Mustang3D) {
+    //     Mustang3D.style.display = "block"; // Affiche le canvas de la Mustang
+    // }
     
-    // Charger le script pour la Mustang après suppression du loader
-    const mustangScript = document.createElement("script");
-    mustangScript.src = "./JS/Mustang3D.js";
-    mustangScript.type = "module";
-    document.body.appendChild(mustangScript);
+    // // Charger le script pour la Mustang après suppression du loader
+    // const mustangScript = document.createElement("script");
+    // mustangScript.src = "./JS/Mustang3D.js";
+    // mustangScript.type = "module";
+    // document.body.appendChild(mustangScript);
 });
 
 
