@@ -1,30 +1,30 @@
 async function loadModules() {
     // Importer THREE
-    const THREE = await import('https://unpkg.com/three@0.168.0/build/three.module.js');
+    const THREE = await import('https://www.skypack.dev//three@0.168.0/build/three.module.js');
     console.log(THREE, "THREE");
 
     // Importer GLTFLoader
-    const { GLTFLoader } = await import('https://unpkg.com/three@0.168.0/examples/jsm/loaders/GLTFLoader.js');
+    const { GLTFLoader } = await import('https://www.skypack.dev/three@0.168.0/examples/jsm/loaders/GLTFLoader.js');
     console.log(GLTFLoader, "GLTFLoader");
 
     // Importer OrbitControls
-    const { OrbitControls } = await import('https://unpkg.com/three@0.168.0/examples/jsm/controls/OrbitControls.js');
+    const { OrbitControls } = await import('https://www.skypack.dev/three@0.168.0/examples/jsm/controls/OrbitControls.js');
     console.log(OrbitControls, "OrbitControls");
 
     // Importer EffectComposer
-    const { EffectComposer } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/EffectComposer.js');
+    const { EffectComposer } = await import('https://www.skypack.dev/three@0.168.0/examples/jsm/postprocessing/EffectComposer.js');
     console.log(EffectComposer, "EffectComposer");
 
     // Importer RenderPass
-    const { RenderPass } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/RenderPass.js');
+    const { RenderPass } = await import('https://www.skypack.dev/three@0.168.0/examples/jsm/postprocessing/RenderPass.js');
     console.log(RenderPass, "RenderPass");
 
     // Importer UnrealBloomPass
-    const { UnrealBloomPass } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/UnrealBloomPass.js');
+    const { UnrealBloomPass } = await import('https://www.skypack.dev/three@0.168.0/examples/jsm/postprocessing/UnrealBloomPass.js');
     console.log(UnrealBloomPass, "UnrealBloomPass");
 
     // Importer ShaderPass
-    const { ShaderPass } = await import('https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/ShaderPass.js');
+    const { ShaderPass } = await import('https://www.skypack.dev/three@0.168.0/examples/jsm/postprocessing/ShaderPass.js');
     console.log(ShaderPass, "ShaderPass");
 }
 
