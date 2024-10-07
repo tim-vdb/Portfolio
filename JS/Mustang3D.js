@@ -1,13 +1,19 @@
-import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.168.0/build/three.module.js';
-console.log(THREE, "coucou");
-import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/postprocessing/ShaderPass.js';
-import { EXRLoader } from 'https://cdn.jsdelivr.net/npm/three@0.168.0/examples/jsm/loaders/EXRLoader.js';
-
+import * as THREE from 'https://cdn.jsdelivr.net/npm/three@0.156.0/build/three.module.js';
+console.log(THREE, "THREE");
+import { GLTFLoader } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/GLTFLoader.js';
+console.log(GLTFLoader, "GLTFLoader");
+import { OrbitControls } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/controls/OrbitControls.js';
+console.log(OrbitControls, "OrbitControls");
+import { EffectComposer } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/EffectComposer.js';
+console.log(EffectComposer, "EffectComposer");
+import { RenderPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/RenderPass.js';
+console.log(RenderPass, "RenderPass");
+import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/UnrealBloomPass.js';
+console.log(UnrealBloomPass, "UnrealBloomPass");
+import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/ShaderPass.js';
+console.log(ShaderPass, "ShaderPass");
+import { EXRLoader } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/EXRLoader.js';
+console.log(EXRLoader, "EXRLoader");
 const Mustang3D = document.getElementById('mustang');
 const divtest = document.getElementById("testo");
 
