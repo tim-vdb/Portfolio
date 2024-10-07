@@ -12,8 +12,9 @@ import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/exam
 console.log(UnrealBloomPass, "UnrealBloomPass");
 import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/ShaderPass.js';
 console.log(ShaderPass, "ShaderPass");
-import { EXRLoader } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/EXRLoader.js';
-console.log(EXRLoader, "EXRLoader");
+import { RGBELoader } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/RGBELoader.js'; // Remplacer EXRLoader par RGBELoader
+console.log(RGBELoader, "RGBELoader");
+
 const Mustang3D = document.getElementById('mustang');
 const divtest = document.getElementById("testo");
 
@@ -35,14 +36,13 @@ renderer.setPixelRatio(window.devicePixelRatio);
 
 // add the automatically created <canvas> element to the page
 divtest.appendChild(renderer.domElement);
-// document.body.appendChild(renderer.domElement);
-
 
 const pmremGenerator = new THREE.PMREMGenerator(renderer);
 pmremGenerator.compileEquirectangularShader();
 
-const exrLoader = new EXRLoader();
-exrLoader.load('./public/wildflower_field_4k.exr', function (texture) {
+// Remplacer EXRLoader par RGBELoader pour charger un fichier HDR
+const rgbeLoader = new RGBELoader();
+rgbeLoader.load('./public/wildflower_field_4k.hdr', function (texture) {
     const envMap = pmremGenerator.fromEquirectangular(texture).texture;
     texture.dispose();
     pmremGenerator.dispose(); // Optionnel : Libère de la mémoire après génération
@@ -54,17 +54,15 @@ exrLoader.load('./public/wildflower_field_4k.exr', function (texture) {
     scene.background = new THREE.Color(0x444444);
 });
 
-
 // Orbit Controls
 const controls = new OrbitControls(camera, renderer.domElement);
 camera.position.set(-2, 2, 4);
 controls.minDistance = 4;
 controls.maxDistance = 6;
 controls.enablePan = false;
-// controls.enableZoom = false;
 controls.update();
 
-// // Grid Helper
+// Grid Helper
 const gridHelper = new THREE.GridHelper(100, 100, 0xff0000);
 scene.add(gridHelper);
 
@@ -79,24 +77,9 @@ loader.load("./public/mustang.glb", function (gltf) {
     mesh.position.set(0, -0.1, 0);
     scene.add(mesh);
 
-    // Active les animations
-    // if (gltf.animations && gltf.animations.length) {
-    //     mixer = new THREE.AnimationMixer(mesh);
-    //     gltf.animations.forEach((clip) => {
-    //         const action = mixer.clipAction(clip);
-    //         setTimeout(() => {
-    //         action.play(); // Démarre l'animation après le délai
-    //     }, animationDelay);
-    //     });
-    // }
 }, undefined, function (error) {
     console.error(error);
 });
-
-// Ajouter de la lumière
-// const light = new THREE.PointLight(0xffffff, 100, 100);
-// light.position.set(0, 5, 0);
-// scene.add(light);
 
 // Configurer l'effet de bloom
 const renderScene = new RenderPass(scene, camera);
