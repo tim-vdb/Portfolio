@@ -1,10 +1,10 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import * as THREE from './three/build/three.module.js';
+import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
+import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { ShaderPass } from './three/examples/jsm/postprocessing/ShaderPass.js';
 
 const KirschShader = {
     uniforms: {

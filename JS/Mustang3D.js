@@ -1,10 +1,11 @@
-import * as THREE from 'three';
-import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
-import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from 'three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from 'three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from 'three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { ShaderPass } from 'three/examples/jsm/postprocessing/ShaderPass.js';
+import * as THREE from './three/build/three.module.js';
+import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
+import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { ShaderPass } from './three/examples/jsm/postprocessing/ShaderPass.js';
+import { EXRLoader } from './three/examples/jsm/loaders/EXRLoader.js';
 
 const Mustang3D = document.getElementById('mustang');
 const divtest = document.getElementById("testo");
@@ -29,7 +30,7 @@ renderer.setPixelRatio(window.devicePixelRatio);
 divtest.appendChild(renderer.domElement);
 // document.body.appendChild(renderer.domElement);
 
-import { EXRLoader } from 'three/examples/jsm/loaders/EXRLoader.js';
+
 const pmremGenerator = new THREE.PMREMGenerator(renderer);
 pmremGenerator.compileEquirectangularShader();
 
