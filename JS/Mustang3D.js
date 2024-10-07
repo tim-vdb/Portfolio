@@ -36,7 +36,7 @@ const pmremGenerator = new THREE.PMREMGenerator(renderer);
 pmremGenerator.compileEquirectangularShader();
 
 const exrLoader = new EXRLoader();
-exrLoader.load('wildflower_field_4k.exr', function (texture) {
+exrLoader.load('./public/wildflower_field_4k.exr', function (texture) {
     const envMap = pmremGenerator.fromEquirectangular(texture).texture;
     texture.dispose();
     pmremGenerator.dispose(); // Optionnel : Libère de la mémoire après génération
@@ -65,7 +65,7 @@ scene.add(gridHelper);
 // GLTF Loader
 const loader = new GLTFLoader();
 
-loader.load("/mustang.glb", function (gltf) {
+loader.load("./public/mustang.glb", function (gltf) {
     const mesh = gltf.scene;
 
     // Applique une rotation et ajoute le modèle à la scène
