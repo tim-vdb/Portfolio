@@ -1,6 +1,6 @@
 async function loadModules() {
     // Importer THREE
-    const THREE = await import('https://www.skypack.dev//three@0.168.0/build/three.module.js');
+    const THREE = await import('https://www.skypack.dev/three@0.168.0/build/three.module.js');
     console.log(THREE, "THREE");
 
     // Importer GLTFLoader
