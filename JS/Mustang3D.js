@@ -1,11 +1,12 @@
-import * as THREE from 'three';
-import { GLTFLoader } from './three/examples/jsm/loaders/GLTFLoader.js';
-import { OrbitControls } from './three/examples/jsm/controls/OrbitControls.js';
-import { EffectComposer } from './three/examples/jsm/postprocessing/EffectComposer.js';
-import { RenderPass } from './three/examples/jsm/postprocessing/RenderPass.js';
-import { UnrealBloomPass } from './three/examples/jsm/postprocessing/UnrealBloomPass.js';
-import { ShaderPass } from './three/examples/jsm/postprocessing/ShaderPass.js';
-import { EXRLoader } from './three/examples/jsm/loaders/EXRLoader.js';
+import * as THREE from 'https://unpkg.com/three@0.168.0/build/three.module.js';
+import { GLTFLoader } from 'https://unpkg.com/three@0.168.0/examples/jsm/loaders/GLTFLoader.js';
+import { OrbitControls } from 'https://unpkg.com/three@0.168.0/examples/jsm/controls/OrbitControls.js';
+import { EffectComposer } from 'https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/EffectComposer.js';
+import { RenderPass } from 'https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/RenderPass.js';
+import { UnrealBloomPass } from 'https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/UnrealBloomPass.js';
+import { ShaderPass } from 'https://unpkg.com/three@0.168.0/examples/jsm/postprocessing/ShaderPass.js';
+
+import { EXRLoader } from 'https://unpkg.com/three@0.168.0/examples/jsm/loaders/EXRLoader.js';
 
 const Mustang3D = document.getElementById('mustang');
 const divtest = document.getElementById("testo");
