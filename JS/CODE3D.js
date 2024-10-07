@@ -120,7 +120,7 @@ const loader = new GLTFLoader();
 const animationDelay = 300;
 let mixer;
 
-loader.load("https://timothee-vandenbosch.github.io/public/Code3D.glb", function (gltf) {
+loader.load("./public/Code3D.glb", function (gltf) {
     const mesh = gltf.scene;
 
     // Applique une rotation et ajoute le modèle à la scène
