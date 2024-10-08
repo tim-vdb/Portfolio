@@ -91,9 +91,21 @@ const KirschShader = {
 const canvas = document.getElementById("canvas"); // Canvas du loader
 
 // Fonction pour redimensionner le canvas du loader
+// function resizeCanvas() {
+//     canvas.width = window.innerWidth;
+//     canvas.height = window.innerHeight;
+// }
 function resizeCanvas() {
-    canvas.width = window.innerWidth;
-    canvas.height = window.innerHeight;
+    const devicePixelRatio = window.devicePixelRatio || 1; // Ajuste pour les écrans haute résolution
+    const scale = devicePixelRatio > 1 ? 0.5 : 1; // Réduire la résolution sur les appareils haute résolution
+    
+    const width = window.innerWidth * scale;
+    const height = window.innerHeight * scale;
+    
+    canvas.width = width;
+    canvas.height = height;
+    renderer.setSize(width, height, false);
+    composer.setSize(width, height);  // Redimensionne aussi le composer
 }
 
 resizeCanvas();
@@ -172,16 +184,29 @@ composer.addPass(bloomPass);
 composer.addPass(kirschPass);
 
 // Fonction d'animation
-function animate() {
+// function animate() {
+//     requestAnimationFrame(animate);
+
+//     // Mise à jour du mixer d'animations (si présent)
+//     if (mixer) mixer.update(0.01);
+
+//     // Utilisation du composer pour le rendu avec l'effet de bloom
+//     composer.render();
+//     // controls.update();
+// }
+
+let lastFrameTime = 0;
+const frameInterval = 1000 / 30;  // 30 FPS
+
+function animate(time) {
     requestAnimationFrame(animate);
+    
+    // Limite la fréquence d'images
+    if (time - lastFrameTime < frameInterval) return;
+    lastFrameTime = time;
 
-    // Mise à jour du mixer d'animations (si présent)
     if (mixer) mixer.update(0.01);
-
-    // Utilisation du composer pour le rendu avec l'effet de bloom
     composer.render();
-    // controls.update();
-    console.log("base")
 }
 
 animate();

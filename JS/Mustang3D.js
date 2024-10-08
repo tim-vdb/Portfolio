@@ -21,9 +21,24 @@ const Mustang3D = document.getElementById('mustang');
 const divtest = document.getElementById("testo");
 
 // Fonction pour redimensionner le canvas de la Mustang
+// function resizeMustang() {
+//     Mustang3D.width = divtest.clientWidth;
+//     Mustang3D.height = divtest.clientHeight;
+// }
+
 function resizeMustang() {
-    Mustang3D.width = divtest.clientWidth;
-    Mustang3D.height = divtest.clientHeight;
+    const devicePixelRatio = window.devicePixelRatio || 1; // Ajuste pour les écrans haute résolution
+    const scale = devicePixelRatio > 1 ? 0.5 : 1; // Réduire la résolution sur les appareils haute résolution
+    
+    const width = divtest.clientWidth * scale;  // Utiliser la largeur du parent div (divtest)
+    const height = divtest.clientHeight * scale; // Utiliser la hauteur du parent div (divtest)
+    
+    Mustang3D.width = width;
+    Mustang3D.height = height;
+    
+    // Redimensionner le rendu pour la nouvelle taille
+    renderer.setSize(width, height, false);
+    composer.setSize(width, height);  // Redimensionne aussi le composer
 }
 
 resizeMustang();
@@ -76,7 +91,7 @@ dloader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/'
 dloader.setDecoderConfig({type: 'js'});
 loader.setDRACOLoader(dloader);
 
-loader.load("./public/Mustang_Draco.glb", function (gltf) {
+loader.load("./public/Mustang-Draco.glb", function (gltf) {
     const mesh = gltf.scene;
 
     // Applique une rotation et ajoute le modèle à la scène
