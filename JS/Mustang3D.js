@@ -14,6 +14,8 @@ import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/
 console.log(ShaderPass, "ShaderPass");
 import { RGBELoader } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/RGBELoader.js'; // Remplacer EXRLoader par RGBELoader
 console.log(RGBELoader, "RGBELoader");
+import { DRACOLoader } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/DRACOLoader.js'; // Remplacer EXRLoader par RGBELoader
+console.log(DRACOLoader, "DRACOLoader");
 
 const Mustang3D = document.getElementById('mustang');
 const divtest = document.getElementById("testo");
@@ -69,7 +71,12 @@ scene.add(gridHelper);
 // GLTF Loader
 const loader = new GLTFLoader();
 
-loader.load("./public/mustang.glb", function (gltf) {
+const dloader = new DRACOLoader();
+dloader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/');
+dloader.setDecoderConfig({type: 'js'});
+loader.setDRACOLoader(dloader);
+
+loader.load("./public/Mustang_Draco.glb", function (gltf) {
     const mesh = gltf.scene;
 
     // Applique une rotation et ajoute le modèle à la scène
