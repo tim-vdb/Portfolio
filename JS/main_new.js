@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const ol = document.querySelector("header nav ol");
     const divLeft_nav = document.getElementById("divLeft_nav");
     const btnTop = document.getElementById("btnTop")
-    const canvasLoader = document.getElementById("canvas"); 
+    const canvasLoader = document.getElementById("canvas");
 
     window.onscroll = function () { checkNavbar(), scrollToTopBtn() };
 
@@ -18,15 +18,15 @@ document.addEventListener("DOMContentLoaded", function () {
     //         };
     //     });
     // }
-    
+
     // // Utilisation de la fonction
     // const LoaderDelay = 6000;
-    
+
     // waitForPageLoadAndDelay(LoaderDelay)
     //     .then(() => {
     //         const loader = document.getElementById("canvas"); // L'élément du loader
     //         const body = document.body;
-    
+
     //         // Suppression du loader et réactivation du défilement
     //         if (loader) {
     //             loader.remove(); // Supprime complètement le loader du DOM
@@ -35,42 +35,43 @@ document.addEventListener("DOMContentLoaded", function () {
     //     });
 
     // --- Gestion du Loader Canvas ---
-function waitForPageLoadAndDelay(delay) {
-    return new Promise((resolve) => {
-        window.onload = () => {
-            setTimeout(() => {
-                resolve();
-            }, delay);
-        };
+    function waitForPageLoadAndDelay(delay) {
+        return new Promise((resolve) => {
+            window.onload = () => {
+                setTimeout(() => {
+                    resolve();
+                }, delay);
+            };
+        });
+    }
+
+    // Utilisation de la fonction
+    const LoaderDelay = 6000; // 6 secondes d'affichage du loader
+
+    waitForPageLoadAndDelay(LoaderDelay).then(() => {
+        const loader = document.getElementById("canvas"); // Canvas du loader
+        const body = document.body;
+
+        // Suppression du loader et activation du canvas de la Mustang
+        if (loader) {
+            loader.remove(); // Supprime complètement le loader du DOM
+        }
+
+        body.style.overflow = "auto"; // Réactive le défilement
+
+        // Afficher le canvas de la Mustang après suppression du loader
+        const Mustang3D = document.getElementById("mustang");
+        if (Mustang3D) {
+            Mustang3D.style.display = "block"; // Affiche le canvas de la Mustang
+
+
+            // Charger le script pour la Mustang après suppression du loader
+            const mustangScript = document.createElement("script");
+            mustangScript.src = "JS/Mustang3D.js";
+            mustangScript.type = "module";
+            document.body.appendChild(mustangScript);
+        }
     });
-}
-
-// Utilisation de la fonction
-const LoaderDelay = 6000; // 6 secondes d'affichage du loader
-
-waitForPageLoadAndDelay(LoaderDelay).then(() => {
-    const loader = document.getElementById("canvas"); // Canvas du loader
-    const body = document.body;
-
-    // Suppression du loader et activation du canvas de la Mustang
-    if (loader) {
-        loader.remove(); // Supprime complètement le loader du DOM
-    }
-
-    body.style.overflow = "auto"; // Réactive le défilement
-
-    // Afficher le canvas de la Mustang après suppression du loader
-    const Mustang3D = document.getElementById("mustang");
-    if (Mustang3D) {
-        Mustang3D.style.display = "block"; // Affiche le canvas de la Mustang
-    }
-    
-    // Charger le script pour la Mustang après suppression du loader
-    const mustangScript = document.createElement("script");
-    mustangScript.src = "JS/Mustang3D.js";
-    mustangScript.type = "module";
-    document.body.appendChild(mustangScript);
-});
 
 
     // --- Gestion de la Nav ---

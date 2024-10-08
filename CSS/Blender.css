@@ -72,8 +72,9 @@ main #section_1 video {
     }
 }
 
-#mustang {
-    width: calc(100%);
+#testo {
+    border: double 10px var(--new_color_orange);
+    width: 100%;
     height: 50svh; 
     z-index: 9999;
     display: none;
