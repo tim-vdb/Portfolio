@@ -109,6 +109,10 @@ composer.addPass(kirschPass);
 function resizeCanvas() {
     canvas.width = window.innerWidth;
     canvas.height = window.innerHeight;
+
+    if (canvas.width < 800) {
+        camera.position.set(0, 0, 15);
+    }
 }
 
 resizeCanvas();
@@ -116,7 +120,7 @@ window.addEventListener('resize', resizeCanvas);
 
 // Loader pour le modèle GLTF
 const loader = new GLTFLoader();
-const animationDelay = 0;
+const animationDelay = 300;
 let mixer;
 
 loader.load("./public/Code3D.glb", function (gltf) {
@@ -138,7 +142,7 @@ loader.load("./public/Code3D.glb", function (gltf) {
         gltf.animations.forEach((clip) => {
             const action = mixer.clipAction(clip);
             setTimeout(() => {
-                action.timeScale = 3; // Ralentit l'animation par 2
+                action.timeScale = 4; // Vitesse animation
                 action.play(); // Démarre l'animation après le délai
             }, animationDelay);
         });

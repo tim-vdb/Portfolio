@@ -33,24 +33,6 @@ renderer.setClearColor(0x1C1C1C, 1); // La couleur de fond est définie ici
 renderer.setSize(divtest.clientWidth, divtest.clientHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
 
-function resizeMustang() {
-    const devicePixelRatio = window.devicePixelRatio || 1; // Ajuste pour les écrans haute résolution
-    const scale = devicePixelRatio > 1 ? 0.5 : 1; // Réduire la résolution sur les appareils haute résolution
-    
-    const width = divtest.clientWidth * scale;  // Utiliser la largeur du parent div (divtest)
-    const height = divtest.clientHeight * scale; // Utiliser la hauteur du parent div (divtest)
-    
-    Mustang3D.width = width;
-    Mustang3D.height = height;
-    
-    // Redimensionner le rendu pour la nouvelle taille
-    renderer.setSize(width, height, false);
-    composer.setSize(width, height);  // Redimensionne aussi le composer
-}
-
-resizeMustang();
-window.addEventListener('resize', resizeMustang);
-
 // add the automatically created <canvas> element to the page
 divtest.appendChild(renderer.domElement);
 
@@ -116,6 +98,24 @@ const bloomPass = new UnrealBloomPass(
 const composer = new EffectComposer(renderer);
 composer.addPass(renderScene);
 composer.addPass(bloomPass);
+
+function resizeMustang() {
+    const devicePixelRatio = window.devicePixelRatio || 1; // Ajuste pour les écrans haute résolution
+    const scale = devicePixelRatio > 1 ? 0.5 : 1; // Réduire la résolution sur les appareils haute résolution
+    
+    const width = divtest.clientWidth * scale;  // Utiliser la largeur du parent div (divtest)
+    const height = divtest.clientHeight * scale; // Utiliser la hauteur du parent div (divtest)
+    
+    Mustang3D.width = width;
+    Mustang3D.height = height;
+    
+    // Redimensionner le rendu pour la nouvelle taille
+    renderer.setSize(width, height, false);
+    composer.setSize(width, height);  // Redimensionne aussi le composer
+}
+
+resizeMustang();
+window.addEventListener('resize', resizeMustang);
 
 // Fonction d'animation
 function animate() {
