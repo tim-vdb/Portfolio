@@ -12,6 +12,8 @@ import { UnrealBloomPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/exam
 console.log(UnrealBloomPass, "UnrealBloomPass");
 import { ShaderPass } from 'https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/ShaderPass.js';
 console.log(ShaderPass, "ShaderPass");
+
+// Shader de Kirsch
 const KirschShader = {
     uniforms: {
         'tDiffuse': { value: null },
@@ -29,7 +31,6 @@ const KirschShader = {
         uniform sampler2D tDiffuse;
         uniform vec2 resolution;
 
-        // Noyaux de convolution Kirsch
         mat3 kirschKernelX = mat3(
             5.0,  5.0,  5.0,
             -3.0,  0.0, -3.0,
@@ -42,7 +43,6 @@ const KirschShader = {
             5.0, -3.0, -3.0
         );
 
-        // Applique le filtre Kirsch dans une direction donnée
         float applyKirsch(mat3 kernel, vec2 uv, vec2 texelSize) {
             float edge = 0.0;
             for (int i = -1; i <= 1; i++) {
@@ -57,60 +57,25 @@ const KirschShader = {
 
         void main() {
             vec2 texelSize = 0.2 / resolution;
-            
-            // Applique le filtre dans les deux directions principales
             float edgeX = applyKirsch(kirschKernelX, vUv, texelSize);
             float edgeY = applyKirsch(kirschKernelY, vUv, texelSize);
-
-            // Combine les résultats pour obtenir les contours
             float edge = sqrt(edgeX * edgeX + edgeY * edgeY);
-            
-            // Récupère la couleur d'origine
-            vec4 originalColor = texture2D(tDiffuse, vUv);
 
-            // Couleur de contour : orange
-            vec3 edgeColor = vec3(1.0, 0.5, 0.0); // Orange
-            
-            // Ajuster l'intensité des contours
+            vec4 originalColor = texture2D(tDiffuse, vUv);
+            vec3 edgeColor = vec3(1.0, 0.5, 0.0);
             float intensity = clamp(edge, 0.0, 0.4);
 
-            // Mélanger l'original avec la couleur de contour
-            vec3 finalColor = mix(originalColor.rgb, edgeColor, intensity); // Mélange entre original et orange
-            
-            // Appliquer un effet de dégradé vers le noir
-            finalColor *= (0.2 + intensity); // Assombrit le centre
-
-            // Appliquer un filtre pour que les zones intenses soient plus lumineuses
-            finalColor += edgeColor * intensity * 0.5; // Ajouter un peu de l'orange aux bords
+            vec3 finalColor = mix(originalColor.rgb, edgeColor, intensity);
+            finalColor *= (0.2 + intensity);
+            finalColor += edgeColor * intensity * 0.5;
             
             gl_FragColor = vec4(finalColor, originalColor.a);
         }
     `
 };
 
+// Configuration de la scène, de la caméra et du rendu
 const canvas = document.getElementById("canvas"); // Canvas du loader
-
-// Fonction pour redimensionner le canvas du loader
-// function resizeCanvas() {
-//     canvas.width = window.innerWidth;
-//     canvas.height = window.innerHeight;
-// }
-function resizeCanvas() {
-    const devicePixelRatio = window.devicePixelRatio || 1; // Ajuste pour les écrans haute résolution
-    const scale = devicePixelRatio > 1 ? 0.5 : 1; // Réduire la résolution sur les appareils haute résolution
-    
-    const width = window.innerWidth * scale;
-    const height = window.innerHeight * scale;
-    
-    canvas.width = width;
-    canvas.height = height;
-    renderer.setSize(width, height, false);
-    composer.setSize(width, height);  // Redimensionne aussi le composer
-}
-
-resizeCanvas();
-window.addEventListener('resize', resizeCanvas);
-
 const scene = new THREE.Scene();
 const camera = new THREE.PerspectiveCamera(75, window.innerWidth / window.innerHeight, 0.1, 100);
 const renderer = new THREE.WebGLRenderer({ canvas, antialias: true });
@@ -123,13 +88,35 @@ document.body.appendChild(renderer.domElement);
 camera.position.set(0, 0, 9);
 // controls.update();
 
-// // Grid Helper
-// const gridHelper = new THREE.GridHelper(100, 100, 0xff0000);
-// scene.add(gridHelper);
+// Configurer l'effet de post-processing et les passes
+const renderScene = new RenderPass(scene, camera);
+const bloomPass = new UnrealBloomPass(
+    new THREE.Vector2(window.innerWidth, window.innerHeight),
+    0.6, // intensity
+    1,   // radius
+    0    // threshold
+);
 
-// GLTF Loader
+const kirschPass = new ShaderPass(KirschShader);
+kirschPass.uniforms['resolution'].value.set(window.innerWidth, window.innerHeight);
+
+const composer = new EffectComposer(renderer);
+composer.addPass(renderScene);
+composer.addPass(bloomPass);
+composer.addPass(kirschPass);
+
+// Fonction pour redimensionner le canvas du loader
+function resizeCanvas() {
+    canvas.width = window.innerWidth;
+    canvas.height = window.innerHeight;
+}
+
+resizeCanvas();
+window.addEventListener('resize', resizeCanvas);
+
+// Loader pour le modèle GLTF
 const loader = new GLTFLoader();
-const animationDelay = 300;
+const animationDelay = 0;
 let mixer;
 
 loader.load("./public/Code3D.glb", function (gltf) {
@@ -143,6 +130,7 @@ loader.load("./public/Code3D.glb", function (gltf) {
     if (!gltf.animations.length) {
         console.warn('Le modèle GLTF ne contient aucune animation.');
     }
+
     // Active les animations
     if (gltf.animations && gltf.animations.length) {
         console.log("verif")
@@ -150,7 +138,7 @@ loader.load("./public/Code3D.glb", function (gltf) {
         gltf.animations.forEach((clip) => {
             const action = mixer.clipAction(clip);
             setTimeout(() => {
-                action.timeScale = 0.6; // Ralentit l'animation par 2
+                action.timeScale = 3; // Ralentit l'animation par 2
                 action.play(); // Démarre l'animation après le délai
             }, animationDelay);
         });
@@ -164,37 +152,7 @@ const light = new THREE.PointLight(0xffffff, 1, 100);
 light.position.set(10, 10, 10);
 scene.add(light);
 
-// Configurer l'effet de bloom
-const renderScene = new RenderPass(scene, camera);
-const bloomPass = new UnrealBloomPass(
-    new THREE.Vector2(window.innerWidth, window.innerHeight),
-    0.6, // intensity
-    1, // radius
-    0 // threshold
-);
-
-const kirschPass = new ShaderPass(KirschShader);
-kirschPass.uniforms['resolution'].value.set(window.innerWidth, window.innerHeight);
-
-
-// Composer de post-processing
-const composer = new EffectComposer(renderer);
-composer.addPass(renderScene);
-composer.addPass(bloomPass);
-composer.addPass(kirschPass);
-
-// Fonction d'animation
-// function animate() {
-//     requestAnimationFrame(animate);
-
-//     // Mise à jour du mixer d'animations (si présent)
-//     if (mixer) mixer.update(0.01);
-
-//     // Utilisation du composer pour le rendu avec l'effet de bloom
-//     composer.render();
-//     // controls.update();
-// }
-
+// Fonction d'animation avec limite de fréquence d'images (30 FPS)
 let lastFrameTime = 0;
 const frameInterval = 1000 / 30;  // 30 FPS
 
@@ -211,7 +169,10 @@ function animate(time) {
 
 animate();
 
-
 // const light = new THREE.PointLight(0xeeeeee);
 // scene.add(light);
 // light.position.set(0, 0, 3);
+
+// // Grid Helper
+// const gridHelper = new THREE.GridHelper(100, 100, 0xff0000);
+// scene.add(gridHelper);

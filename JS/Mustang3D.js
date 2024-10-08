@@ -26,6 +26,13 @@ const divtest = document.getElementById("testo");
 //     Mustang3D.height = divtest.clientHeight;
 // }
 
+const scene = new THREE.Scene();
+const camera = new THREE.PerspectiveCamera(75, divtest.clientWidth / divtest.clientHeight, 0.1, 100);
+const renderer = new THREE.WebGLRenderer({ Mustang3D, antialias: true });
+renderer.setClearColor(0x1C1C1C, 1); // La couleur de fond est définie ici
+renderer.setSize(divtest.clientWidth, divtest.clientHeight);
+renderer.setPixelRatio(window.devicePixelRatio);
+
 function resizeMustang() {
     const devicePixelRatio = window.devicePixelRatio || 1; // Ajuste pour les écrans haute résolution
     const scale = devicePixelRatio > 1 ? 0.5 : 1; // Réduire la résolution sur les appareils haute résolution
@@ -43,13 +50,6 @@ function resizeMustang() {
 
 resizeMustang();
 window.addEventListener('resize', resizeMustang);
-
-const scene = new THREE.Scene();
-const camera = new THREE.PerspectiveCamera(75, divtest.clientWidth / divtest.clientHeight, 0.1, 100);
-const renderer = new THREE.WebGLRenderer({ Mustang3D, antialias: true });
-renderer.setClearColor(0x1C1C1C, 1); // La couleur de fond est définie ici
-renderer.setSize(divtest.clientWidth, divtest.clientHeight);
-renderer.setPixelRatio(window.devicePixelRatio);
 
 // add the automatically created <canvas> element to the page
 divtest.appendChild(renderer.domElement);
