@@ -82,6 +82,10 @@ body {
     /* background: linear-gradient(to top, rgb(228, 112, 4), rgb(255, 77, 12)); */
 }
 
+body button {
+    font-family: 'Galindo', sans-serif !important;
+}
+
 body h1 {
     font-size: var(--type-heading-h1-font-size);
     text-align: center;

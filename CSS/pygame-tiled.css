@@ -1,4 +1,8 @@
 /* --------------------------Main Pygame-Tiled------------------- */
+body {
+overflow-x: hidden !important;
+}
+
 .content {
     display: flex;
     justify-content: center;
@@ -480,7 +484,7 @@ main #section_4 #vague_3 #hiddenBar {
     color: transparent;
     transform: translateY(100px);
     z-index: 1000;
-    background-color: var(--marron_foncé);
+    background-color: var(--new_color_gris_foncé);
     position: absolute;
 }
 
@@ -561,8 +565,15 @@ main .centrer {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
     width: 100%;
+}
+
+main .centrer div {
+display: flex; 
+justify-content: center;
+align-items: center;
+flex-direction: column;
+width: 100%;
 }
 
 main #section_5 img {
