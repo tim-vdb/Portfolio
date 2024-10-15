@@ -88,10 +88,14 @@ document.addEventListener("DOMContentLoaded", function () {
 
 
             // Charger le script pour la Mustang après suppression du loader
-            const mustangScript = document.createElement("script");
-            mustangScript.src = "JS/Mustang3D.js";
-            mustangScript.type = "module";
-            document.body.appendChild(mustangScript);
+            const active_Mustang3D = document.getElementById('active_Mustang3D');
+            active_Mustang3D.addEventListener("click", function () {
+                const mustangScript = document.createElement("script");
+                mustangScript.src = "JS/Mustang3D.js";
+                mustangScript.type = "module";
+                document.body.appendChild(mustangScript);
+                active_Mustang3D.remove();
+            });
         }
     });
 

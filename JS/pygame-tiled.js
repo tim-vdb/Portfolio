@@ -1,4 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
+    document.createElement("marée");
+
     //-------------Main Pygame/Tiled-------------------------
     const observer_pygame_vague1Et2 = new IntersectionObserver(function (entries) {
         // entries est un tableau d'objets IntersectionObserverEntry
