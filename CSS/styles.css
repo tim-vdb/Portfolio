@@ -154,6 +154,7 @@ header {
     position: relative;
     transition: color 3s;
     transition: background-color 0.8s;
+    width: 100%;
 }
 
 header::before {
@@ -320,6 +321,10 @@ header div#flip_div {
 
 #div_cassetete {
     transform: rotateY(180deg);
+}
+
+#div_cassetete p {
+    white-space: nowrap;
 }
 
 header img#moi {

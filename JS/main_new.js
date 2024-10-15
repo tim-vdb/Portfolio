@@ -34,6 +34,28 @@ document.addEventListener("DOMContentLoaded", function () {
     //         body.style.overflow = "auto"; // Réactive le défilement
     //     });
 
+    // --- Gestion de l'effet 3D Projets ---
+    const banner = document.querySelector('.banner');
+    const images = document.querySelectorAll('.all_item a');
+    const slider = document.querySelector('.slider');
+    
+
+    if (banner) {
+        images.forEach((img) => {
+            const paragraph = img.parentElement.querySelector('p');
+
+            img.addEventListener('mouseenter', () => {
+                paragraph.style.opacity = '1';
+                slider.style.animationPlayState = 'paused';
+            });
+
+            img.addEventListener('mouseleave', () => {
+                paragraph.style.opacity = '0';
+                slider.style.animationPlayState = 'running';
+            });
+        });
+    }
+
     // --- Gestion du Loader Canvas ---
     function waitForPageLoadAndDelay(delay) {
         return new Promise((resolve) => {
@@ -126,13 +148,15 @@ document.addEventListener("DOMContentLoaded", function () {
     // --- Div sticky ---
     const div_sticky = document.getElementById("div_sticky");
 
-    function checkNavbar() {
-        if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-            div_sticky.style.display = "flex";
-        } else {
-            div_sticky.style.display = "none";
-        }
-    };
+    if (div_sticky) {
+        function checkNavbar() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                div_sticky.style.display = "flex";
+            } else {
+                div_sticky.style.display = "none";
+            }
+        };
+    }
 
 
     // --- Arrow Up ---
