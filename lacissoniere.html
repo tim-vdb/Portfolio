@@ -1,0 +1,391 @@
+<html lang="fr">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="CSS/styles.css">
+    <link rel="stylesheet" href="CSS/visualiseur_coding.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@1,500&family=Galindo&display=swap"
+        rel="stylesheet">
+    <link rel="icon" href="images/cassetete.png" type="image/x-icon">
+    <title>Portfolio Timothée Van Den Bosch</title>
+    <script type="importmap">
+        {
+            "imports": {
+                "three": "https://cdn.jsdelivr.net/npm/three@0.156.0/build/three.module.js",
+                "three/examples/jsm/loaders/GLTFLoader.js": "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/GLTFLoader.js",
+                "three/examples/jsm/controls/OrbitControls.js": "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/controls/OrbitControls.js",
+                "three/examples/jsm/postprocessing/EffectComposer.js": "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/EffectComposer.js",
+                "three/examples/jsm/postprocessing/RenderPass.js": "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/RenderPass.js",
+                "three/examples/jsm/postprocessing/UnrealBloomPass.js": "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/UnrealBloomPass.js",
+                "three/examples/jsm/postprocessing/ShaderPass.js": "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/postprocessing/ShaderPass.js",
+                "three/examples/jsm/loaders/EXRLoader.js": "https://cdn.jsdelivr.net/npm/three@0.156.0/examples/jsm/loaders/EXRLoader.js"
+            }
+        }
+    </script>
+    <script type="module">
+        const canvas = document.getElementById("canvas");
+
+        // Fonction pour mettre à jour la taille du canvas
+        function resizeCanvas() {
+            canvas.width = window.innerWidth;
+            canvas.height = window.innerHeight;
+            window.iw = window.innerWidth;
+            window.ih = window.innerHeight;
+        }
+
+        // Redimensionne le canvas à la taille de la fenêtre actuelle
+        resizeCanvas();
+
+        // Ajoute un écouteur d'événements pour redimensionner le canvas lorsque la fenêtre change de taille
+        window.addEventListener('resize', resizeCanvas);
+    </script>
+    <script src="JS/CODE3D.js" type="module"></script>
+</head>
+
+<body>
+    <canvas id="canvas"></canvas>
+    <header>
+        <div id="div_sticky">
+            <button class="btn_iframes_close">Ne plus Interagir</button>
+        </div>
+        <ion-icon name="menu" id="MenuBurger_enable"></ion-icon>
+        <a href="#"><ion-icon name="arrow-up" id="btnTop"></ion-icon></a>
+        <div id="first">
+            <div id="moi_barre">
+                <div id="flip_div">
+                    <div id="div_moi">
+                        <img src="images/Photo_Pro_avecOutline.webp" alt="Photo de profil de Timothée Van Den Bosch"
+                            id="moi">
+                        <p>Timothée VDB</p>
+                    </div>
+                    <div id="div_cassetete">
+                        <img src="images/cassetete.png" alt="" id="cassetete">
+                        <p>Pseudo : Cassetete</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div id="divLeft_nav">
+            <nav>
+
+                <ol>
+                    <li>
+                        <div>
+                            <ion-icon name="Home" class="nav_icon"></ion-icon>
+                            <a href="index.html" class="nav_links" id>Home</a>
+                        </div>
+                    </li>
+                    <li class="container_links">
+                        <div>
+                            <ion-icon name="layers"></ion-icon>
+                            <p class="nav_links">Projects</p>
+                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                        </div>
+                        <ul id="Projects_container">
+                            <li class="container_links">
+                                <div>
+                                    <ion-icon name="code-slash"></ion-icon>
+                                    <p class="nav_links">Coding Projects</p>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <img src="images/Iconduck - La Cissonière.svg" alt="">
+                                            <a href="lacissoniere.html" class="nav_links">La Cissonière</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="Quantix_Horizon/images/Logo_Quantix.svg" alt="">
+                                            <a href="quantix_horizon.html" class="nav_links">Quantix Horizon</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/logo_2final.svg" alt="">
+                                            <a href="chocospace.html" class="nav_links">ChocoSpace</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/github/icon_minecraft.svg" alt="">
+                                            <a href="Wiki-MC-SB.html" class="nav_links">Wiki Minecraft Skyblock</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/pygame_wireframe.svg" alt="">
+                                            <img id="Tiled_logo" src="images/Tiled_wireframe.svg" alt="">
+                                            <a href="pygame-tiled.html" class="nav_links">Pygame & Tiled</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/montagnes.svg" alt="">
+                                            <a href="montagneLandingPage.html" class="nav_links">Landing Page - La Montagne Enchantée</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li class="container_links">
+                                <div>
+                                    <ion-icon name="cube-outline"></ion-icon>
+                                    <p class="nav_links">3D & Design</p>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </div>
+                                <ul>
+                                    <li class="container_links">
+                                        <div>
+                                            <img src="images/Adobe_Suite/Iconduck - Adobe Suite.svg" alt="">
+                                            <p class="nav_links">Adobe Suite</p>
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_photoshop.svg" alt="">
+                                                    <a href="Photoshop.html" class="nav_links">Photoshop</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_illustrator.svg" alt="">
+                                                    <a href="Illustrator.html" class="nav_links">Illustrator</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_xd.svg" alt="">
+                                                    <a href="XD.html" class="nav_links">XD</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                    <li class="container_links">
+                                        <div>
+                                            <img src="images/Blender/icon_blender_software.svg" alt="">
+                                            <p class="nav_links">Blender 3D</p>
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                                        </div>
+                                        <ul>
+                                            <li>
+                                                <img src="images/mustang_icon.svg" alt="">
+                                                <a href="mustang.html" class="nav_links">Fond d'écran 3D "Mustang GT" </a>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/montagnes.svg" alt="">
+                                                    <a href="montagne3D.html" class="nav_links">Modèle 3D - La Montagne Enchantée</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="Quantix_Horizon/images/Logo_Quantix.svg" alt="">
+                                                    <a href="quantixH3D.html" class="nav_links">Modèle 3D - Quantix Horizon</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/champignons.svg" alt="">
+                                                    <a href="champis.html" class="nav_links">Paysage 3D procédural</a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li>
+                                <div>
+                                    <ion-icon name="logo-wordpress"></ion-icon>
+                                    <a href="Wordpress.html" class="nav_links">WordPress</a>
+                                </div>
+                            </li>
+                            <li class="container_links">
+                                <div><img src="images/gearedit.svg" alt="">
+                                    <p class="nav_links">Projects in progress</p>
+                                    <ion-icon name="chevron-forward-outline"></ion-icon>
+                                </div>
+                                <ul>
+                                    <li>
+                                        <div>
+                                            <img src="images/GraceGloire.svg" alt="">
+                                            <a href="graceetgloire.html" class="nav_links">Grâce et Gloire</a>
+                                        </div>
+                                    </li>
+                                    <li>
+                                        <div>
+                                            <img src="images/ferrari_icon.svg" alt="">
+                                            <a href="ferrari.html" class="nav_links">Fond d'écran 3D "Ferrari Portofino"</a>
+                                        </div>
+                                    </li>
+                                </ul>
+                            </li>
+                        </ul>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="school-sharp"></ion-icon>
+                            <a href="Formation.html" class="nav_links">Formation</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="chatbubbles"></ion-icon>
+                            <a href="#Contacts" class="nav_links">Contacts</a>
+                        </div>
+                    </li>
+                    <li>
+                        <div>
+                            <ion-icon name="reader-outline"></ion-icon>
+                            <a href="mentions-legales.html" class="nav_links">Mentions Légales</a>
+                        </div>
+                    </li>
+                </ol>
+            </nav>
+        </div>
+        <div id="moi_orange">
+            <h1>Timothée</h1>
+            <h1>Van Den Bosch</h1>
+        </div>
+        <!-- <div id="icon_header_top">
+                    <ion-icon name="language-outline" id="language" class="change-color"></ion-icon>
+                    <ion-icon name="sunny-outline" id="icon_dark-mode" class="change-color"></ion-icon>
+                </div> -->
+
+
+        <!-- <div id="div_language" class="interface_language">
+                <ul>
+                    <li>
+                        <a href="" id="fr_lang">Français</a>
+                    </li>
+                    <li>
+                        <a href="" id="en_lang">Anglais</a>
+                    </li>
+
+                </ul>
+                <div id="font_size">
+                    <ion-icon name="caret-back-circle-outline" id="small" class="btn_letter"></ion-icon>
+                    <p>A</p>
+                    <ion-icon name="caret-forward-circle-outline" id="big" class="btn_letter"></ion-icon>
+                </div>
+                <div id="div_apply">
+                    <button id="btn_apply">Appliquer</button>
+                </div>
+            </div>
+
+            <link rel="icon" type="image/png" href="">
+            <div id="border_bottom_header"></div> -->
+
+        <!-- <img src="images/scroll-long-down.234x512.png" id="scroll-long-down" alt=""> -->
+    </header>
+    <main>
+        <div class="content content_hidden">
+
+            <section id="section_1">
+                <h2>La Cissonière, Boucherie - Charcuterie - Artisanale depuis 1988</h2>
+                <p>Dans le cadre de ma première année à MyDigitalSchool, nous devons effectuer un
+                    stage de deux mois minimums. Le but de ce stage est de nous familiariser dans une vie
+                    professionnelle et de mettre en pratique toutes les connaissances acquises durant notre
+                    cursus de cette année. Cependant, un stage n'est pas quelque chose déjà pré-écrit comme
+                    un programme scolaire, mais il faut savoir saisir les connaissances et les bienfaits de ce stage
+                    pour progresser, voilà donc ce que signifie à mon sens un stage</p>
+
+                <p>J'ai effectué mon premier stage chez La Cissonière, c'est une Boucherie - Charcuterie -
+                    Artisanale, elle effectue la fabrication, la vente sur place et
+                    ambulant de charcuterie et boucherie ainsi que tout autre
+                    objet se rattachant à ces activités. De plus, La Cissonière pratique la
+                    vente sédentaire et ambulante de fromages ainsi que du vin
+                    et pour finir l'activité sédentaire et ambulante de traiteur et
+                    d'épicerie fine.</p>
+
+                <p>La Cissonière était en possesion d'aucune site web, ma tâche a été donc de leur créer un site web
+                    vitrine, non marchand. Il a pour but d'informer et de faire découvrir la Cissonière via ses produits
+                    proposés en magasin et sur les marchés.</p>
+
+                <p>Vous avez la possibilité de visualiser le site web ci-dessous en cliquant sur le bouton "Interagir"
+                    ou via l'adresse suivante : <a target="_blank" href="https://lacissoniere.fr">https://lacissoniere.fr</a></p>
+                <p>De plus, après avoir visualiser le site web, vous pourrez retrouver mon rapport de stage plus bas.
+                </p>
+                <h3>Visualisation du site web "La Cissonière" :</h3>
+                <div class="div_iframes">
+                    <iframe src="https://lacissoniere.fr" class="iframes_container" width="100%" height="700"
+                        style="border: double 5px var(--new_color_orange);"></iframe>
+                    <button class="btn_iframes_open">Interagir</button>
+                </div>
+                <p>Vous constaterez que le titre du site web stipule être en création. Cela vient du fait que le
+                    propriétaire du site web peut se connecter et changer certains textes tel que le titre ou encore des
+                    images, ce qui n'a visiblement pas été finalisé, pour ma part la partie code du site web est fini.
+                </p>
+                <h3 style="margin-top: 100px;">Mon Rapport de Stage chez La Cissonière :</h3>
+                <embed src="images/rapport_stage_Timothée_VANDENBOSCH_2023-2024.pdf" type="application/pdf" width="100%"
+                    height="600" style="z-index: 9997;">
+            </section>
+        </div>
+    </main>
+    <footer>
+        <h2 id="Contacts">Contacts</h2>
+        <div id="icon_contact">
+
+            <a href="https://github.com/NectorCassetete/" target="_blank">
+                <div>
+                    <ion-icon name="logo-github"></ion-icon>
+                    <p>Mon Github</p>
+                </div>
+            </a>
+            <a href="https://www.instagram.com/vantimothee/" target="_blank">
+                <div>
+                    <ion-icon name="logo-instagram"></ion-icon>
+                    <p>Mon Instagram</p>
+                </div>
+            </a>
+            <a href="https://discord.com/users/457538401407729679" target="_blank">
+                <div>
+                    <ion-icon name="logo-discord"></ion-icon>
+                    <p>Mon Discord</p>
+                </div>
+            </a>
+            <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiElMLW-5uEAxWlVKQEHbheDe8QFnoECBcQAQ&url=https%3A%2F%2Ffr.linkedin.com%2Fin%2Ftimoth%25C3%25A9e-van-den-bosch-097146292&usg=AOvVaw3sTRdDOyKxGpsIlhPTp7NU&opi=89978449"
+                target="_blank">
+                <div>
+                    <ion-icon name="logo-linkedin"></ion-icon>
+                    <p>Mon LinkedIn</p>
+                </div>
+            </a>
+            <a href="mailto: timothee.vandenbosch@my-digital-school.org" target="_blank">
+                <div>
+                    <ion-icon name="mail-outline"></ion-icon>
+                    <p>Envoyez un Mail</p>
+                </div>
+            </a>
+        </div>
+        <div class="copyright">
+            <p>Copyright 2024 Timothée Van Den Bosch Tous droits réservés</p>
+        </div>
+    </footer>
+
+    <script src="JS/main_new.js"></script>
+    <!-- <script src="main.js"></script>
+    <script src="mainSansAdobeSuite.js"></script> -->
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</body>
+
+</html>
+
+<!-- voir pour lien sur text pour autres pages,
+     bandeaux nuages et bateau dark-mode,
+      voir responsive chaque page,
+        mettre site chocospace,
+    enlever wikipédia coding,
+mettre site testimony,
+filter orange svg scroll header,
+planets blender,
+images en webp,
+quand on click sur menuburger alors top page,-->
+
+
+<!-- first step -> "</>" -> 🟨 second step -> --- Attention ! --- -> disappear -> main page -->

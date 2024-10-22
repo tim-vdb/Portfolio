@@ -1,0 +1,559 @@
+/* --------------------------Main Pygame-Tiled------------------- */
+#section_1 {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 30px;
+    width: calc(100% - 60px);
+}
+
+main #section_1 #button_audio {
+    background-color: var(--new_color_gris_foncé);
+    color: white;
+    padding: 10px;
+    border-radius: 20px;
+    border: 3px solid var(--new_color_orange);
+    transition: 0.4s;
+}
+
+main #section_1 #button_audio:hover {
+    border-bottom: 3px solid var(--new_color_gris_foncé);
+    border-right: 3px solid var(--new_color_gris_foncé);
+    box-shadow: 5px 5px var(--new_color_orange);
+}
+
+main #section_1 #logo_couleur img {
+    object-fit: contain;
+    width: 150px;
+    height: 150px;
+}
+
+main #section_1 #logo_couleur a {
+    cursor: url('images/curseur_pointer_logo_grand.png'), auto;
+    width: 15%;
+    padding: 20px;
+    text-decoration: none;
+}
+
+main #section_2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+}
+
+main #section_2 .courbe_1 {
+    overflow: hidden;
+    padding: 10svh 0;
+}
+
+@media (max-width: 1024px) {
+    main #section_2 .courbe_1 {
+        overflow: hidden;
+        padding: 5svh 0;
+    }
+}
+
+.courbe_1,
+#vague_1,
+#vague_2 {
+    width: 100%;
+}
+
+#vector_1 {
+    position: relative;
+}
+
+
+.courbe_1 #bateau_marchand {
+    position: absolute;
+    left: 0;
+    opacity: 0;
+    width: 16svw;
+}
+
+.show_aperçu#bateau_marchand {
+    opacity: 1;
+    animation: bateau_marchand_1 15s infinite ease-out forwards;
+}
+
+.show_aperçu#bateau_pirate_1 {
+    animation: bateau_marchand_1 15s infinite ease-out 5s forwards;
+}
+
+#bateau_pirate_1::before {
+    animation: boulet-canon_1 10s 1 7s ease-in-out;
+}
+
+#bateau_pirate_1::after {
+    animation: boulet-canon_2 12s 1 6.5s ease-in-out;
+}
+
+#bateau_pirate_1 {
+    position: absolute;
+    opacity: 0;
+    left: 0;
+    width: 16svw;
+}
+
+#bateau_pirate_1::before {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 50%;
+    width: 50px;
+    height: 50px;
+    opacity: 0;
+    background-image: url('/images/pygame/boulet_de_canon.png');
+    background-size: cover;
+    transform: translate(-50%, -50%);
+}
+
+#bateau_pirate_1::after {
+    content: "";
+    position: absolute;
+    top: 60%;
+    left: 60%;
+    width: 50px;
+    height: 50px;
+    background-image: url('/images/pygame/boulet_de_canon.png');
+    background-size: cover;
+    opacity: 0;
+    transform: translate(-50%, -50%);
+}
+
+@keyframes boulet-canon_1 {
+    0% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateY(400px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        box-shadow: none;
+    }
+
+    60% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateX(700px) translateY(180px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px) translateY(0);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+}
+
+
+@keyframes boulet-canon_2 {
+    0% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    20% {
+        transform: translateY(600px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    40% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+        box-shadow: none;
+    }
+
+    60% {
+        transform: translateY(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 1;
+    }
+
+    80% {
+        transform: translateX(500px);
+        width: 10px;
+        height: 10px;
+        opacity: 0;
+    }
+
+    100% {
+        transform: translateX(0px);
+        width: 30px;
+        height: 30px;
+        opacity: 0;
+    }
+}
+
+@keyframes bateau_marchand_1 {
+    0% {
+        top: 30%;
+        transform: translate(-100%) rotate(-30deg);
+        opacity: 0;
+    }
+
+    4% {
+        top: 0%;
+        transform: translate(20%) rotate(-20deg);
+        opacity: 1;
+    }
+
+    8% {
+        top: -20%;
+        transform: translate(100%) rotate(-10deg);
+
+    }
+
+    12% {
+        top: 0%;
+        transform: translate(180%) rotate(20deg);
+
+    }
+
+    16% {
+        top: 20%;
+        transform: translate(230%) rotate(10deg);
+
+    }
+
+    20% {
+        top: 35%;
+        transform: translate(300%) rotate(0deg);
+
+
+    }
+
+    24% {
+        /* top: 40%;
+        transform: translate(350%) rotate(5deg); */
+        top: 45%;
+        transform: translate(400%) rotate(0deg);
+
+    }
+
+    28% {
+        top: 50%;
+        transform: translate(500%) rotate(0deg);
+        opacity: 1;
+    }
+
+    32% {
+        top: 55%;
+        transform: translate(750%) rotate(-2deg);
+        opacity: 0;
+    }
+
+    34% {
+        top: 130%;
+        transform: translate(650%) rotate(210deg);
+    }
+
+    36% {
+        top: 130%;
+        transform: translate(550%) rotate(210deg);
+        opacity: 0;
+
+    }
+
+    40% {
+        top: 110%;
+        transform: translate(490%) rotate(200deg);
+        opacity: 1;
+    }
+
+    44% {
+        top: 110%;
+        transform: translate(460%) rotate(175deg);
+        opacity: 1;
+    }
+
+    48% {
+        top: 110%;
+        transform: translate(440%) rotate(155deg);
+        opacity: 1;
+    }
+
+    52% {
+        top: 120%;
+        transform: translate(430%) rotate(145deg);
+        opacity: 1;
+    }
+
+    56% {
+        top: 130%;
+        transform: translate(400%) rotate(145deg);
+        opacity: 1;
+    }
+
+    60% {
+        top: 140%;
+        transform: translate(340%) rotate(165deg);
+        opacity: 1;
+    }
+
+    64% {
+        top: 140%;
+        transform: translate(310%) rotate(175deg);
+        opacity: 1;
+    }
+
+    68% {
+        top: 140%;
+        transform: translate(280%) rotate(185deg);
+        opacity: 1;
+    }
+
+    72% {
+        top: 140%;
+        transform: translate(250%) rotate(185deg);
+        opacity: 1;
+    }
+
+    76% {
+        top: 135%;
+        transform: translate(220%) rotate(185deg);
+        opacity: 1;
+    }
+
+    80% {
+        top: 135%;
+        transform: translate(190%) rotate(185deg);
+        opacity: 1;
+    }
+
+    84% {
+        top: 130%;
+        transform: translate(160%) rotate(185deg);
+        opacity: 1;
+    }
+
+    88% {
+        top: 130%;
+        transform: translate(100%) rotate(185deg);
+        opacity: 1;
+    }
+
+    92% {
+        top: 125%;
+        transform: translate(40%) rotate(185deg);
+        opacity: 1;
+    }
+
+    94% {
+        top: 120%;
+        transform: translate(10%) rotate(185deg);
+        opacity: 1;
+    }
+
+    96% {
+        top: 120%;
+        transform: translate(-10%) rotate(180deg);
+        opacity: 1;
+    }
+
+    98% {
+        top: 120%;
+        transform: translate(-100%) rotate(180deg);
+        opacity: 1;
+    }
+
+    100% {
+        top: 120%;
+        transform: translate(-100%) rotate(180deg);
+        opacity: 1;
+    }
+}
+
+
+main #section_3 {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 30px;
+    width: calc(100% - 60px);
+}
+
+main #section_3 img {
+    width: 100%;
+}
+
+main #section_4 {
+    width: 100%;
+}
+
+main #section_4 .container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 200px;
+    overflow: hidden;
+}
+
+main #section_4 .ocean {
+    height: 100px;
+    width: 100%;
+    position: relative;
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+    overflow: hidden;
+}
+
+main #section_4 #vague_3 {
+    height: 100px;
+    width: 100%;
+    background-color: var(--beige);
+    position: relative;
+}
+
+main #section_4 #vague_3 #bateau_pirate_2 {
+    position: absolute;
+    left: 0;
+    bottom: 35px;
+    width: 150px;
+    opacity: 0;
+}
+
+.show_aperçu#bateau_pirate_2 {
+    opacity: 1 !important;
+    animation: petit_bat 7s ease-in-out infinite;
+}
+
+main #section_4 #vague_3 .vague {
+    left: 0;
+    top: 100%;
+    width: calc(100% / var(--nb_vagues));
+    height: 100px;
+    background-color: blue;
+    box-shadow: inset 5px 15px 2em -10px lightskyblue, 15px 5px 0.5em blue;
+    color: transparent;
+    border-radius: 20% 80% 0 0;
+}
+
+.show_aperçu.vague {
+    animation: marée 1.5s ease-in alternate-reverse infinite;
+}
+
+@keyframes marée {
+    0% {
+        transform: translateY(0px);
+    }
+
+    50% {
+        transform: translateY(50px);
+    }
+
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+/* petit_bat 3s , truc du bas 0.5s, 15 elements, 150ms */
+@keyframes petit_bat {
+    0% {
+        left: 100%;
+        transform: rotate(0);
+    }
+
+    25% {
+        transform: rotate(10deg);
+    }
+
+    50% {
+        transform: rotate(30deg);
+    }
+
+    75% {
+        transform: rotate(10deg);
+    }
+
+    100% {
+        left: -15%;
+        transform: rotate(0);
+
+    }
+}
+
+main #section_5 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    padding: 15px;
+    width: calc(100% - 30px);
+
+}
+
+main .centrer {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    gap: 30px;
+    margin-bottom: 50px;
+}
+
+main .centrer div {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    width: 100%;
+}
+
+main #section_5 img {
+    width: 100%;
+    margin-bottom: 50px;
+}
+
+main #section_5 audio {
+    cursor: url('images/curseur_pointer_logo_grand.png'), auto;
+    width: 75%;
+    height: 5svh;
+}
+
+@media (max-width: 1024px) {
+    main #section_4 {
+        display: none;
+    }
+
+    main .centrer {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        width: 100%;
+        margin-bottom: 50px;
+    }
+}

@@ -1,0 +1,18 @@
+/* --------------------------Main--------------------------- */
+section {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 15px;
+    width: 90%;
+}
+
+section img {
+    max-width: 25%;
+    max-height: 150px;
+    border-radius: 10%;
+    object-fit: cover;
+    box-shadow: 1px 1px 1em var(--beige);
+    margin-left: 20px;
+}

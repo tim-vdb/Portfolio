@@ -1,0 +1,30 @@
+/* --------------------------Main Blender--------------------------- */
+#section_1 {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    padding: 30px;
+    width: calc(100% - 60px);
+}
+
+#div_quantixH3D {
+    border: double 10px var(--new_color_orange);
+    height: 50svh; 
+    z-index: 9997;
+    display: none;
+    width: calc(100% - 20px);
+}
+
+#active_QuantixH3D {
+top: 50%;
+left: 50%;
+transform: translate(-50%, -50%);
+position: absolute;
+padding: 10px;
+color: white;
+background-color: var(--new_color_gris_foncé);
+border: 2px solid var(--new_color_orange);
+border-radius: 5px;
+cursor: pointer;
+}
