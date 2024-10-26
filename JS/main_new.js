@@ -253,5 +253,17 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
+    const observer_projects = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show_aperçu");
+            } else {
+                entry.target.classList.remove("show_aperçu");
+            }
+        });
+    }, { threshold: 0.5 });
+
+    const Aperçu = document.querySelectorAll(".aperçu_gauche, .aperçu_droite")
+    Aperçu.forEach((el) => observer_projects.observe(el));
 
 });
