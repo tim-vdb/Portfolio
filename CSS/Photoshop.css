@@ -48,19 +48,3 @@ aspect-ratio: 16 / 9;
 .aperçu_droite h3 {
     color: var(--marron_foncé);
 }
-
-.aperçu_gauche {
-    transform: translateX(-20%);
-    transition: all 0.4s;
-}
-
-.aperçu_droite {
-    transform: translateX(20%);
-    transition: all 0.4s;
-}
-
-.show_aperçu {
-    opacity: 1;
-    filter: blur(0);
-    transform: translateX(0);
-}

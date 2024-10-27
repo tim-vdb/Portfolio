@@ -7,7 +7,6 @@ document.addEventListener("DOMContentLoaded", function () {
     const canvasLoader = document.getElementById("canvas");
 
     window.onscroll = function () { checkNavbar(), scrollToTopBtn() };
-
     // --- Gestion du Loader Canvas ---
     // function waitForPageLoadAndDelay(delay) {
     //     return new Promise((resolve) => {
@@ -38,7 +37,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const banner = document.querySelector('.banner');
     const images = document.querySelectorAll('.all_item a');
     const slider = document.querySelector('.slider');
-    
+
 
     if (banner) {
         images.forEach((img) => {
@@ -68,7 +67,7 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // Utilisation de la fonction
-    const LoaderDelay = 6000; // 6 secondes d'affichage du loader
+    const LoaderDelay = 4500; // 4.5 secondes d'affichage du loader
 
     waitForPageLoadAndDelay(LoaderDelay).then(() => {
         const loader = document.getElementById("canvas"); // Canvas du loader
@@ -130,6 +129,18 @@ document.addEventListener("DOMContentLoaded", function () {
                 active_Champis3D.remove();
             });
         }
+
+        // --Animation translate--
+        const observer_elements = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show_aperçu");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const animTranslate = document.querySelectorAll(".animTranslateLeft, .animTranslateRight, .animTranslateBottom, .animTranslateTop")
+        animTranslate.forEach((el) => observer_elements.observe(el));
     });
 
 
@@ -205,6 +216,13 @@ document.addEventListener("DOMContentLoaded", function () {
         }
     }
 
+    btnTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth" // Défilement fluide
+        });
+    });
+
     // --- Gestion des iframes ---
     const iframes = document.querySelectorAll(".iframes_container");
     const btn_iframes_open = document.querySelectorAll(".btn_iframes_open");
@@ -253,17 +271,29 @@ document.addEventListener("DOMContentLoaded", function () {
             });
         });
     });
-    const observer_projects = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show_aperçu");
-            } else {
-                entry.target.classList.remove("show_aperçu");
-            }
+
+    // --Animation Vague Text-- 
+    const texts_toAnim = document.querySelectorAll(".vague"); // Sélectionne tous les éléments
+
+    texts_toAnim.forEach(textElement => {
+        const text = textElement.textContent;
+        textElement.innerHTML = ""; // On vide le titre pour y ajouter les lettres une par une
+        const fontSize = window.getComputedStyle(textElement).fontSize;
+        // Ajout de chaque lettre dans un <span> avec un délai d'animation
+        text.split("").forEach((letter, index) => {
+            const span = document.createElement("span");
+            span.innerHTML = letter === " " ? "&nbsp;" : letter;
+            span.style.animation = `colorChange 5s ease-in-out infinite`;
+            span.style.animationDelay = `${index * 0.1}s`; // Délai d'animation pour chaque lettre
+            span.style.fontSize = fontSize;
+            textElement.appendChild(span);
         });
-    }, { threshold: 0.5 });
 
-    const Aperçu = document.querySelectorAll(".aperçu_gauche, .aperçu_droite")
-    Aperçu.forEach((el) => observer_projects.observe(el));
-
+        // Boucle d'animation toutes les 1.5 secondes pour chaque élément
+        setInterval(() => {
+            textElement.querySelectorAll("span").forEach((span, index) => {
+                span.style.animationDelay = `${index * 0.1}s`;
+            });
+        }, 1000);
+    });
 });
