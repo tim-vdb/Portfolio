@@ -1,7 +1,19 @@
 /* --------------------------Main Photoshop--------------------------- */
 h1 {
-    width: 100%;
-    text-align: center;
+    position: relative;
+    margin: 0 auto;
+}
+
+h1:before {
+    content: "";
+    background-image: url("/images/Adobe_Suite/icon_adobe.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 4rem;
+    height: 4rem;
+    left: -5rem;              
+    position: absolute;
+    top: 0%;                  
 }
 
 section {
