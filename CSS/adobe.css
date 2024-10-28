@@ -1,0 +1,280 @@
+/* --------------------------Main Photoshop--------------------------- */
+h1 {
+    width: 100%;
+    text-align: center;
+}
+
+section {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    margin: 0 10%;
+    width: calc(100% - 20%);
+}
+
+section .group-projects {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+    margin-top: 300px;
+}
+
+section .group-projects-noMarginTop {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    width: 100%;
+}
+
+section .group,
+section .banner_gameboy {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    width: 100%;
+    margin: 400px 0;
+}
+
+section .group img {
+    border: 7.5px double var(--new_color_orange);
+    border-radius: 10px;
+    transition: all .6s ease;
+    position: absolute;
+    bottom: 0%;
+    transform: perspective(800px) rotateY(-25deg) scale(.8) rotateX(10deg);
+    transition: all .6s ease;
+    border: 7.5px double var(--new_color_orange);
+    border-radius: 10px;
+}
+
+section .group-title {
+    text-shadow: -1px 0 black, 0 7px black, 1px 0 black, 0 -7px 10px black;
+    color: var(--new_color_orange);
+    margin: 0;
+}
+
+section .group .group-text,
+section .banner_gameboy .group-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: -150px;
+    transform: perspective(800px) rotateX(-45deg) rotateY(-13deg) rotateX(20deg) translateX(-30px) translateY(-65px);
+    transition: 0.4s ease-in transform;
+}
+
+section .group-reverse .group-text {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    position: absolute;
+    bottom: -150px;
+    transform: perspective(800px) rotateX(-45deg) rotateY(13deg) rotateX(20deg) translateX(30px) translateY(-65px);
+    transition: all .6s ease;
+}
+
+section .paysage .group-text {
+    transform: perspective(800px) rotateX(-45deg) rotateY(-7deg) rotateX(20deg) translateX(-5%) translateY(-65px);
+    transition: 0.4s ease-in transform;
+}
+
+section .paysage-reverse .group-text {
+    transform: perspective(800px) rotateX(-45deg) rotateY(7deg) rotateX(20deg) translateX(5%) translateY(-65px);
+    transition: 0.4s ease-in transform;
+}
+
+section .portrait img:not(img.square) {
+    max-width: 400px;
+    max-height: 500px;
+    aspect-ratio: 9 / 16;
+}
+
+section .portrait img.square {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+section .paysage img, section .paysage-reverse img{
+    max-width: 500px;
+    max-height: 500px;
+    aspect-ratio: 16 / 9;
+}
+
+section .banner_gameboy img {
+    border: 7.5px double var(--new_color_orange);
+    border-radius: 10px;
+    transform: perspective(800px) rotateY(-35deg) scale(.8) rotateX(10deg);
+    transition: all .6s ease;
+    max-width: 1000px;
+    max-height: 500px;
+    position: absolute;
+    bottom: 0%;
+}
+
+section .group-reverse {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    flex-direction: row-reverse;
+    width: 100%;
+    margin: 400px 0;
+    position: relative;
+}
+
+section .group-reverse img {
+    border: 7.5px double var(--new_color_orange);
+    border-radius: 10px;
+    transform: perspective(800px) rotateY(25deg) scale(.8) rotateX(10deg);
+    transition: all .6s ease;
+    position: absolute;
+    bottom: 0%;
+}
+
+@media (hover: hover) {
+
+    section .portrait:hover img {
+        transform: perspective(800px) rotateY(0deg) translateY(0px) rotateX(10deg) scale(1);
+    }
+
+    section .portrait:hover .group-text {
+        transform: perspective(500px) rotateX(0deg) scale(1.5);
+    }
+
+    section .paysage:hover img, section .paysage-reverse:hover img{
+        transform: perspective(800px) rotateY(0deg) translateY(0px) rotateX(10deg) scale(1);
+    }
+
+    section .paysage:hover .group-text, section .paysage-reverse:hover .group-text  {
+        transform: perspective(500px) rotateX(0deg) scale(1.5);
+    }
+
+    section .banner_gameboy:hover img {
+        transform: perspective(800px) rotateY(0deg) translateY(0px) rotateX(10deg) scale(1);
+    }
+
+    section .banner_gameboy:hover .group-text {
+        transform: perspective(500px) rotateX(0deg) scale(1.5);
+    }
+
+}
+
+@media (max-width: 1230px) {
+
+    section .group,
+    section .banner_gameboy {
+        margin: 300px 0;
+    }
+
+    section .group-reverse {
+        margin: 300px 0;
+    }
+}
+
+@media (max-width: 1150px) {
+    section .portrait img:not(img.square) {
+        max-width: 400px;
+        max-height: 500px;
+        aspect-ratio: 9 / 16;
+    }
+
+    section .portrait img.square {
+        max-width: 300px;
+        max-height: 300px;
+    }
+
+    section .paysage img, section .paysage-reverse img {
+        max-width: 400px;
+        max-height: 400px;
+        aspect-ratio: 16 / 9;
+    }
+
+    section .banner_gameboy img {
+        max-width: 800px !important;
+        max-height: 500px !important;
+        transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
+    }
+
+    section .banner_gameboy .group-text {
+        transform: perspective(800px) rotateX(-20deg) rotateY(-13deg) rotateX(20deg) translateX(-10px) translateY(-65px);
+    }
+}
+
+@media (max-width: 1000px) {
+    section .group-projects, section .group-projects-noMarginTop {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
+    }
+}
+
+@media (max-width: 900px) {
+    section .banner_gameboy img {
+        max-width: 600px !important;
+        max-height: 500px !important;
+        transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
+    }
+}
+
+@media (max-width: 690px) {
+    section .banner_gameboy img {
+        max-width: 500px !important;
+        max-height: 500px !important;
+        transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
+    }
+}
+
+@media (max-width: 500px) {
+    section .banner_gameboy img {
+        max-width: 420px !important;
+        max-height: 500px !important;
+        transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
+    }
+
+    section .paysage img, section .paysage-reverse img {
+        max-width: 300px;
+        max-height: 300px;
+        aspect-ratio: 16 / 9;
+    }
+
+    section .banner_gameboy .group-text h3,
+    section .group .group-text h3,
+    section .group-reverse .group-text h3 {
+        font-size: 1rem;
+    }
+
+    section .banner_gameboy .group-text p,
+    section .group .group-text p,
+    section .group-reverse .group-text p {
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 351px) and (max-width: 400px) {
+    section .banner_gameboy img {
+        max-width: 380px !important;
+        max-height: 500px !important;
+        transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
+    }
+
+    section .banner_gameboy .group-text {
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        position: absolute;
+        bottom: -150px;
+        transform: perspective(800px) rotateX(-20deg) rotateY(-13deg) rotateX(20deg) translateX(-30px) translateY(-65px);
+        transition: 0.4s ease-in transform;
+    }
+}
+
+@media (max-width: 350px) {
+    section .banner_gameboy img {
+        max-width: 350px !important;
+        max-height: 400px !important;
+        transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
+    }
+}

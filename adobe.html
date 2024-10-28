@@ -1,16 +1,15 @@
-<!DOCTYPE html>
 <html lang="fr">
 
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/index.css">
+    <link rel="stylesheet" href="CSS/adobe.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@1,500&family=Galindo&display=swap"
         rel="stylesheet">
-    <link rel="icon" href="images/cassetete.webp" type="image/x-icon">
+    <link rel="icon" href="images/cassetete.png" type="image/x-icon">
     <title>Portfolio Timothée Van Den Bosch</title>
     <script type="importmap">
         {
@@ -43,7 +42,7 @@
         // Ajoute un écouteur d'événements pour redimensionner le canvas lorsque la fenêtre change de taille
         window.addEventListener('resize', resizeCanvas);
     </script>
-
+    <script src="JS/CODE3D.js" type="module"></script>
 </head>
 
 <body>
@@ -140,12 +139,36 @@
                                     <ion-icon name="chevron-forward-outline"></ion-icon>
                                 </div>
                                 <ul>
-                                    <li>
+                                    <li class="container_links">
                                         <div>
                                             <img src="images/Adobe_Suite/Iconduck - Adobe Suite.svg" alt=""
                                                 loading="lazy">
-                                            <a href="adobe.html" class="nav_links">Adobe Suite</a>
+                                            <p class="nav_links">Adobe Suite</p>
+                                            <ion-icon name="chevron-forward-outline"></ion-icon>
                                         </div>
+                                        <ul>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_photoshop.svg" alt=""
+                                                        loading="lazy">
+                                                    <a href="Photoshop.html" class="nav_links">Photoshop</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_illustrator.svg" alt=""
+                                                        loading="lazy">
+                                                    <a href="Illustrator.html" class="nav_links">Illustrator</a>
+                                                </div>
+                                            </li>
+                                            <li>
+                                                <div>
+                                                    <img src="images/Adobe_Suite/icon_adobe_xd.svg" alt=""
+                                                        loading="lazy">
+                                                    <a href="XD.html" class="nav_links">XD</a>
+                                                </div>
+                                            </li>
+                                        </ul>
                                     </li>
                                     <li class="container_links">
                                         <div>
@@ -279,10 +302,12 @@
                     <h3 class="vague"><span class="orange"><span class="antiwrap">Développeur</span> <span
                                 class="antiwrap">Full</span> <span class="antiwrap">Stack</span></span></h3>
                     <div></div>
-                    <p>Enchanté, moi c'est <span class="orange">Timothée</span> !</p>
+                    <p>Envie de découvrir mes projets Adobe Suite ?</p>
                     <p>
-                        Passionné par le code depuis mes dernières années de lycée, mon objectif est de devenir
-                        <span class="orange">Développeur Full Stack</span>.
+                        J'utilise plusieurs logiciel d'<span class="orange">Adobe</span> comme : PhotoShop, Illustrator,
+                        XD / Figma (conception de
+                        maquettes), InDesign, Première Pro. J'affiche ici seulement <span class="orange">mes
+                            projets</span> dont je pense être les meilleurs.
                     </p>
                 </div>
                 <button class="animTranslateBottom" id="contactMe">Me contacter !</button>
@@ -291,306 +316,167 @@
     </header>
 
     <main>
-        <section class="animTranslateLeft">
-            <h1 class="vague">À propos de moi
-            </h1>
-            <h2>Découverte de ma passion :</h2>
-
-            <p>C'est en classe de <span class="orange">Première</span>, au lycée, que j'ai découvert ma passion pour le
-                développement via la <span class="orange">Spécialité NSI</span>
-                (Numérique et Sciences Informatiques), à partir de là tout s'est déclenché petit à petit.</p>
-            <p>C'est par cette matière que je découvre la joie de travailler sans avoir à souffler d'ennuies.</p>
-            <h3>Mes projets en NSI :</h3>
-            <p>J'ai développé <a href="Wiki-MC-SB.html">un site web</a> dédié au jeu vidéo <span
-                    class="orange">Minecraft</span> sur le mode Skyblock en utilisant Markdown sur GitHub.
-            </p>
-            <p>De plus en année de Terminale, j'ai participé à un projet de groupe dans lequel nous avons
-                créé un mini-jeu en Python, celui-ci s'appelle <a href="pygame-tiled.html">"À Bon Port"</a>.
-                Bien qu'il ne soit pas achevé à la perfection (étant un projet bonus de fin d'année), ce projet
-                m'a apporté une première expérience de collaboration en développement.
-            </p>
-        </section>
-        <section class="animTranslateLeft">
-            <h2>Étudiant à MyDigitalSchool :</h2>
-            <p>En septembre 2023, j'ai eu la chance d'intégrer <span class="orange">MyDigitalSchool Lyon</span>, une
-                nouvelle étape dans mon parcours de formation.</p>
-            <p>Cette école possède <span class="orange">trois domaines</span> d'apprentissage en particulier : le
-                développement, le design et le marketing.</p>
-            <p>Grâce à ces trois domaines professionnels et à ce qui les entoure, je deviens ainsi quelqu'un de
-                <span class="orange">professionnel</span> et qui possède un regard sur chacun de ses aspects, même si
-                vous
-                l'aurez compris, le développement est mon favori.
-            </p>
-        </section>
-        <section class="animTranslateLeft">
-            <h2>Maitrise Proactive de Blender :</h2>
-            <p>Depuis mes dernières années de lycée, en plus d'apprendre à coder, j'apprends en autodidacte le logiciel
-                de modélisation
-                3D <span class="orange">Blender</span>.</p>
-            <p>Ce logiciel est assez complexe lorsqu'on le découvre, mais j'ai appris à me familiariser en l'utilisant
-                pour plusieurs projets. Depuis que je suis à MyDigitalSchool, j'apprends à créer de nouveaux modèles 3D
-                et ainsi les liés au code pour en faire des véritables merveilles !</p>
-        </section>
-        <section class="animTranslateLeft">
-            <h2>Découvrir quelques projets :</h2>
-            <p>Cliquez simplement sur un <span class="orange">projet</span> qui vous intéresse pour accéder à sa page !
-            </p>
-            <div class="banner">
-                <div class="slider" style="--quantity: 21">
-                    <div class="item2 all_item" style="--position: 1">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Illustrator/Plakatstil_Timothee_VDB_B1_A-768x543.webp"
-                                    alt="" loading="lazy">
-                            </a>
-                            <p>Loco Goods</p>
-                        </div>
+        <h1>Logiciels Adobe Suite</h1>
+        <section>
+            <h2>Logiciel Photoshop</h2>
+            <p>Dans cette section, je vous présente mes réalisations personnelles et liés
+                aux
+                projets de mon école Mydigitalschool Lyon.</p>
+            <h3>Année 2023 - 2024 Mydigitalschool Lyon</h3>
+            <div class="group-projects">
+                <div class="group portrait">
+                    <img src="images/postal_World.webp" alt="Affiche Postal Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">The Postal World</h3>
+                        <p>Affiche Publicitaire - Scolaire</p>
                     </div>
-                    <div class="item1 all_item" style="--position: 2">
-                        <div>
-                            <a href="">
-                                <img src="images/postal_World.webp" alt="" loading="lazy">
-                            </a>
-                            <p>The Postal World</p>
-                        </div>
+                </div>
+                <div class="group-reverse portrait">
+                    <img src="images/Adobe_Suite/Photoshop/Exercice_2_magazine_archi_Timothee_VDB_B1_A-scaled-1.webp"
+                        alt="Affiche Rotterdam Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">Rotterdam</h3>
+                        <p>Affiche Architecture - Scolaire</p>
                     </div>
-                    <div class="item2 all_item" style="--position: 3" loading="lazy">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Photoshop/Inesis-scaled-1-1024x724.webp" alt=""
-                                    loading="lazy">
-                            </a>
-                            <p>Inesis</p>
-                        </div>
+                </div>
+                <div class="group portrait">
+                    <img src="images/Adobe_Suite/Photoshop/Pub_Eau_1-scaled-1-724x1024.webp"
+                        alt="Publicité sur l'eau Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">L'Eau</h3>
+                        <p>Affiche Publicitaire - Personnel</p>
                     </div>
-                    <div class="item2 all_item" style="--position: 4">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Photoshop/Exercice_3_pub_touristique_Timothee_VDB_B1_A-1024x576.webp"
-                                    alt="" loading="lazy">
-                            </a>
-                            <p>Le Palais des Papes</p>
-                        </div>
+                </div>
+                <div class="group-reverse portrait">
+                    <img src="images/Adobe_Suite/Photoshop/Affiche_chat_gpt_Timothee_VDB_B1_A-1-724x1024.webp"
+                        alt="Affiche constructivisme Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">ChatGPT</h3>
+                        <p>Affiche Constructivisme - Scolaire</p>
                     </div>
-
-                    <div class="item1 all_item" style="--position: 5">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Illustrator/Affiche-04.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Star Wars Outlaws</p>
-                        </div>
+                </div>
+                <div class="group paysage">
+                    <img src="images/Adobe_Suite/Photoshop/Exercice_3_pub_touristique_Timothee_VDB_B1_A-1024x576.webp"
+                        alt="">
+                    <div class="group-text">
+                        <h3 class="group-title">Le Palais des Papes</h3>
+                        <p>Affiche Publicitaire - Scolaire</p>
                     </div>
-                    <div class="item2 all_item" style="--position: 6">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Photoshop/Moodboard_City_Commerce-scaled-1-1024x724.webp"
-                                    alt="" loading="lazy">
-                            </a>
-                            <p>MoodBoard</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 7">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Illustrator/Keyvisual_paysage.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Star Wars Outlaws</p>
-                        </div>
-                    </div>
-                    <div class="item1 all_item" style="--position: 8">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Photoshop/Exercice_2_magazine_archi_Timothee_VDB_B1_A-scaled-1.webp"
-                                    alt="" loading="lazy">
-
-                            </a>
-                            <p>Magazine Architecture</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 9">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Illustrator/Logo-Tiktok_amélioré_Plan-de-travail-1.webp"
-                                    alt="" loading="lazy">
-                            </a>
-                            <p>Projet TikTok</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 10">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/XD/XD_maquettage.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Réalisation maquette XD</p>
-                        </div>
-                    </div>
-                    <div class="item1 all_item" style="--position: 11">
-                        <div>
-                            <a href="pygame-tiled.html">
-                                <img src="images/pygame/map_final_pygame_jeu_bateau-683x1024.webp" alt=""
-                                    loading="lazy">
-                            </a>
-                            <p>Projet Jeu "À Bon Port"</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 12">
-                        <div>
-                            <a href="lacissoniere.html">
-                                <img src="images/lacissoniere/lacissoniere.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Site Web "La Cissonière"</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 13">
-                        <div>
-                            <a href="Wiki-MC-SB.html">
-                                <img src="images/siteweb_Minecraft_img.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Site Web "Wiki Minecraft Skyblock"</p>
-                        </div>
-                    </div>
-                    <div class="item1 all_item" style="--position: 14">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Illustrator/Affiche-03.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Star Wars Outlaws</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 15">
-                        <div>
-                            <a href="chocospace.html">
-                                <img src="images/ChocoSpace_img.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Site Web "ChocoSpace"</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 16">
-                        <div>
-                            <a href="quantix_horizon.html">
-                                <img src="images/Quantix_Horizon.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Site Web "Quantix Horizon"</p>
-                        </div>
-                    </div>
-                    <div class="item1 all_item" style="--position: 17">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Illustrator/keyvisual_Portrait.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Star Wars Outlaws</p>
-                        </div>
-                    </div>
-
-                    <div class="item2 all_item" style="--position: 18">
-                        <div>
-                            <a href="Wordpress.html">
-                                <img src="images/Wordpress/Maquettes_Wireframes.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Maquette - WordPress</p>
-                        </div>
-                    </div>
-                    <div class="item2 all_item" style="--position: 19">
-                        <div>
-                            <a href="Wordpress.html">
-                                <img src="images/Wordpress/lycée_accueil_1.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Site Web - WordPress</p>
-                        </div>
-                    </div>
-
-                    <div class="item1 all_item" style="--position: 20">
-                        <div>
-                            <a href="">
-                                <img src="images/Adobe_Suite/Photoshop/Pub_Eau_1-scaled-1-724x1024.webp" alt=""
-                                    loading="lazy">
-                            </a>
-                            <p>Affiche "L'Eau"</p>
-                        </div>
-                    </div>
-
-                    <div class="item2 all_item" style="--position: 21">
-                        <div>
-                            <a href="Blender.html">
-                                <img src="images/test1_mustang_img.webp" alt="" loading="lazy">
-                            </a>
-                            <p>Fond d'écran animé - Mustang </p>
-                        </div>
+                </div>
+                <div class="group-reverse paysage-reverse">
+                    <img src="images/Adobe_Suite/Photoshop/Moodboard_City_Commerce-scaled-1-1024x724.webp"
+                        alt="MoodBoard">
+                    <div class="group-text">
+                        <h3 class="group-title">MoodBoard</h3>
+                        <p>Projet Maquettage - Scolaire</p>
                     </div>
                 </div>
             </div>
-            <h4 class="title_Slider">Sites Web & Maquettes</h4>
-            <div class="InlineSlider"
-                style="--width: 250px; --height: 230px; --quantity: 7; --aspect-ratio: 16 / 9; --animation: 15s;">
-                <div class="list">
-                    <div class="item" style="--position: 1"><img src="images/ChocoSpace_img.webp" alt="" loading="lazy">
+            <div class="group paysage">
+                <img src="images/Adobe_Suite/Photoshop/Inesis-scaled-1-1024x724.webp" alt="Affiche Postal Photoshop">
+                <div class="group-text">
+                    <h3 class="group-title">Inesis - Décathlon</h3>
+                    <p>Design Y2K - Scolaire</p>
+                </div>
+            </div>
+        </section>
+        <section>
+            <h2>Logiciel Illustrator</h2>
+            <p>Dans cette section, je vous présente mes réalisations personnelles et liés
+                aux projets de mon école Mydigitalschool Lyon.</p>
+            <h3>Année 2023 - 2024 Mydigitalschool Lyon</h3>
+            <h3>Projet Illustrator Gameboy</h3>
+            <div class="group-projects">
+                <div class="group portrait">
+                    <img src="images/Adobe_Suite/Illustrator/keyvisual_Portrait.webp" alt="Affiche Postal Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">Keyvisual 1</h3>
+                        <p>Star Wars Outlaws - Scolaire</p>
                     </div>
-                    <div class="item" style="--position: 2"><img src="images/siteweb_Minecraft_img.webp" alt=""
-                            loading="lazy"></div>
-                    <div class="item" style="--position: 3"><img src="images/Quantix_Horizon.webp" alt=""
-                            loading="lazy">
+                </div>
+                <div class="group-reverse portrait">
+                    <img src="images/Adobe_Suite/Illustrator/Affiche-04.webp" alt="Affiche Rotterdam Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">Keyvisual 2</h3>
+                        <p>Star Wars Outlaws - Scolaire</p>
                     </div>
-                    <div class="item" style="--position: 4"><img src="images/lacissoniere/lacissoniere.webp" alt=""
-                            loading="lazy">
+                </div>
+                <div class="group portrait">
+                    <img src="images/Adobe_Suite/Illustrator/Affiche-03.webp" alt="Publicité sur l'eau Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">Keyvisual 3</h3>
+                        <p>Star Wars Outlaws - Scolaire</p>
                     </div>
-                    <div class="item" style="--position: 5"><img src="images/Adobe_Suite/XD/XD_maquettage.webp" alt=""
-                            loading="lazy">
+                </div>
+                <div class="group-reverse paysage-reverse">
+                    <img src="images/Adobe_Suite/Illustrator/Keyvisual_paysage.webp" alt="Affiche Postal Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">Keyvisual 4</h3>
+                        <p>Star Wars Outlaws - Scolaire</p>
                     </div>
-                    <div class="item" style="--position: 6"><img src="images/Wordpress/Maquettes_Wireframes.webp" alt=""
-                            loading="lazy">
+                </div>
+                <div class="group portrait">
+                    <img class="square" src="images/Adobe_Suite/Illustrator/Goodies_dark_avecFond.webp"
+                        alt="Publicité sur l'eau Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">Goodies Dark</h3>
+                        <p>Star Wars Outlaws - Scolaire</p>
                     </div>
-                    <div class="item" style="--position: 7"><img src="images/Wordpress/lycée_accueil_1.webp" alt=""
-                            loading="lazy">
+                </div>
+                <div class="group-reverse portrait">
+                    <img class="square" src="images/Adobe_Suite/Illustrator/Goodies_light_avecFond.webp"
+                        alt="Affiche Postal Photoshop">
+                    <div class="group-text">
+                        <h3 class="group-title">Goodies Light</h3>
+                        <p>Star Wars Outlaws - Scolaire</p>
                     </div>
                 </div>
             </div>
-            <h4 class="title_Slider">Design & jeux</h4>
-            <div class="InlineSlider"
-                style="--width: 150px; --height: 350px; --quantity: 7; --aspect-ratio: 9 / 16; --animation: 15s;">
-                <div class="list">
-                    <div class="item" style="--position: 1"><img
-                            src="images/pygame/map_final_pygame_jeu_bateau-683x1024.webp" alt="" loading="lazy"></div>
-                    <div class="item" style="--position: 2"><img
-                            src="images/Adobe_Suite/Photoshop/Exercice_2_magazine_archi_Timothee_VDB_B1_A-scaled-1.webp"
-                            alt="" loading="lazy"></div>
-                    <div class="item" style="--position: 3"><img
-                            src="images/Adobe_Suite/Photoshop/Pub_Eau_1-scaled-1-724x1024.webp" alt="" loading="lazy">
+            <div class="banner_gameboy">
+                <img src="images/Adobe_Suite/Illustrator/Bannière-StarWars-Outlaws.webp"
+                    alt="Bannière-StarWars-Outlaws">
+                <div class="group-text">
+                    <h3 class="group-title">Bannière</h3>
+                    <p>Star Wars Outlaws - Scolaire</p>
+                </div>
+            </div>
+            <h3>D'autres Projets</h3>
+            <div class="group-projects-noMarginTop">
+                <div class="group paysage">
+                    <img src="images/Adobe_Suite/Illustrator/Logo-Tiktok_amélioré_Plan-de-travail-1.webp"
+                        alt="Logo Tiktok">
+                    <div class="group-text">
+                        <h3 class="group-title">Projet TikTok</h3>
+                        <p>Projet Personnel</p>
                     </div>
-                    <div class="item" style="--position: 4"><img src="images/Adobe_Suite/Illustrator/Affiche-03.webp"
-                            alt="" loading="lazy"></div>
-                    <div class="item" style="--position: 5"><img src="images/Adobe_Suite/Illustrator/Affiche-04.webp"
-                            alt="" loading="lazy"></div>
-                    <div class="item" style="--position: 6"><img
-                            src="images/Adobe_Suite/Illustrator/keyvisual_Portrait.webp" alt="" loading="lazy"></div>
-                    <div class="item" style="--position: 7"><img src="images/postal_World.webp" alt="" loading="lazy">
+                </div>
+                <div class="group-reverse paysage-reverse">
+                    <img src="images/Adobe_Suite/Illustrator/Plakatstil_Timothee_VDB_B1_A-768x543.webp" alt="">
+                    <div class="group-text">
+                        <h3 class="group-title">Loco Goods</h3>
+                        <p>Poster allemand "Plakatstil" - Scolaire</p>
                     </div>
                 </div>
             </div>
-            <div class="InlineSlider"
-                style="--width: 250px; --height: 250px; --quantity: 7; --aspect-ratio: 16 / 9; --animation: 15s;">
-                <div class="list">
-                    <div class="item" style="--position: 1"><img src="images/Plakatstil_Timothee_VDB_B1_A.webp" alt=""
-                            loading="lazy">
+        </section>
+        <section>
+            <h2>Logiciel XD</h2>
+            <p>Dans cette section, je vous présente mes réalisations liés aux projets de mon école Mydigitalschool Lyon.
+            </p>
+            <h3>Année 2023 - 2024 Mydigitalschool Lyon</h3>
+            <div class="group-projects-noMarginTop">
+                <div class="group paysage">
+                    <img src="images/Adobe_Suite/XD/XD_maquettage.png" alt="Réalisation XD">
+                    <div class="group-text">
+                        <h3 class="group-title">Conception Site Web Sport</h3>
+                        <p>Projet Maquettage - Scolaire</p>
                     </div>
-                    <div class="item" style="--position: 2"><img
-                            src="images/Adobe_Suite/Illustrator/Keyvisual_paysage.webp" alt="" loading="lazy"></div>
-                    <div class="item" style="--position: 3"><img
-                            src="images/Adobe_Suite/Photoshop/Exercice_3_pub_touristique_Timothee_VDB_B1_A-1024x576.webp"
-                            alt="" loading="lazy"></div>
-                    <div class="item" style="--position: 4"><img
-                            src="images/Adobe_Suite/Photoshop/Inesis-scaled-1-1024x724.webp" alt="" loading="lazy">
-                    </div>
-                    <div class="item" style="--position: 5"><img
-                            src="images/Adobe_Suite/Photoshop/Moodboard_City_Commerce-scaled-1-1024x724.webp" alt=""
-                            loading="lazy">
-                    </div>
-
-                    <div class="item" style="--position: 6"><img src="images/test1_mustang_img.webp" alt=""
-                            loading="lazy"></div>
-                    <div class="item" style="--position: 7">
-                        <img src="images/Adobe_Suite/Illustrator/Logo-Tiktok_amélioré_Plan-de-travail-1.webp" alt=""
-                            loading="lazy">
+                </div>
+                <div class="group-reverse paysage-reverse">
+                    <img src="images/Adobe_Suite/XD/XD_Site_touristique_dev_front.png" alt="Réalisation XD">
+                    <div class="group-text">
+                        <h3 class="group-title">Conception Site Web Touristique</h3>
+                        <p>Projet Maquettage - Scolaire</p>
                     </div>
                 </div>
             </div>
@@ -664,8 +550,8 @@
             <p>Tous droits réservés</p>
         </div>
     </footer>
+
     <script src="JS/main_new.js"></script>
-    <script src="JS/CODE3D.js" type="module"></script>
     <!-- <script src="main.js"></script>
     <script src="mainSansAdobeSuite.js"></script> -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
@@ -673,26 +559,3 @@
 </body>
 
 </html>
-
-<!-- voir pour lien sur text pour autres pages,
-    bandeaux nuages et bateau dark-mode,
-    voir responsive chaque page,
-    mettre site chocospace,
-    enlever wikipédia coding,
-    mettre site testimony,
-    filter orange svg scroll header,
-    planets blender,
-    images en webp,
-    quand on click sur menuburger alors top page,-->
-
-
-<!-- first step -> "</>" -> 🟨 second step -> --- Attention ! --- -> disappear -> main page -->
-<!-- Blender :
-- Mustang 3D
-- truc box neige
-- vis ?
-- quantix horizon
-- bateau egyptiens
-- champignons
-
--->
