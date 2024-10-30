@@ -1,11 +1,28 @@
 /* --------------------------Main--------------------------- */
+h1 {
+    position: relative;
+    margin: 0 auto;
+}
+
+h1:before {
+    content: "";
+    background-image: url("/images/Adobe_Suite/icon_adobe.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    width: 4rem;
+    height: 4rem;
+    left: -5rem;              
+    position: absolute;
+    top: 0%;                  
+}
+
 section {
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    padding: 15px;
-    width: 90%;
+    margin: 0 10%;
+    width: calc(100% - 20%);
 }
 
 section img {

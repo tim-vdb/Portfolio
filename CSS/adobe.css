@@ -55,9 +55,6 @@ section .group img {
     position: absolute;
     bottom: 0%;
     transform: perspective(800px) rotateY(-25deg) scale(.8) rotateX(10deg);
-    transition: all .6s ease;
-    border: 7.5px double var(--new_color_orange);
-    border-radius: 10px;
 }
 
 section .group-title {
@@ -86,7 +83,7 @@ section .group-reverse .group-text {
     position: absolute;
     bottom: -150px;
     transform: perspective(800px) rotateX(-45deg) rotateY(13deg) rotateX(20deg) translateX(30px) translateY(-65px);
-    transition: all .6s ease;
+    transition: all .6s ease-in;
 }
 
 section .paysage .group-text {
@@ -101,7 +98,7 @@ section .paysage-reverse .group-text {
 
 section .portrait img:not(img.square) {
     max-width: 400px;
-    max-height: 500px;
+    max-height: 400px;
     aspect-ratio: 9 / 16;
 }
 
@@ -189,7 +186,7 @@ section .group-reverse img {
 @media (max-width: 1150px) {
     section .portrait img:not(img.square) {
         max-width: 400px;
-        max-height: 500px;
+        max-height: 400px;
         aspect-ratio: 9 / 16;
     }
 
