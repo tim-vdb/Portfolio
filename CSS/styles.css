@@ -26,8 +26,6 @@
 /* Largeur de la barre de défilement */
 ::-webkit-scrollbar {
     width: 15px;
-
-    /* Largeur de la barre de défilement */
 }
 
 /* Couleur de la barre de défilement */
@@ -90,6 +88,10 @@ body button {
 
 h1 {
     font-size: var(--type-heading-h1-font-size);
+    margin: 0 auto;
+    margin-top: 50px;
+    text-underline-offset: 5px;
+    text-decoration: 3px underline var(--new_color_orange);
 }
 
 h2 {
@@ -350,19 +352,8 @@ header .profil .moi_orange {
 header .profil h2 {
     display: inline !important;
     color: var(--new_color_orange) !important;
-    animation: 2s linear 0s infinite alternate h2_shadow !important;
     margin: 0px 5px;
     text-align: center;
-}
-
-@keyframes h2_shadow {
-    from {
-        text-shadow: none;
-    }
-
-    to {
-        text-shadow: 1px 1px 15px var(--orange_shadow);
-    }
 }
 
 header .presentation {
@@ -834,6 +825,11 @@ header nav .nav_links:hover {
 header nav ion-icon {
     color: white;
     font-size: 2rem;
+}
+
+header nav img {
+width: 2rem;
+height: 2rem;
 }
 
 /* --------------------------Dark-Mode--------------------------- */

@@ -1,11 +1,21 @@
 /* --------------------------Main Blender--------------------------- */
-#section_1 {
+/* #section_1 {
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
     padding: 30px;
     width: calc(100% - 60px);
+} */
+
+section {
+    display: flex;
+    justify-content: start;
+    align-items: start;
+    flex-direction: column;
+    max-width: 1420px;
+    margin: 0 10%;
+    width: 80%;
 }
 
 video {
@@ -13,6 +23,10 @@ video {
     margin: auto;
     border: double 10px var(--new_color_orange);
 }
+
+section:last-of-type {
+    margin-bottom: 50px;
+    }
 
 #div_mustang {
     border: double 10px var(--new_color_orange);
