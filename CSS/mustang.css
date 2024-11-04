@@ -1,13 +1,4 @@
 /* --------------------------Main Blender--------------------------- */
-/* #section_1 {
-    display: flex;
-    justify-content: start;
-    align-items: start;
-    flex-direction: column;
-    padding: 30px;
-    width: calc(100% - 60px);
-} */
-
 section {
     display: flex;
     justify-content: start;

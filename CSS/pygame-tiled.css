@@ -30,7 +30,6 @@ main #section_1 #logo_couleur img {
 }
 
 main #section_1 #logo_couleur a {
-    cursor: url('images/curseur_pointer_logo_grand.png'), auto;
     width: 15%;
     padding: 20px;
     text-decoration: none;
@@ -95,32 +94,6 @@ main #section_2 .courbe_1 {
     opacity: 0;
     left: 0;
     width: 16svw;
-}
-
-#bateau_pirate_1::before {
-    content: "";
-    position: absolute;
-    top: 60%;
-    left: 50%;
-    width: 50px;
-    height: 50px;
-    opacity: 0;
-    background-image: url('/images/pygame/boulet_de_canon.png');
-    background-size: cover;
-    transform: translate(-50%, -50%);
-}
-
-#bateau_pirate_1::after {
-    content: "";
-    position: absolute;
-    top: 60%;
-    left: 60%;
-    width: 50px;
-    height: 50px;
-    background-image: url('/images/pygame/boulet_de_canon.png');
-    background-size: cover;
-    opacity: 0;
-    transform: translate(-50%, -50%);
 }
 
 @keyframes boulet-canon_1 {
@@ -450,7 +423,7 @@ main #section_4 #vague_3 #bateau_pirate_2 {
     animation: petit_bat 7s ease-in-out infinite;
 }
 
-main #section_4 #vague_3 .vague {
+main #section_4 #vague_3 .vague_anim {
     left: 0;
     top: 100%;
     width: calc(100% / var(--nb_vagues));
@@ -461,7 +434,7 @@ main #section_4 #vague_3 .vague {
     border-radius: 20% 80% 0 0;
 }
 
-.show_aperçu.vague {
+.show_aperçu.vague_anim {
     animation: marée 1.5s ease-in alternate-reverse infinite;
 }
 
@@ -538,7 +511,6 @@ main #section_5 img {
 }
 
 main #section_5 audio {
-    cursor: url('images/curseur_pointer_logo_grand.png'), auto;
     width: 75%;
     height: 5svh;
 }

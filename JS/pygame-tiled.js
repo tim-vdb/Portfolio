@@ -47,7 +47,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const Bateau_marchand = document.getElementById("bateau_marchand");
     const Bateau_pirate_1 = document.getElementById("bateau_pirate_1");
     const Bateau_pirate_2 = document.getElementById("bateau_pirate_2");
-    const maréeItems = document.querySelectorAll('.vague');
+    const maréeItems = document.querySelectorAll('.vague_anim');
     const delayStep = 200; // Valeur du délai entre chaque élément
     const totalItems = maréeItems.length;
     const totalDelay = delayStep * (totalItems - 1); // Total du délai pour tous les éléments sauf le dernier
