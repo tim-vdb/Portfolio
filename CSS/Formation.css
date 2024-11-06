@@ -21,7 +21,7 @@ section {
     justify-content: start;
     align-items: start;
     flex-direction: column;
-    margin: 0 10%;
+    margin: 0 auto;
     width: calc(100% - 20%);
 }
 
