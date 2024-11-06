@@ -94,11 +94,11 @@ h1 {
     text-decoration: 3px underline var(--new_color_orange);
 }
 
-h2 {
+h2, .profil .moi_orange p {
     font-size: var(--type-heading-h2-font-size);
 }
 
-h3 {
+h3, .presentationText .statut {
     font-size: var(--type-heading-h3-font-size);
 }
 
@@ -349,7 +349,7 @@ header .profil .moi_orange {
     text-align: center;
 }
 
-header .profil h2 {
+header .profil .moi_orange p {
     display: inline !important;
     color: var(--new_color_orange) !important;
     margin: 0px 5px;
@@ -371,7 +371,7 @@ header .presentationText {
     flex-direction: column;
 }
 
-header .presentation .presentationText h3 {
+header .presentation .presentationText .statut {
     margin-top: 0;
 }
 
