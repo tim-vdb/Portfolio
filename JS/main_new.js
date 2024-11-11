@@ -5,6 +5,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const divLeft_nav = document.getElementById("divLeft_nav");
     const btnTop = document.getElementById("btnTop")
     const canvasLoader = document.getElementById("canvas");
+    const loader = document.getElementById("canvas");
 
     window.onscroll = function () { checkNavbar(), scrollToTopBtn() };
     // --- Gestion du Loader Canvas ---
@@ -55,94 +56,69 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // --- Gestion du Loader Canvas ---
-    function waitForPageLoadAndDelay(delay) {
-        return new Promise((resolve) => {
-            window.onload = () => {
-                setTimeout(() => {
-                    resolve();
-                }, delay);
-            };
+    if (!loader) {
+        document.body.style.overflow = "auto";
+    }
+    const Mustang3D = document.getElementById("mustang");
+    const QuantixH3D = document.getElementById("quantixH3D")
+    const Champis = document.getElementById("champis")
+
+    if (Mustang3D) {
+        Mustang3D.style.display = "block"; // Affiche le canvas de la Mustang
+
+
+        // Charger le script pour la Mustang après suppression du loader
+        const active_Mustang3D = document.getElementById('active_Mustang3D');
+        active_Mustang3D.addEventListener("click", function () {
+            const mustangScript = document.createElement("script");
+            mustangScript.src = "JS/Mustang3D.js";
+            mustangScript.type = "module";
+            document.body.appendChild(mustangScript);
+            active_Mustang3D.remove();
         });
     }
 
-    // Utilisation de la fonction
-    const LoaderDelay = 4500; // 4.5 secondes d'affichage du loader
-
-    waitForPageLoadAndDelay(LoaderDelay).then(() => {
-        const loader = document.getElementById("canvas"); // Canvas du loader
-        const body = document.body;
-
-        // Suppression du loader et activation du canvas de la Mustang
-        if (loader) {
-            loader.remove(); // Supprime complètement le loader du DOM
-        }
-
-        body.style.overflow = "auto"; // Réactive le défilement
-
-        // Afficher le canvas de la Mustang après suppression du loader
-        const Mustang3D = document.getElementById("mustang");
-        const QuantixH3D = document.getElementById("quantixH3D")
-        const Champis = document.getElementById("champis")
-
-        if (Mustang3D) {
-            Mustang3D.style.display = "block"; // Affiche le canvas de la Mustang
+    if (QuantixH3D) {
+        QuantixH3D.style.display = "block"; // Affiche le canvas de la Mustang
 
 
-            // Charger le script pour la Mustang après suppression du loader
-            const active_Mustang3D = document.getElementById('active_Mustang3D');
-            active_Mustang3D.addEventListener("click", function () {
-                const mustangScript = document.createElement("script");
-                mustangScript.src = "JS/Mustang3D.js";
-                mustangScript.type = "module";
-                document.body.appendChild(mustangScript);
-                active_Mustang3D.remove();
-            });
-        }
+        // Charger le script pour la Mustang après suppression du loader
+        const active_QuantixH3D = document.getElementById('active_QuantixH3D');
+        active_QuantixH3D.addEventListener("click", function () {
+            const quantixScript = document.createElement("script");
+            quantixScript.src = "JS/QuantixH3D.js";
+            quantixScript.type = "module";
+            document.body.appendChild(quantixScript);
+            active_QuantixH3D.remove();
+        });
+    }
 
-        if (QuantixH3D) {
-            QuantixH3D.style.display = "block"; // Affiche le canvas de la Mustang
-
-
-            // Charger le script pour la Mustang après suppression du loader
-            const active_QuantixH3D = document.getElementById('active_QuantixH3D');
-            active_QuantixH3D.addEventListener("click", function () {
-                const quantixScript = document.createElement("script");
-                quantixScript.src = "JS/QuantixH3D.js";
-                quantixScript.type = "module";
-                document.body.appendChild(quantixScript);
-                active_QuantixH3D.remove();
-            });
-        }
-
-        if (Champis) {
-            Champis.style.display = "block"; // Affiche le canvas de la Mustang
+    if (Champis) {
+        Champis.style.display = "block"; // Affiche le canvas de la Mustang
 
 
-            // Charger le script pour la Mustang après suppression du loader
-            const active_Champis3D = document.getElementById('active_Champis3D');
-            active_Champis3D.addEventListener("click", function () {
-                const champisScript = document.createElement("script");
-                champisScript.src = "JS/champis.js";
-                champisScript.type = "module";
-                document.body.appendChild(champisScript);
-                active_Champis3D.remove();
-            });
-        }
+        // Charger le script pour la Mustang après suppression du loader
+        const active_Champis3D = document.getElementById('active_Champis3D');
+        active_Champis3D.addEventListener("click", function () {
+            const champisScript = document.createElement("script");
+            champisScript.src = "JS/champis.js";
+            champisScript.type = "module";
+            document.body.appendChild(champisScript);
+            active_Champis3D.remove();
+        });
+    }
 
-        // --Animation translate--
-        const observer_elements = new IntersectionObserver((entries) => {
-            entries.forEach((entry) => {
-                if (entry.isIntersecting) {
-                    entry.target.classList.add("show_aperçu");
-                }
-            });
-        }, { threshold: 0.2 });
+    // --Animation translate--
+    const observer_elements = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+            if (entry.isIntersecting) {
+                entry.target.classList.add("show_aperçu");
+            }
+        });
+    }, { threshold: 0.2 });
 
-        const animTranslate = document.querySelectorAll(".animTranslateLeft, .animTranslateRight, .animTranslateBottom, .animTranslateTop")
-        animTranslate.forEach((el) => observer_elements.observe(el));
-    });
-
+    const animTranslate = document.querySelectorAll(".animTranslateLeft, .animTranslateRight, .animTranslateBottom, .animTranslateTop")
+    animTranslate.forEach((el) => observer_elements.observe(el));
 
     // --- Gestion de la Nav ---
     container_links.forEach(link => {

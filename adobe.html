@@ -25,28 +25,9 @@
             }
         }
     </script>
-    <script type="module">
-        const canvas = document.getElementById("canvas");
-
-        // Fonction pour mettre à jour la taille du canvas
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            window.iw = window.innerWidth;
-            window.ih = window.innerHeight;
-        }
-
-        // Redimensionne le canvas à la taille de la fenêtre actuelle
-        resizeCanvas();
-
-        // Ajoute un écouteur d'événements pour redimensionner le canvas lorsque la fenêtre change de taille
-        window.addEventListener('resize', resizeCanvas);
-    </script>
-    <script src="JS/CODE3D.js" type="module"></script>
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
     <header>
         <div id="div_sticky">
             <button class="btn_iframes_close">Ne plus Interagir</button>
@@ -532,8 +513,6 @@
     </footer>
 
     <script src="JS/main_new.js"></script>
-    <!-- <script src="main.js"></script>
-    <script src="mainSansAdobeSuite.js"></script> -->
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
