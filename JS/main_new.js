@@ -58,6 +58,18 @@ document.addEventListener("DOMContentLoaded", function () {
 
     if (!loader) {
         document.body.style.overflow = "auto";
+
+        // --Animation translate--
+        const observer_elements = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show_aperçu");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const animTranslate = document.querySelectorAll(".animTranslateLeft, .animTranslateRight, .animTranslateBottom, .animTranslateTop")
+        animTranslate.forEach((el) => observer_elements.observe(el));
     }
     const Mustang3D = document.getElementById("mustang");
     const QuantixH3D = document.getElementById("quantixH3D")
@@ -107,18 +119,6 @@ document.addEventListener("DOMContentLoaded", function () {
             active_Champis3D.remove();
         });
     }
-
-    // --Animation translate--
-    const observer_elements = new IntersectionObserver((entries) => {
-        entries.forEach((entry) => {
-            if (entry.isIntersecting) {
-                entry.target.classList.add("show_aperçu");
-            }
-        });
-    }, { threshold: 0.2 });
-
-    const animTranslate = document.querySelectorAll(".animTranslateLeft, .animTranslateRight, .animTranslateBottom, .animTranslateTop")
-    animTranslate.forEach((el) => observer_elements.observe(el));
 
     // --- Gestion de la Nav ---
     container_links.forEach(link => {

@@ -25,28 +25,9 @@
             }
         }
     </script>
-    <script type="module">
-        const canvas = document.getElementById("canvas");
-
-        // Fonction pour mettre à jour la taille du canvas
-        function resizeCanvas() {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerHeight;
-            window.iw = window.innerWidth;
-            window.ih = window.innerHeight;
-        }
-
-        // Redimensionne le canvas à la taille de la fenêtre actuelle
-        resizeCanvas();
-
-        // Ajoute un écouteur d'événements pour redimensionner le canvas lorsque la fenêtre change de taille
-        window.addEventListener('resize', resizeCanvas);
-    </script>
-    <script src="JS/CODE3D.js" type="module"></script>
 </head>
 
 <body>
-    <canvas id="canvas"></canvas>
     <header>
         <div id="div_sticky">
             <button class="btn_iframes_close">Ne plus Interagir</button>
@@ -228,7 +209,7 @@
                     <li>
                         <div>
                             <ion-icon name="chatbubbles"></ion-icon>
-                            <a href="#Contacts" class="nav_links">Contacts</a>
+                            <a href="contact.html" class="nav_links">Contacts</a>
                         </div>
                     </li>
                     <li>
@@ -274,7 +255,7 @@
                 <img src="images/profile-pic2_sansFond.webp" alt="Photo de Timothée Van Den Bosch" loading="lazy">
                 <div class="moi_orange">
                     <p>Timothée</p>
-                    <p class="antiwrap">Van Den Bosch</>
+                    <p class="antiwrap">Van Den Bosch</p>
                 </div>
             </div>
             <div class="presentation">
@@ -287,7 +268,7 @@
                         Voici un site web vitrine "Grace&Gloire", il y a aussi la possibilité de faire un don via Paypal.
                     </p>
                 </div>
-                <button class="animTranslateBottom" id="contactMe">Me contacter !</button>
+                <a href="images/CV_Timothée_VanDenBosch.pdf" class="animTranslateBottom" id="contactMe">Voir mon CV !</a>
             </div>
     </header>
     <main>
@@ -310,7 +291,7 @@
     <footer>
         <div class="infos_footer">
             <div class="icon_contact">
-                <h3>Contacts :</h3>
+                <h3>Me Contacter :</h3>
                 <ul>
                     <li>
                         <a href="https://github.com/Timothee-VanDenBosch" target="_blank">
@@ -338,7 +319,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/vantimothee/" target="_blank">
+                        <a href="https://www.instagram.com/timothee_vandenbosch/" target="_blank">
                             <ion-icon name="logo-instagram"></ion-icon>
                             <p>Mon Instagram</p>
                         </a>
@@ -349,9 +330,15 @@
                 <h3>Liens Internes :</h3>
                 <ul>
                     <li>
-                        <a href="Formation.html" class="nav_links">
+                        <a href="Formation.html">
                             <ion-icon name="school-sharp"></ion-icon>
                             <p>Formation</p>
+                        </a>
+                    </li>
+                    <li>
+                        <a href="contact.html">
+                            <ion-icon name="chatbubbles"></ion-icon>
+                            <p>Formulaire de Contacts</p>
                         </a>
                     </li>
                     <li>

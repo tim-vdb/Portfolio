@@ -196,7 +196,7 @@
                     <li>
                         <div>
                             <ion-icon name="chatbubbles"></ion-icon>
-                            <a href="#Contacts" class="nav_links">Contacts</a>
+                            <a href="contact.html" class="nav_links">Contacts</a>
                         </div>
                     </li>
                     <li>
@@ -237,26 +237,69 @@
 
             <link rel="icon" type="image/png" href="">
             <div id="border_bottom_header"></div> -->
+            <div class="container_profil">
+                <div class="profil animTranslateLeft">
+                    <img src="images/profile-pic2_sansFond.webp" alt="Photo de Timothée Van Den Bosch" loading="lazy">
+                    <div class="moi_orange">
+                        <p>Timothée</p>
+                        <p class="antiwrap">Van Den Bosch</p>
+                    </div>
+                </div>
+                <div class="presentation">
+                    <div class="presentationText animTranslateRight">
+                        <p class="statut">Étudiant & Apprenti :</p>
+                        <p class="statut vague"><span class="orange"><span class="antiwrap">Développeur</span> <span
+                                    class="antiwrap">Full</span> <span class="antiwrap">Stack</span></span></p>
+                        <div></div>
+                        <p>Enchanté, moi c'est <span class="orange">Timothée</span> !</p>
+                        <p>
+                            Passionné par le code depuis mes dernières années de lycée, mon objectif est de devenir
+                            <span class="orange">Développeur Full Stack</span>.
+                        </p>
+                    </div>
+                    <a href="images/CV_Timothée_VanDenBosch.pdf" class="animTranslateBottom" id="contactMe">Voir mon CV !</a>
+                </div>
+            </div>
     </header>
-
     <main>
-        <form action="https://formspree.io/f/mgveyaor" method="POST">
-            <label>
-                Your email:
-                <input type="email" name="email">
-            </label>
-            <label>
-                Your message:
-                <textarea name="message"></textarea>
-            </label>
-            <!-- your other form fields go here -->
-            <button type="submit">Send</button>
+        <section>
+            <form action="https://formspree.io/f/mgveyaor" method="POST">
+                <h3>Contacter moi !</h3>
+            <div id="div_form">
+                <div class="form-group">
+                    <label>
+                        <p>Qui êtes-vous ?</p>
+
+                        <input type="text" name="firstName" placeholder="Votre Prénom" required>
+                    </label>
+                    <label>
+                        <input type="text" name="lastName" placeholder="Votre Nom" required>
+                    </label>
+                </div>
+                <div class="form-group">
+                    <label>
+                        <p>Votre Email :</p>
+                        <input type="email" name="email" placeholder="Contact@gmail.com" required>
+                    </label>
+                    <label>
+                        <p>Votre Numéro : (facultatif)</p>
+                        <input type="phone" name="phone" placeholder="0123456789">
+                    </label>
+                    <label>
+                        <p>Votre Message :</p>
+                        <textarea name="message" placeholder="Votre Message" required></textarea>
+                    </label>
+                </div>
+                <!-- your other form fields go here -->
+                <button type="submit">Envoyer</button>
+            </div>
         </form>
+    </section>
     </main>
     <footer>
         <div class="infos_footer">
             <div class="icon_contact">
-                <h3>Contacts :</h3>
+                <h3>Me Contacter :</h3>
                 <ul>
                     <li>
                         <a href="https://github.com/Timothee-VanDenBosch" target="_blank">
@@ -284,7 +327,7 @@
                         </a>
                     </li>
                     <li>
-                        <a href="https://www.instagram.com/vantimothee/" target="_blank">
+                        <a href="https://www.instagram.com/timothee_vandenbosch/" target="_blank">
                             <ion-icon name="logo-instagram"></ion-icon>
                             <p>Mon Instagram</p>
                         </a>
@@ -295,13 +338,13 @@
                 <h3>Liens Internes :</h3>
                 <ul>
                     <li>
-                        <a href="Formation.html" class="nav_links">
+                        <a href="Formation.html">
                             <ion-icon name="school-sharp"></ion-icon>
                             <p>Formation</p>
                         </a>
                     </li>
                     <li>
-                        <a href="">
+                        <a href="contact.html">
                             <ion-icon name="chatbubbles"></ion-icon>
                             <p>Formulaire de Contacts</p>
                         </a>
