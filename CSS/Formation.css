@@ -1,28 +1,12 @@
 /* --------------------------Main--------------------------- */
-h1 {
-    position: relative;
-    margin: 0 auto;
-}
-
-h1:before {
-    content: "";
-    background-image: url("/images/Adobe_Suite/icon_adobe.svg");
-    background-repeat: no-repeat;
-    background-size: cover;
-    width: 4rem;
-    height: 4rem;
-    left: -5rem;              
-    position: absolute;
-    top: 0%;                  
-}
-
 section {
     display: flex;
     justify-content: start;
     align-items: start;
     flex-direction: column;
+    max-width: 1420px;
     margin: 0 auto;
-    width: calc(100% - 20%);
+    width: 80%;
 }
 
 section img {

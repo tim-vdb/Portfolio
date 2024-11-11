@@ -196,6 +196,7 @@ p {
     align-items: center;
     background-color: var(--new_color_gris_foncé);
     height: 10svh;
+    min-height: 80px;
     width: calc(100% - 14px);
     top: 0;
     position: fixed;
