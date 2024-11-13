@@ -16,6 +16,8 @@ section .group-projects {
     margin-top: 300px;
 }
 
+
+
 section .group-projects-noMarginTop {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
