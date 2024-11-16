@@ -16,6 +16,10 @@ section img {
     border: double 10px var(--new_color_orange);
 }
 
+section:last-of-type {
+    margin-bottom: 50px;
+    }
+
 #div_champis {
     border: double 10px var(--new_color_orange);
     height: 50svh; 
