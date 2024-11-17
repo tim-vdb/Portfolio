@@ -4,8 +4,8 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0, interactive-widget=resizes-content">
-    <link rel="stylesheet" href="CSS/styles.css">
-    <link rel="stylesheet" href="CSS/contact.css">
+    <link rel="stylesheet" href="CSS/styles.min.css">
+    <link rel="stylesheet" href="CSS/contact.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@1,500&family=Galindo&display=swap"
@@ -70,7 +70,7 @@
                                         <div>
                                             <img src="images/Logo_Quantix.svg" alt="Logo Quantix Horizon"
                                                 loading="lazy">
-                                            <a href="quantix_horizon.html" class="nav_links">Quantix Horizon</a>
+                                            <a href="quantix-horizon.html" class="nav_links">Quantix Horizon</a>
                                         </div>
                                     </li>
                                     <li>
@@ -179,8 +179,7 @@
                                         <div>
                                             <img src="images/ferrari_icon.svg" alt="Logo voiture ferrari"
                                                 loading="lazy">
-                                            <a href="ferrari.html" class="nav_links">Fond d'écran 3D "Ferrari
-                                                Portofino"</a>
+                                            <p class="nav_links">Fond d'écran 3D "Ferrari Portofino"</p>
                                         </div>
                                     </li>
                                 </ul>
@@ -190,7 +189,7 @@
                     <li>
                         <div>
                             <ion-icon name="school-sharp"></ion-icon>
-                            <a href="Formation.html" class="nav_links">Formation</a>
+                            <a href="formation.html" class="nav_links">Formations & Expériences</a>
                         </div>
                     </li>
                     <li>
@@ -208,93 +207,71 @@
                 </ol>
             </nav>
         </div>
-
-        <!-- <div id="icon_header_top">
-                    <ion-icon name="language-outline" id="language" class="change-color"></ion-icon>
-                    <ion-icon name="sunny-outline" id="icon_dark-mode" class="change-color"></ion-icon>
-                </div> -->
-
-
-        <!-- <div id="div_language" class="interface_language">
-                <ul>
-                    <li>
-                        <a href="" id="fr_lang">Français</a>
-                    </li>
-                    <li>
-                        <a href="" id="en_lang">Anglais</a>
-                    </li>
-
-                </ul>
-                <div id="font_size">
-                    <ion-icon name="caret-back-circle-outline" id="small" class="btn_letter"></ion-icon>
-                    <p>A</p>
-                    <ion-icon name="caret-forward-circle-outline" id="big" class="btn_letter"></ion-icon>
-                </div>
-                <div id="div_apply">
-                    <button id="btn_apply">Appliquer</button>
+        
+        <div class="container_profil">
+            <div class="profil animTranslateLeft">
+                <img src="images/profile-pic2_sansFond.webp" alt="Photo de Timothée Van Den Bosch" loading="lazy">
+                <div class="moi_orange">
+                    <p>Timothée</p>
+                    <p class="antiwrap">Van Den Bosch</p>
                 </div>
             </div>
-
-            <link rel="icon" type="image/png" href="">
-            <div id="border_bottom_header"></div> -->
-            <div class="container_profil">
-                <div class="profil animTranslateLeft">
-                    <img src="images/profile-pic2_sansFond.webp" alt="Photo de Timothée Van Den Bosch" loading="lazy">
-                    <div class="moi_orange">
-                        <p>Timothée</p>
-                        <p class="antiwrap">Van Den Bosch</p>
-                    </div>
+            <div class="presentation">
+                <div class="presentationText animTranslateRight">
+                    <p class="statut">Étudiant & Apprenti :</p>
+                    <p class="statut vague"><span class="orange"><span class="antiwrap">Développeur</span> <span
+                                class="antiwrap">Full</span> <span class="antiwrap">Stack</span></span></p>
+                    <div></div>
+                    <p>Enchanté, moi c'est <span class="orange">Timothée</span> !</p>
+                    <p>
+                        Passionné par le code depuis mes dernières années de lycée, mon objectif est de devenir
+                        <span class="orange">Développeur Full Stack</span>.
+                    </p>
                 </div>
-                <div class="presentation">
-                    <div class="presentationText animTranslateRight">
-                        <p class="statut">Étudiant & Apprenti :</p>
-                        <p class="statut vague"><span class="orange"><span class="antiwrap">Développeur</span> <span
-                                    class="antiwrap">Full</span> <span class="antiwrap">Stack</span></span></p>
-                        <div></div>
-                        <p>Enchanté, moi c'est <span class="orange">Timothée</span> !</p>
-                        <p>
-                            Passionné par le code depuis mes dernières années de lycée, mon objectif est de devenir
-                            <span class="orange">Développeur Full Stack</span>.
-                        </p>
-                    </div>
-                    <a href="images/CV_Timothée_VanDenBosch.pdf" class="animTranslateBottom" id="contactMe">Voir mon CV !</a>
-                </div>
+                <a href="images/CV_Timothée_VanDenBosch.pdf" class="animTranslateBottom" download id="contactMe">Voir mon CV
+                    !</a>
             </div>
+        </div>
     </header>
     <main>
         <section>
             <form action="https://formspree.io/f/mgveyaor" method="POST">
                 <h3>Contactez-moi !</h3>
-            <div id="div_form">
-                <div class="form-group">
-                    <label>
-                        <p>Qui êtes-vous ?</p>
+                <div id="div_form">
+                    <div class="form-group">
+                        <label>
+                            <p>Qui êtes-vous ?<span class="orange">*</span></p>
 
-                        <input type="text" name="firstName" placeholder="Votre Prénom" required>
-                    </label>
-                    <label>
-                        <input type="text" name="lastName" placeholder="Votre Nom" required>
-                    </label>
+                            <input type="text" name="firstName" placeholder="Votre Prénom" required>
+                        </label>
+                        <label>
+                            <input type="text" name="lastName" placeholder="Votre Nom" required>
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <p>Votre Email :<span class="orange">*</span></p>
+                            <input type="email" name="email" placeholder="Contact@gmail.com" required>
+                        </label>
+                    </div>
+                    <div class="form-group">
+
+                        <label>
+                            <p>Votre numéro de Téléphone : (facultatif)</p>
+                            <input type="phone" name="phone" placeholder="0123456789">
+                        </label>
+                    </div>
+                    <div class="form-group">
+                        <label>
+                            <p>Votre Message :<span class="orange">*</span></p>
+                            <textarea name="message" placeholder="Votre Message" required></textarea>
+                        </label>
+                    </div>
+                    <!-- your other form fields go here -->
+                    <button type="submit">Envoyer</button>
                 </div>
-                <div class="form-group">
-                    <label>
-                        <p>Votre Email :</p>
-                        <input type="email" name="email" placeholder="Contact@gmail.com" required>
-                    </label>
-                    <label>
-                        <p>Votre Numéro : (facultatif)</p>
-                        <input type="phone" name="phone" placeholder="0123456789">
-                    </label>
-                    <label>
-                        <p>Votre Message :</p>
-                        <textarea name="message" placeholder="Votre Message" required></textarea>
-                    </label>
-                </div>
-                <!-- your other form fields go here -->
-                <button type="submit">Envoyer</button>
-            </div>
-        </form>
-    </section>
+            </form>
+        </section>
     </main>
     <footer>
         <div class="infos_footer">
@@ -338,9 +315,9 @@
                 <h3>Liens Internes :</h3>
                 <ul>
                     <li>
-                        <a href="Formation.html">
+                        <a href="formation.html">
                             <ion-icon name="school-sharp"></ion-icon>
-                            <p>Formation</p>
+                            <p>Formations & Expériences</p>
                         </a>
                     </li>
                     <li>

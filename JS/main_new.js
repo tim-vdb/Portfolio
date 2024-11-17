@@ -199,6 +199,13 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     });
 
+    // --- Clear Form ---
+    window.onbeforeunload = () => {
+        for (const form of document.getElementsByTagName('form')) {
+            form.reset();
+        }
+    }
+
     // --- Gestion des iframes ---
     const iframes = document.querySelectorAll(".iframes_container");
     const btn_iframes_open = document.querySelectorAll(".btn_iframes_open");

@@ -6,11 +6,11 @@ section {
     flex-direction: column;
     max-width: 1420px;
     margin: 0 auto;
-    width: 80%;
+    width: 90%;
 }
 
 main #section_1 #button_audio {
-    background-color: var(--new_color_gris_foncé);
+    background-color: var(--new_color_gris);
     color: white;
     padding: 10px;
     border-radius: 20px;
@@ -19,8 +19,8 @@ main #section_1 #button_audio {
 }
 
 main #section_1 #button_audio:hover {
-    border-bottom: 3px solid var(--new_color_gris_foncé);
-    border-right: 3px solid var(--new_color_gris_foncé);
+    border-bottom: 3px solid var(--new_color_gris);
+    border-right: 3px solid var(--new_color_gris);
     box-shadow: 5px 5px var(--new_color_orange);
 }
 
