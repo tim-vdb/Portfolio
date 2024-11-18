@@ -1,6 +1,6 @@
 document.addEventListener("DOMContentLoaded", function () {
 
-    // --- Gestion du Loader Canvas ---
+    // --- Gestion du Loader Canvas - Page D'accueil ---
     function waitForPageLoadAndDelay(delay) {
         return new Promise((resolve) => {
             window.onload = () => {
@@ -11,22 +11,19 @@ document.addEventListener("DOMContentLoaded", function () {
         });
     }
 
-    // Utilisation de la fonction
-    const LoaderDelay = 4500; // 4.5 secondes d'affichage du loader
+    const LoaderDelay = 4500;
 
     waitForPageLoadAndDelay(LoaderDelay).then(() => {
-        const loader = document.getElementById("canvas"); // Canvas du loader
+        const loader = document.getElementById("canvas");
 
-        // Suppression du loader et activation du canvas de la Mustang
+        // Suppression du loader
         if (loader) {
-            loader.remove(); // Supprime complètement le loader du DOM
+            loader.remove();
         }
+         // Réactive le défilement
+        document.body.style.overflow = "auto";
 
-        document.body.style.overflow = "auto"; // Réactive le défilement
-
-        // Afficher le canvas de la Mustang après suppression du loader
-
-        // --Animation translate--
+        // Animation translate
         const observer_elements = new IntersectionObserver((entries) => {
             entries.forEach((entry) => {
                 if (entry.isIntersecting) {

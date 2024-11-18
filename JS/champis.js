@@ -28,7 +28,7 @@ const renderer = new THREE.WebGLRenderer({ champis, antialias: true });
 renderer.setClearColor(0x1C1C1C, 1); // La couleur de fond est définie ici
 renderer.setSize(divtest.clientWidth, divtest.clientHeight);
 renderer.setPixelRatio(window.devicePixelRatio);
-
+renderer.gammaOutput = true;
 // add the automatically created <canvas> element to the page
 divtest.appendChild(renderer.domElement);
 
@@ -76,7 +76,7 @@ loader.load("./public/couteauGLB.glb", function (gltf) {
 const renderScene = new RenderPass(scene, camera);
 const bloomPass = new UnrealBloomPass(
     new THREE.Vector2(window.innerWidth, window.innerHeight),
-    0.5, // intensity
+    1, // intensity
     1, // radius
     1 // threshold
 );

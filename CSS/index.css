@@ -9,10 +9,6 @@ section {
     width: 90%;
 }
 
-section h2 {
-    text-decoration: underline;
-}
-
 #description_main {
     display: flex;
     justify-content: start;

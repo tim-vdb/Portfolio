@@ -1,216 +1,292 @@
-function rgbToHex(rgb) {
-    return "#" + rgb.match(/\d+/g).map(function (part) {
-        return ('0' + parseInt(part).toString(16)).slice(-2);
-    }).join('');
-}
-
 document.addEventListener("DOMContentLoaded", function () {
-    const H1 = document.querySelector("h1")
-    const Presentation = document.getElementById("presentation")
-    const Icon_dark_mode = document.getElementById("icon_dark-mode")
-    const Header = document.querySelector("header")
-    const Body = document.querySelector("body")
-    const IconBtnLanguage = document.querySelector("ion-icon#language")
-    const HeaderALinks = document.querySelectorAll("header a");
-    const Small_button = document.getElementById("small")
-    const Big_button = document.getElementById("big")
-    const Div_language = document.getElementById("div_language");
-    const BtnApply = document.getElementById("btn_apply")
-    const A_Lang = document.querySelector("#div_language p")
-    const Fr_lang = document.getElementById("fr_lang")
-    const En_lang = document.getElementById("en_lang")
-    const Main = document.querySelector("main")
-    const navbar = document.querySelector("nav");
-    const Content_main = document.querySelector("main div.content")
-    const Icon_scroll_down = document.getElementById("scroll-long-down")
-    
+    const container_links = document.querySelectorAll("li.container_links > div > .nav_links");
+    const MenuBurger_enable = document.getElementById("MenuBurger_enable");
+    const ol = document.querySelector("header nav ol");
+    const divLeft_nav = document.getElementById("divLeft_nav");
+    const btnTop = document.getElementById("btnTop")
+    const canvasLoader = document.getElementById("canvas");
+    const loader = document.getElementById("canvas");
 
-    let size_lang = 16
-    let size_lang_previous = size_lang
-    let mousedown_lang = false
-    let escape = false
+    window.onscroll = function () { checkNavbar(), scrollToTopBtn() };
+    // --- Gestion du Loader Canvas ---
+    // function waitForPageLoadAndDelay(delay) {
+    //     return new Promise((resolve) => {
+    //         window.onload = () => {
+    //             setTimeout(() => {
+    //                 resolve();
+    //             }, delay);
+    //         };
+    //     });
+    // }
 
-    // -------------------Header--------------------------
-    // ------------------Dark-Mode------------------------------
-    const beige_rgb = "rgb(232, 220, 202);";
-    const marron_foncé_rgb = "rgb(27, 23, 20)";
-    // const beige_hex = rgbToHex(beige_rgb);
-    // const marron_foncé_hex = rgbToHex(marron_foncé_rgb);
-    // const ion_icon = document.querySelector("ion-icon, ion-icon#icon_dark-mode, ion-icon#language")
-    // const Header_nav_a_hover = document.querySelector("header nav a:hover")
-    // const Presentation_div_h1 = document.querySelector("#presentation_div h1")
-    // const Presentation_after = document.querySelector("#presentation::after")
+    // // Utilisation de la fonction
+    // const LoaderDelay = 6000;
 
-    Icon_dark_mode.addEventListener("click", function () {
-        if (Icon_dark_mode.name == "sunny-outline") {
-            Icon_dark_mode.name = "moon-outline"
-            localStorage.setItem("icon_dark_mode", "moon-outline");
-            // localStorage.setItem("color_dark_mode", beige_hex);
-            // changeSrcLightMode()
-        } else {
-            Icon_dark_mode.name = "sunny-outline"
-            localStorage.setItem("icon_dark_mode", "sunny-outline");
-            // localStorage.setItem("color_dark_mode", marron_foncé_hex);
-            // changeSrcDarkMode()
-        }
-        Body.classList.toggle("dark-mode");
-        Header.classList.toggle("dark-mode");
-        HeaderALinks.forEach(link => {
-            link.classList.toggle("dark-mode");
+    // waitForPageLoadAndDelay(LoaderDelay)
+    //     .then(() => {
+    //         const loader = document.getElementById("canvas"); // L'élément du loader
+    //         const body = document.body;
+
+    //         // Suppression du loader et réactivation du défilement
+    //         if (loader) {
+    //             loader.remove(); // Supprime complètement le loader du DOM
+    //         }
+    //         body.style.overflow = "auto"; // Réactive le défilement
+    //     });
+
+    // --- Gestion de l'effet 3D Projets Circulaire ---
+    const banner = document.querySelector('.banner');
+    const images = document.querySelectorAll('.all_item a');
+    const slider = document.querySelector('.slider');
+
+
+    if (banner) {
+        images.forEach((img) => {
+            const paragraph = img.parentElement.querySelector('p');
+
+            img.addEventListener('mouseenter', () => {
+                paragraph.style.opacity = '1';
+                slider.style.animationPlayState = 'paused';
+            });
+
+            img.addEventListener('mouseleave', () => {
+                paragraph.style.opacity = '0';
+                slider.style.animationPlayState = 'running';
+            });
+        });
+    }
+
+    // --- Gestion du Loader - Hors page d'accueil ---
+
+    if (!loader) {
+        document.body.style.overflow = "auto";
+
+        // --Animation translate--
+        const observer_elements = new IntersectionObserver((entries) => {
+            entries.forEach((entry) => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add("show_aperçu");
+                }
+            });
+        }, { threshold: 0.2 });
+
+        const animTranslate = document.querySelectorAll(".animTranslateLeft, .animTranslateRight, .animTranslateBottom, .animTranslateTop")
+        animTranslate.forEach((el) => observer_elements.observe(el));
+    }
+    const Mustang3D = document.getElementById("mustang");
+    const QuantixH3D = document.getElementById("quantixH3D")
+    const Champis = document.getElementById("champis")
+
+    if (Mustang3D) {
+        Mustang3D.style.display = "block"; // Affiche le canvas de la Mustang
+
+        const active_Mustang3D = document.getElementById('active_Mustang3D');
+        active_Mustang3D.addEventListener("click", function () {
+            const mustangScript = document.createElement("script");
+            mustangScript.src = "JS/Mustang3D.js";
+            mustangScript.type = "module";
+            document.body.appendChild(mustangScript);
+            active_Mustang3D.remove();
+        });
+    }
+
+    if (QuantixH3D) {
+        QuantixH3D.style.display = "block"; // Affiche le canvas de la Mustang
+
+        const active_QuantixH3D = document.getElementById('active_QuantixH3D');
+        active_QuantixH3D.addEventListener("click", function () {
+            const quantixScript = document.createElement("script");
+            quantixScript.src = "JS/QuantixH3D.js";
+            quantixScript.type = "module";
+            document.body.appendChild(quantixScript);
+            active_QuantixH3D.remove();
+        });
+    }
+
+    if (Champis) {
+        Champis.style.display = "block"; // Affiche le canvas de la Mustang
+
+        const active_Champis3D = document.getElementById('active_Champis3D');
+        active_Champis3D.addEventListener("click", function () {
+            const champisScript = document.createElement("script");
+            champisScript.src = "JS/champis.js";
+            champisScript.type = "module";
+            document.body.appendChild(champisScript);
+            active_Champis3D.remove();
+        });
+    }
+
+    // --- Gestion de la Nav ---
+    container_links.forEach(link => {
+        link.addEventListener("click", function (e) {
+            e.preventDefault();  // Empêche le comportement par défaut du lien
+
+            let ul_links = this.closest("li.container_links").querySelector("ul");
+            let icon = this.closest("div").querySelector("ion-icon:last-of-type");
+
+            if (ul_links) {
+                if (ul_links.style.display === "none" || ul_links.style.display === "") {
+                    ul_links.style.display = "flex";
+                    if (this.matches("p")) {
+                        this.style.color = "var(--new_color_orange)";
+                        icon.style.color = "var(--new_color_orange)";
+                    }
+                    icon.setAttribute("name", "chevron-down-outline");
+                } else {
+                    ul_links.style.display = "none";
+                    if (this.matches("p")) {
+                        this.style.color = "white";
+                        icon.style.color = "white";
+                    }
+                    icon.setAttribute("name", "chevron-forward-outline");
+                }
+            }
         });
     });
 
-    // function changeSrcLightMode() {
-    //     Tiled.src = "images/Tiled_beige.svg"
-    //     Pygame.src = "images/pygame_beige.svg"
 
-    // }
+    MenuBurger_enable.addEventListener("click", function () {
 
-    // function changeSrcDarkMode() {
-    //     Tiled.src = "images/Tiled.svg"
-    //     Pygame.src = "images/pygame.svg"
-    // }
+        if (ol.style.display === "none" || ol.style.display === "") {
+            ol.style.display = "flex";
+            divLeft_nav.style.transform = "translateX(0%)";
+            MenuBurger_enable.setAttribute("name", "close");
+        } else {
+            divLeft_nav.style.transform = "translateX(-100%)";
+            MenuBurger_enable.setAttribute("name", "menu");
 
-    // ------------------Storage Dark-Mode-----------------------
-    if (!localStorage.getItem("icon_dark_mode")) {
-        localStorage.setItem("icon_dark_mode", "sunny-outline");
-        // localStorage.setItem("color_dark_mode", marron_foncé_hex);
-    } else {
-        setStyles_Dark_Mode();
-    }
-
-    // //Appel de la fonction setStyles_Dark_Mode pour le localStorage
-    function setStyles_Dark_Mode() {
-        let favorite_icon_dark_mode = localStorage.getItem("icon_dark_mode");
-        //     let favorite_color_dark_mode = localStorage.getItem("color_dark_mode");
-        Icon_dark_mode.name = favorite_icon_dark_mode
-        //     ion_icon.style.color = favorite_color_dark_mode
-        //     Body.style.color = favorite_color_dark_mode
-        //     Header.style.backgroundColor = favorite_color_dark_mode
-        //     Header.style.color = favorite_color_dark_mode
-        //     Header_nav_a.style.color = favorite_color_dark_mode
-        //     Header_nav_a.style.textShadow = favorite_color_dark_mode
-        //     // Header_nav_a_hover.style.color = favorite_color_dark_mode
-        //     // Header_nav_a_hover.style.borderColor = favorite_color_dark_mode
-        //     // Header_nav_a_hover.style.backgroundColor = favorite_color_dark_mode
-        //     // Header_nav_a_hover.style.boxShadow = favorite_color_dark_mode
-        //     Presentation.style.color = favorite_color_dark_mode
-        //     Presentation.style.borderColor = favorite_color_dark_mode
-        //     //à vérifier
-        //     Presentation_div_h1.style.textShadow = "none";
-        //     // Presentation_after.style.color = favorite_color_dark_mode
-        //     // Presentation_after.style.borderTop = favorite_color_dark_mode
-    }
-
-    // -------------------------Fonts---------------------------
-
-    //Appel de la fonction setStyles_Fonts pour le localStorage
-    function setStyles_Fonts() {
-        let favorite_font = localStorage.getItem("font");
-        const size_lang_str_fav = favorite_font.toString() + "px";
-        A_Lang.style.fontSize = size_lang_str_fav;
-        Fr_lang.style.fontSize = size_lang_str_fav;
-        En_lang.style.fontSize = size_lang_str_fav;
-        Main.style.fontSize = size_lang_str_fav;
-    }
-
-    IconBtnLanguage.addEventListener("click", interfaceLanguage);
-
-    function interfaceLanguage() {
-        //Rend visible l'interface settings de font
-        Div_language.classList.remove("interface_language")
-        //Variable qui permet d'indiquer si il est dans la zone de settings de font (voir en bas)
-        escape = true
-        //Garde en Mémoire la taille de la font pour afficher la taille pas enregistrer lorsqu'il click sur Echap
-        size_lang_previous = size_lang
-    }
-
-    BtnApply.addEventListener("click", ApplyFont);
-
-    function ApplyFont() {
-        //Rend non visible l'interface settings de font
-        Div_language.classList.add("interface_language")
-        Main.style.fontSize = size_lang
-        //Mettre à jour la nouvelle taille de font
-        localStorage.setItem("font", size_lang)
-    }
-
-    document.addEventListener("keydown", function (event) {
-        //Variable qui permet d'indiquer si il est dans la zone de settings de font (voir en haut)
-        if (escape) {
-            if (event.key == "Escape") {
-                Div_language.classList.add("interface_language")
-                A_Lang.style.fontSize = size_lang_previous;
-                Fr_lang.style.fontSize = size_lang_previous;
-                En_lang.style.fontSize = size_lang_previous; d
-                size_lang = size_lang_previous
-                escape = false
-            }
+            setTimeout(function () {
+                ol.style.display = "none";
+            }, 300);
         }
     });
 
-    Small_button.addEventListener("mousedown", function () {
-        mousedown_lang = true;
-        reduceFont();
-    });
+    // --- Gestion Div sticky ---
+    const div_sticky = document.getElementById("div_sticky");
 
-    Small_button.addEventListener("mouseup", function () {
-        mousedown_lang = false;
-    });
-
-    Big_button.addEventListener("mousedown", function () {
-        mousedown_lang = true;
-        growFont();
-    });
-
-    Big_button.addEventListener("mouseup", function () {
-        mousedown_lang = false;
-    });
-
-    function reduceFont() {
-        if (mousedown_lang) {
-            if (size_lang > 8) {
-                size_lang -= 0.2;
-                updateFontSize();
-                requestAnimationFrame(reduceFont);
+    if (div_sticky) {
+        function checkNavbar() {
+            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
+                div_sticky.style.display = "flex";
+            } else {
+                div_sticky.style.display = "none";
             }
+        };
+    }
+
+
+    // --- Gestion Arrow Up ---
+    function scrollToTopBtn() {
+        if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+            btnTop.style.opacity = '1';
+        } else {
+            btnTop.style.opacity = "0";
         }
     }
 
-    function growFont() {
-        if (mousedown_lang) {
-            if (size_lang < 25) {
-                size_lang += 0.2;
-                updateFontSize();
-                requestAnimationFrame(growFont);
-            }
+    btnTop.addEventListener("click", () => {
+        window.scrollTo({
+            top: 0,
+            behavior: "smooth"
+        });
+    });
+
+    // --- Gestion Clear Form ---
+    window.onbeforeunload = () => {
+        for (const form of document.getElementsByTagName('form')) {
+            form.reset();
         }
     }
 
-    function updateFontSize() {
-        const size_lang_str = size_lang.toString() + "px";
-        A_Lang.style.fontSize = size_lang_str;
-        Fr_lang.style.fontSize = size_lang_str
-        En_lang.style.fontSize = size_lang_str
-        console.log(size_lang_str)
-    }
+    // --- Gestion des Iframes ---
+    const iframes = document.querySelectorAll(".iframes_container");
+    const btn_iframes_open = document.querySelectorAll(".btn_iframes_open");
+    const btn_iframes_close = document.querySelectorAll(".btn_iframes_close");
 
-    // ------------------Storage Fonts------------------------------
-    if (!localStorage.getItem("font")) {
-        localStorage.setItem("font", size_lang);
-        setStyles_Fonts();
-    } else {
-        setStyles_Fonts();
-    }
+    btn_iframes_open.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            iframes.forEach((iframe) => {
+                iframe.style.overflow = 'auto';
+                iframe.style.pointerEvents = "all";
+                iframe.setAttribute("scrolling", "yes");
+            });
 
-    // When the user clicks on the button, scroll to the top of the document
-    IconBtnLanguage.addEventListener("click", function () {
-        document.body.scrollTop = 0; // For Safari
-        document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
-    })
+            iframes.forEach((div) => {
+                div.style.filter = "none";
+            });
+
+            btn_iframes_open.forEach((btn) => {
+                btn.style.display = "none";
+            });
+
+            btn_iframes_close.forEach((btn) => {
+                btn.style.display = "block";
+            });
+        });
+    });
+
+    btn_iframes_close.forEach((btn) => {
+        btn.addEventListener("click", function () {
+            iframes.forEach((iframe) => {
+                iframe.style.overflow = 'hidden';
+                iframe.style.pointerEvents = "none";
+                iframe.setAttribute("scrolling", "no");
+            });
+
+            iframes.forEach((div) => {
+                div.style.filter = "blur(4px)";
+            });
+
+            btn_iframes_open.forEach((btn) => {
+                btn.style.display = "block";
+            });
+
+            btn_iframes_close.forEach((btn) => {
+                btn.style.display = "none";
+            });
+        });
+    });
+
+    // --- Gestion Animation Vague Text --- 
+    const texts_toAnim = document.querySelectorAll(".vague");
+
+    texts_toAnim.forEach(textElement => {
+        const text = textElement.textContent.trim();
+        textElement.innerHTML = "";
+
+        const fontSize = window.getComputedStyle(textElement).fontSize;
+
+        // Séparation par mot en gardant les espaces consécutifs
+        const words = text.split(/(\s+)/); // Inclut les espaces dans le tableau
+
+        words.forEach((word, wordIndex) => {
+            if (word.trim() === "") {
+                textElement.appendChild(document.createTextNode(" "));
+                return;
+            }
+
+            const wordSpan = document.createElement("span");
+            wordSpan.className = "antiwrap";
+
+            // Ajout de chaque lettre dans le <span>
+            word.split("").forEach((letter, letterIndex) => {
+                const span = document.createElement("span");
+                span.innerHTML = letter;
+                span.style.animation = `colorChange 5s ease-in-out infinite`;
+                span.style.animationDelay = `${(wordIndex + letterIndex) * 0.1}s`;
+                span.style.fontSize = fontSize;
+                wordSpan.appendChild(span);
+            });
+
+            textElement.appendChild(wordSpan);
+        });
+
+        // Boucle d'animation toutes les 1.5 secondes pour chaque élément
+        setInterval(() => {
+            textElement.querySelectorAll(".antiwrap span").forEach((span, index) => {
+                span.style.animationDelay = `${index * 0.1}s`;
+            });
+        }, 1000);
+    });
+
 });
-// mettre info_bulle avec nav lorsque mouseover sur icons Maison/logiciels,
-//dark-mode Local Storage
-//cursor none sur fleche top quand opacité 0,enlever l'espace nul de nav/ul/li,
-//dark-mode et languages à droite
-//resize lors du changement de version d'utilisation resize => set display none

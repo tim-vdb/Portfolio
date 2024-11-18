@@ -101,6 +101,10 @@ h3, .presentationText .statut {
     font-size: var(--type-heading-h3-font-size);
 }
 
+h3 {
+text-decoration: underline;
+}
+
 h4 {
     font-size: var(--type-heading-h4-font-size);
 }
@@ -146,12 +150,6 @@ p {
 
 .antiwrap {
     white-space: nowrap;
-}
-
-.vague {
-    
-    
-    /* Ou toute autre valeur de style à appliquer spécifiquement */
 }
 
 .vague {

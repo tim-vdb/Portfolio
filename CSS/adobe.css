@@ -9,6 +9,10 @@ section {
     width: 90%;
 }
 
+h3 {
+text-decoration: none !important;
+}
+
 section .group-projects {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
