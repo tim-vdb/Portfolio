@@ -69,7 +69,7 @@ dloader.setDecoderPath('https://www.gstatic.com/draco/versioned/decoders/1.5.7/'
 dloader.setDecoderConfig({ type: 'js' });
 loader.setDRACOLoader(dloader);
 
-loader.load("./public/maison_futuriste3.glb", function (gltf) {
+loader.load("./public/maison_futuriste.glb", function (gltf) {
     const mesh = gltf.scene;
 
     // Applique une rotation et ajoute le modèle à la scène
