@@ -1,7 +1,4 @@
 document.addEventListener("DOMContentLoaded", function () {
-    const container_links = document.querySelectorAll("li.container_links > div > .nav_links");
-    const MenuBurger_enable = document.getElementById("MenuBurger_enable");
-    const ol = document.querySelector("header nav ol");
     const divLeft_nav = document.getElementById("divLeft_nav");
     const btnTop = document.getElementById("btnTop")
     const canvasLoader = document.getElementById("canvas");
@@ -117,6 +114,10 @@ document.addEventListener("DOMContentLoaded", function () {
     }
 
     // --- Gestion de la Nav ---
+    const container_links = document.querySelectorAll("li.container_links > div > .nav_links");
+    const MenuBurger_enable = document.getElementById("MenuBurger_enable");
+    const ol = document.querySelector("header nav ol");
+    
     container_links.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();  // Empêche le comportement par défaut du lien

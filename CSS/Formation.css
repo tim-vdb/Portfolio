@@ -171,7 +171,7 @@ section img {
     width: auto !important;
 }
 
-ul {
+main ul {
     display: flex;
     align-items: start;
     flex-direction: column;
@@ -179,7 +179,7 @@ ul {
     margin: 0;
 }
 
-li {
+main li {
     margin: 10px 0;
 }
 
@@ -187,10 +187,10 @@ h3 {
     margin: 0;
 }
 
-@media (max-width: 1200px) {
-}
+@media (max-width: 1200px) {}
 
 @media (max-width: 800px) {
+
     .left-line,
     .right-line {
         display: none;
@@ -237,7 +237,7 @@ h3 {
             --angle-reverse: -180deg;
             padding: 3px;
         }
-    
+
         to {
             --angle: 180deg;
             --angle-reverse: 0deg;

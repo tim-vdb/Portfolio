@@ -413,6 +413,26 @@ header .presentation .presentationText div {
     animation: btn_arrow_story 0.75s alternate infinite;
 }
 
+.justButton {
+    text-decoration: none;
+    color: white;
+    background-color: rgb(36, 36, 40);
+    margin-top: 16px;
+    padding: 10px;
+    border-radius: 10px;
+    border: 2px solid white;
+    display: inline-flex;
+    align-items: center;
+    box-shadow: 5px 5px 15px 3px black;
+    font-size: 16px;
+}
+
+.justButton:hover {
+    text-decoration: none;
+    border: 2px solid var(--new_color_orange);
+    background-color: rgb(46, 46, 50);
+}
+
 @keyframes btn_arrow_story {
     from {
         transform: translateX(0px);
@@ -775,8 +795,11 @@ header nav ul li {
     width: 100%;
 }
 
-header nav ol ul {
+header nav ol ul:not(#Projects_container) {
     display: none;
+}
+
+header nav ol ul {
     justify-content: center;
     align-items: start;
     flex-direction: column;
@@ -786,7 +809,7 @@ header nav ol ul {
     border-left: 2px solid var(--new_color_orange);
 }
 
-header nav .nav_links {
+header nav .nav_links, header nav #link_projects {
     display: block;
     color: white;
     font-size: 1rem;
@@ -798,7 +821,7 @@ header nav .nav_links {
     cursor: pointer;
 }
 
-header nav .nav_links:hover {
+header nav .nav_links:hover , header nav #link_projects:hover {
     background-color: white;
     color: var(--new_color_gris) !important;
     /* box-shadow: 0px 0px 1em 0.5px var(--beige); */
@@ -807,6 +830,11 @@ header nav .nav_links:hover {
 
 header nav ion-icon {
     color: white;
+    font-size: 2rem;
+}
+
+header nav #ion_icon_projects {
+    color: var(--new_color_orange);
     font-size: 2rem;
 }
 

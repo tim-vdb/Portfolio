@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="CSS/styles.min.css">
-    <link rel="stylesheet" href="CSS/projects.css">
+    <link rel="stylesheet" href="CSS/projects.min.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Afacad:ital,wght@1,500&family=Galindo&display=swap"
@@ -38,19 +38,18 @@
         </div>
         <div id="divLeft_nav">
             <nav>
-
                 <ol>
                     <li>
                         <div>
                             <ion-icon name="Home" class="nav_icon"></ion-icon>
-                            <a href="index.html" class="nav_links" id>Home</a>
+                            <a href="index.html" class="nav_links">Home</a>
                         </div>
                     </li>
-                    <li class="container_links">
+                    <li>
                         <div>
                             <ion-icon name="layers"></ion-icon>
-                            <p class="nav_links">Projects</p>
-                            <ion-icon name="chevron-forward-outline"></ion-icon>
+                            <a href="projects.html" id="link_projects">Projects</a>
+                            <ion-icon id="ion_icon_projects" name="chevron-down-outline"></ion-icon>
                         </div>
                         <ul id="Projects_container">
                             <li class="container_links">
@@ -224,7 +223,7 @@
                     <p>Arrivé en <span class="orange">septembre 2023</span> dans l'École du Digital "MyDigitalSchool"
                     </p>
                     <p>
-                        Projects
+                        Vous trouverez ci-dessous mes projets personnels, professionnels et scolaire.
                     </p>
                 </div>
                 <a href="images/CV_Timothée_VanDenBosch.pdf" class="animTranslateBottom" download id="contactMe">Voir mon CV !</a>
@@ -232,21 +231,53 @@
         </div>
     </header>
 
-
     <main>
-        <label for="php">
-            <input type="checkbox" id="php" value="PHP">
-            <p>Filtrer via PHP</p>
-        </label>
-        <label for="html">
-            <input type="checkbox" id="html" value="HTML">
-            <p>Filtrer via HTML</p>
-        </label>
-        <label for="css">
-            <input type="checkbox" id="css" value="CSS">
-            <p>Filtrer via CSS</p>
-        </label>
-        <ul class="filter_cards"></ul>
+        <section>
+            <div id="filter_manage">
+                <button id="input_filter_all">Tout Afficher</button>
+                <label id="HTML" class="custom-button">
+                    <input type="checkbox" value="HTML" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">HTML</span>
+                </label>
+                <label id="CSS" class="custom-button">
+                    <input type="checkbox" value="CSS" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">CSS</span>
+                </label>
+                <label id="JS" class="custom-button">
+                    <input type="checkbox" value="JS" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">JS</span>
+                </label>
+                <label id="PHP" class="custom-button">
+                    <input type="checkbox" value="PHP" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">PHP</span>
+                </label>
+                <label id="Markdown" class="custom-button">
+                    <input type="checkbox" value="Markdown" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">Markdown</span>
+                </label>
+                <label id="Design" class="custom-button">
+                    <input type="checkbox" value="Design" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">Design</span>
+                </label>
+                <label id="Blender" class="custom-button">
+                    <input type="checkbox" value="Blender" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">Blender 3D</span>
+                </label>
+                <label id="WordPress" class="custom-button">
+                    <input type="checkbox" value="WordPress" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">WordPress</span>
+                </label>
+                <label id="Python" class="custom-button">
+                    <input type="checkbox" value="Python" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">Python</span>
+                </label>
+                <label id="In-Progress" class="custom-button">
+                    <input type="checkbox" value="In-Progress" id="checkbox" class="input_filter_tags" />
+                    <span class="button-text">In-Progress</span>
+                </label>
+            </div>
+        <ul id="filter_cards"></ul>
+    </section>
     </main>
 
     <footer>
@@ -318,7 +349,7 @@
     </footer>
 
     <script src="JS/main.min.js"></script>
-    <script src="JS/my_projects.js"></script>
+    <script src="JS/projects.min.js"></script>
     <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
     <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
 </body>
