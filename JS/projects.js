@@ -138,6 +138,15 @@ const my_projects = [
     },
     {
         "url": "adobe.html",
+        "forme": "paysage",
+        "src": "images/jeuxDeCartes.webp",
+        "alt": "Création d'un jeux de cartes - Merveilles du monde",
+        "title": "Jeux de cartes - Merveilles du monde",
+        "title2": "Antique & Moderne - Projet Scolaire",
+        "tags": ["Design"]
+    },
+    {
+        "url": "adobe.html",
         "forme": "portrait",
         "src": "images/Adobe_Suite/Photoshop/Pub_Eau_1-scaled-1-724x1024.webp",
         "alt": "Publicité sur l'eau Photoshop",

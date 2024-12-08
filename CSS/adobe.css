@@ -131,6 +131,18 @@ section .group-reverse img {
     bottom: 0%;
 }
 
+#div_jeuxDeCartes {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column; 
+}
+
+#jeuxDeCartes {
+    max-width: 1000px;
+    max-height: 1000px;
+}
+
 @media (hover: hover) {
 
     section .portrait:hover img {
@@ -178,6 +190,11 @@ section .group-reverse img {
         aspect-ratio: 9 / 16;
     }
 
+    #jeuxDeCartes {
+        max-width: 700px;
+        max-height: 700px;
+    }
+
     section .portrait img.square {
         max-width: 300px;
         max-height: 300px;
@@ -213,6 +230,11 @@ section .group-reverse img {
         max-height: 500px !important;
         transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
     }
+
+    #jeuxDeCartes {
+        max-width: 500px;
+        max-height: 500px;
+    }
 }
 
 @media (max-width: 690px) {
@@ -220,6 +242,11 @@ section .group-reverse img {
         max-width: 500px !important;
         max-height: 500px !important;
         transform: perspective(800px) rotateY(-30deg) scale(.8) rotateX(10deg);
+    }
+
+    #jeuxDeCartes {
+        max-width: 400px;
+        max-height: 400px;
     }
 }
 
@@ -234,6 +261,11 @@ section .group-reverse img {
         max-width: 300px;
         max-height: 300px;
         aspect-ratio: 16 / 9;
+    }
+
+    #jeuxDeCartes {
+        max-width: 280px;
+        max-height: 280px;
     }
 
     section .banner_gameboy .group-text h3,

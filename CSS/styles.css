@@ -385,7 +385,7 @@ header .presentation .presentationText div {
     border-top: 3px solid white;
 }
 
-#contactMe {
+.commonButton {
     text-decoration: none;
     color: white;
     background-color: rgb(36, 36, 40);
@@ -399,13 +399,13 @@ header .presentation .presentationText div {
     font-size: 16px;
 }
 
-#contactMe:hover {
+.commonButton:hover {
     text-decoration: none;
     border: 2px solid var(--new_color_orange);
     background-color: rgb(46, 46, 50);
 }
 
-#contactMe:before {
+.commonButton:before {
     content: "\2192";
     font-size: 24px;
     color: var(--new_color_orange);
