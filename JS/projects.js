@@ -121,6 +121,7 @@ const my_projects = [
     {
         "url": "adobe.html",
         "forme": "portrait",
+        "position": "top",
         "src": "images/postal_World.webp",
         "alt": "Affiche The Postal World",
         "title": "The Postal World",
@@ -130,6 +131,7 @@ const my_projects = [
     {
         "url": "adobe.html",
         "forme": "portrait",
+        "position": "top",
         "src": "images/Adobe_Suite/Photoshop/Exercice_2_magazine_archi_Timothee_VDB_B1_A-scaled-1.webp",
         "alt": "Affiche Rotterdam Photoshop",
         "title": "Rotterdam",
@@ -148,6 +150,7 @@ const my_projects = [
     {
         "url": "adobe.html",
         "forme": "portrait",
+        "position": "top",
         "src": "images/Adobe_Suite/Photoshop/Pub_Eau_1-scaled-1-724x1024.webp",
         "alt": "Publicité sur l'eau Photoshop",
         "title": "L'Eau",
@@ -157,6 +160,7 @@ const my_projects = [
     {
         "url": "adobe.html",
         "forme": "portrait",
+        "position": "top",
         "src": "images/Adobe_Suite/Photoshop/Affiche_chat_gpt_Timothee_VDB_B1_A-1-724x1024.webp",
         "alt": "Affiche constructivisme Photoshop",
         "title": "ChatGPT",
@@ -193,6 +197,7 @@ const my_projects = [
     {
         "url": "adobe.html",
         "forme": "portrait",
+        "position": "top",
         "src": "images/Adobe_Suite/Illustrator/keyvisual_Portrait.webp",
         "alt": "Affiche Star Wars Outlaws 1",
         "title": "Keyvisual 1",
@@ -202,6 +207,7 @@ const my_projects = [
     {
         "url": "adobe.html",
         "forme": "portrait",
+        "position": "top",
         "src": "images/Adobe_Suite/Illustrator/Affiche-04.webp",
         "alt": "Affiche Star Wars Outlaws 2",
         "title": "Keyvisual 2",
@@ -211,11 +217,12 @@ const my_projects = [
     {
         "url": "adobe.html",
         "forme": "portrait",
+        "position": "top",
         "src": "images/Adobe_Suite/Illustrator/Affiche-03.webp",
         "alt": "Affiche Star Wars Outlaws 3",
         "title": "Keyvisual 3",
         "title2": "Star Wars Outlaws - Scolaire",
-        "tags": ["Design"]
+        "tags": ["Design"],
     },
     {
         "url": "adobe.html",
@@ -379,8 +386,8 @@ document.addEventListener("DOMContentLoaded", () => {
             img_cards.alt = project.alt;
             if (project.forme === "portrait") {
                 img_cards.style.aspectRatio = "9/16";
-                img_cards.style.objectFit = "contain";
-                img_cards.style.height = "300px";
+                img_cards.style.objectFit = "cover";
+                img_cards.style.objectPosition = project.position;
             }
             if (project.forme === "paysage") {
                 img_cards.style.objectFit = "fill";
