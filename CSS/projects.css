@@ -41,10 +41,12 @@ section {
     border: 20px double var(--new_color_gris);
     border-radius: 10px;
     min-width: 100%;
+    transform: scale(1);
+    transition: 0.4s all;
 }
 
-.inactive_input {
-    filter: brightness(0.5) blur(1px);
+.active_input {
+    transform: scale(0.8);
 }
 
 #HTML {

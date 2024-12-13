@@ -356,12 +356,13 @@ document.addEventListener("DOMContentLoaded", () => {
     const tags_input = document.querySelectorAll(".input_filter_tags");
     const all_input = document.getElementById("input_filter_all");
     const currentPage = window.location.pathname;
+    let displayAll = null;
     let checked = new Set();
 
     if (window.matchMedia("(max-width: 1300px)").matches) {
         currentPage.endsWith('projects.html') ? create_cards(my_projects) : create_cards(my_projects_actu_tel);
     } else {
-        currentPage.endsWith('projects.html') ? create_cards(my_projects) :  create_cards(my_projects_actu);
+        currentPage.endsWith('projects.html') ? create_cards(my_projects) : create_cards(my_projects_actu);
     }
 
     function create_cards(projects) {
@@ -467,7 +468,7 @@ document.addEventListener("DOMContentLoaded", () => {
             });
             tags_input.forEach(tag_input => {
                 let custom_button = tag_input.closest(".custom-button");
-                custom_button.classList.remove("inactive_input");
+                custom_button.classList.remove("active_input");
                 tag_input.checked = true
                 checked.add(tag_input.value)
             });
@@ -482,15 +483,15 @@ document.addEventListener("DOMContentLoaded", () => {
             tag_input.addEventListener("change", () => {
                 let custom_button = tag_input.closest(".custom-button");
 
-                if (tag_input.checked) {
-                    custom_button.classList.remove("inactive_input");
-                    checked.add(tag_input.value);
-                } else {
-                    custom_button.classList.add("inactive_input");
+                if (!tag_input.checked) {
+                    custom_button.classList.add("active_input");
                     checked.delete(tag_input.value);
+                } else {
+                    custom_button.classList.remove("active_input");
+                    checked.add(tag_input.value);
                 }
-                console.log(checked);
                 check_tags();
+                displayAll = true;
             });
         });
     };
@@ -500,11 +501,20 @@ document.addEventListener("DOMContentLoaded", () => {
         document.querySelectorAll(".cards").forEach(card => {
             let tags_of_card = Array.from(card.querySelectorAll(".tags_cards")).map(tag => tag.textContent);
             let shouldDisplay = tags_of_card.every(tag => checked.has(tag));
-
-            if (shouldDisplay) {
-                card.style.display = "block";
-            } else {
+            if (displayAll && checked.size === 10) {
+                document.querySelectorAll(".cards").forEach(card => {
+                    card.style.display = "block";
+                });
+                tags_input.forEach(tag_input => {
+                    let custom_button = tag_input.closest(".custom-button");
+                    custom_button.classList.remove("active_input");
+                    tag_input.checked = true
+                    checked.add(tag_input.value)
+                });
+            } else if (shouldDisplay) {
                 card.style.display = "none";
+            } else {
+                card.style.display = "block";
             }
         });
     }
