@@ -93,16 +93,18 @@ h1 {
     text-decoration: 3px underline var(--new_color_orange);
 }
 
-h2, .profil .moi_orange p {
+h2,
+.profil .moi_orange p {
     font-size: var(--type-heading-h2-font-size);
 }
 
-h3, .presentationText .statut {
+h3,
+.presentationText .statut {
     font-size: var(--type-heading-h3-font-size);
 }
 
 h3 {
-text-decoration: underline;
+    text-decoration: underline;
 }
 
 h4 {
@@ -161,7 +163,7 @@ p {
 .vague span {
     display: inline-block;
     transition: color 0.5s;
-    white-space:nowrap;
+    white-space: nowrap;
     text-wrap: balance;
 }
 
@@ -207,10 +209,10 @@ p {
 #btnTop {
     color: var(--new_color_orange);
     bottom: 20px;
-    right: 30px;
+    right: 20px;
     position: fixed;
     z-index: 9999;
-    font-size: 65px;
+    font-size: 50px;
     cursor: pointer;
     opacity: 0;
     filter: drop-shadow(0px 0px 8px var(--new_color_gris)) drop-shadow(-0px -0px 8px var(--new_color_gris));
@@ -499,12 +501,6 @@ header div#moi_barre {
     height: 300px;
 }
 
-header div#moi_barre div:not(#flip_div) {
-    display: flex;
-    justify-content: center;
-    align-items: center;
-}
-
 @keyframes flip_text {
 
     0%,
@@ -589,7 +585,7 @@ header div#flip_div {
 #div_moi,
 #div_cassetete {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     position: absolute;
@@ -809,7 +805,8 @@ header nav ol ul {
     border-left: 2px solid var(--new_color_orange);
 }
 
-header nav .nav_links, header nav #link_projects {
+header nav .nav_links,
+header nav #link_projects {
     display: block;
     color: white;
     font-size: 1rem;
@@ -821,7 +818,8 @@ header nav .nav_links, header nav #link_projects {
     cursor: pointer;
 }
 
-header nav .nav_links:hover , header nav #link_projects:hover {
+header nav .nav_links:hover,
+header nav #link_projects:hover {
     background-color: white;
     color: var(--new_color_gris) !important;
     /* box-shadow: 0px 0px 1em 0.5px var(--beige); */
@@ -839,8 +837,8 @@ header nav #ion_icon_projects {
 }
 
 header nav img {
-width: 2rem;
-height: 2rem;
+    width: 2rem;
+    height: 2rem;
 }
 
 /* --------------------------Dark-Mode--------------------------- */
@@ -944,7 +942,7 @@ ion-icon#icon_dark-mode {
     /* box-shadow: inset 0px 0px 10em 3px rgb(232, 220, 202); */
     padding: 5px;
     right: 1%;
-    
+
     color: var(--beige);
     top: 1.5%;
 }
@@ -1002,14 +1000,14 @@ ion-icon#icon_dark-mode {
     margin-right: 50px;
     color: var(--beige);
     font-size: 50px;
-    
+
 }
 
 #div_language #big {
     margin-left: 50px;
     color: var(--beige);
     font-size: 50px;
-    
+
 }
 
 #div_language p {
@@ -1034,7 +1032,7 @@ ion-icon#icon_dark-mode {
     border-radius: 10px;
     font-size: 16px;
     margin-right: 35px;
-    
+
 
 }
 
@@ -1042,7 +1040,7 @@ ion-icon#language {
     width: calc(3rem + 1.5vw);
     height: 50px;
     right: 5%;
-    
+
     color: var(--beige);
     top: 2%;
 }
@@ -1101,10 +1099,9 @@ footer {
     justify-content: center;
     align-items: center;
     flex-direction: column;
-    padding: 25px 0px;
     /* box-shadow: 0px 15px 10em rgb(37, 9, 9); */
     user-select: none;
-    /* border-bottom: 3px dashed var(--beige); */
+    width: 100%;
     position: relative;
     transition: color 3s, background-color 0.8s;
 }
@@ -1119,29 +1116,60 @@ footer::before {
     width: 90%;
 }
 
+footer h3 {
+    text-decoration: none;
+}
+
 footer .infos_footer {
     display: flex;
-    justify-content: space-around;
+    justify-content: space-between;
     align-items: start;
-    width: 100%;
+    width: 90%;
+    box-sizing: border-box;
+}
+
+footer nav {
+    text-align: end;
+}
+
+footer nav ul {
+    flex-direction: column;
+    gap: 10px;
+}
+
+footer nav a {
+    flex-direction: row-reverse;
 }
 
 footer ul {
+    display: flex;
+    justify-content: center;
+    align-items: end;
+    gap: 50px;
     list-style-type: none;
     padding: 0;
+    margin: 0;
 }
 
 footer ion-icon {
     color: white;
     font-size: 2rem;
-    
+
+}
+
+footer nav ion-icon {
+    color: white;
+    font-size: 1.5rem;
+
 }
 
 footer a {
     display: flex;
-    justify-content: start;
+    justify-content: center;
     align-items: center;
-    gap: 10px;
+    flex-direction: column;
+    gap: 5px;
+    text-decoration: none;
 }
 
 footer .icon_contact {
@@ -1162,13 +1190,13 @@ footer .copyright {
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column;
-    width: calc(100% - 14px);
-    margin: 0 10px;
-    margin-top: 50px;
+    width: 100%;
+    box-sizing: border-box;
+    gap: 10px;
+    margin: 20px 0;
 }
 
-footer .copyright p {
+footer p {
     text-align: center;
     margin: 0;
 }
