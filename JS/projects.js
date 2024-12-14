@@ -476,7 +476,7 @@ document.addEventListener("DOMContentLoaded", () => {
             tags_input.forEach(tag_input => {
                 let custom_button = tag_input.closest(".custom-button");
                 custom_button.classList.remove("active_input");
-                tag_input.checked = true
+                tag_input.checked = false
                 checked.add(tag_input.value)
             });
         });
@@ -484,13 +484,13 @@ document.addEventListener("DOMContentLoaded", () => {
 
     function set_input() {
         tags_input.forEach(tag_input => {
-            tag_input.checked = true
+            tag_input.checked = false
             checked.add(tag_input.value)
 
             tag_input.addEventListener("change", () => {
                 let custom_button = tag_input.closest(".custom-button");
 
-                if (!tag_input.checked) {
+                if (tag_input.checked) {
                     custom_button.classList.add("active_input");
                     checked.delete(tag_input.value);
                 } else {
@@ -515,7 +515,7 @@ document.addEventListener("DOMContentLoaded", () => {
                 tags_input.forEach(tag_input => {
                     let custom_button = tag_input.closest(".custom-button");
                     custom_button.classList.remove("active_input");
-                    tag_input.checked = true
+                    tag_input.checked = false
                     checked.add(tag_input.value)
                 });
             } else if (shouldDisplay) {

@@ -9,36 +9,45 @@ section {
     width: 90%;
 }
 
+#filter {
+    display: flex;
+    gap: 20px;
+}
+
 #filter_manage {
-    display: grid;
-    grid-template-columns: repeat(6, 1fr);
+    display: flex;
+    flex-direction: column;
+    width: 200px;
     gap: 5px;
-    width: 100%;
-    box-sizing: border-box;
 }
 
 #input_filter_all {
-    border: 20px double var(--new_color_gris);
+    border: 10px double var(--new_color_gris);
     text-wrap: nowrap;
-    padding: 10px;
     border-radius: 10px;
     font-size: 16px;
 }
 
 .custom-button input[type="checkbox"] {
-    display: none;
+    cursor: pointer;
+    filter: invert(100%) hue-rotate(18deg) brightness(1.7);
 }
+
+#filter_manage button, #filter_manage label {
+    height: 65px;
+}
+
 
 /* Style pour le bouton visuel */
 .custom-button {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     cursor: pointer;
     text-align: center;
     user-select: none;
     box-sizing: border-box;
-    border: 20px double var(--new_color_gris);
+    border: 10px double var(--new_color_gris);
     border-radius: 10px;
     min-width: 100%;
     transform: scale(1);
@@ -94,12 +103,12 @@ section {
 .button-text {
     display: inline-block;
     text-wrap: nowrap;
-    padding: 10px;
+    padding: 0 20px;
 }
 
 #filter_cards {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(2, 1fr);
     width: 100%;
     gap: 20px;
     padding: 0;
@@ -182,18 +191,32 @@ section {
 }
 
 @media (max-width: 1024px) {
-    #filter_manage {
-        display: grid;
-        grid-template-columns: repeat(4, 1fr);
-        /* display: flex; */
-        /* flex-wrap: wrap; */
-        gap: 5px;
-        width: 100%;
-        box-sizing: border-box;
+    #filter {
+        display: flex;
+        gap: 20px;
     }
+
     #filter_cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
+        width: 100%;
+        gap: 20px;
+        padding: 0;
+    }
+
+    #filter_cards .cards {
+        height: 650px;
+    }
+
+    .custom-button {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 950px) {
+    #filter_cards {
+        display: grid;
+        grid-template-columns: repeat(1, 1fr);
         width: 100%;
         gap: 20px;
         padding: 0;
@@ -201,31 +224,14 @@ section {
 }
 
 @media (max-width: 700px) {
-    #filter_manage {
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* display: flex; */
-        /* flex-wrap: wrap; */
-        gap: 5px;
-        width: 100%;
-        box-sizing: border-box;
+    #filter {
+        display: flex;
+        flex-direction: column;
     }
-    #filter_cards {
+
+    #filter_manage {
         display: grid;
         grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-        gap: 20px;
-        padding: 0;
-    }
-}
-
-@media (max-width: 550px) {
-    #filter_manage {
-        display: grid;
-        grid-template-columns: repeat(2, 1fr);
-        /* display: flex; */
-        /* flex-wrap: wrap; */
-        gap: 5px;
         width: 100%;
         box-sizing: border-box;
     }
@@ -237,15 +243,12 @@ section {
         padding: 0;
     }
 
-    #input_filter_all {
-        border: 10px double var(--new_color_gris);
+    #filter_manage button, #filter_manage label {
+        width: 100%;
+        justify-content: center;
     }
 
-    .custom-button {
-        border: 10px double var(--new_color_gris);
-    }
-
-    section {
-        width: 95%;
+    #filter_cards .cards {
+        height: fit-content;
     }
 }
