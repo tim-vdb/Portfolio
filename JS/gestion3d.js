@@ -15,6 +15,7 @@ document.addEventListener("DOMContentLoaded", function () {
 
     waitForPageLoadAndDelay(LoaderDelay).then(() => {
         const loader = document.getElementById("canvas");
+        const div_fixed = document.getElementById("div_fixed");
 
         // Suppression du loader
         if (loader) {
@@ -22,6 +23,7 @@ document.addEventListener("DOMContentLoaded", function () {
         }
          // Réactive le défilement
         document.body.style.overflow = "auto";
+        div_fixed.style.opacity = "1";
 
         // Animation translate
         const observer_elements = new IntersectionObserver((entries) => {

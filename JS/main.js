@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const canvasLoader = document.getElementById("canvas");
     const loader = document.getElementById("canvas");
 
-    window.onscroll = function () { checkNavbar(), scrollToTopBtn() };
+    window.onscroll = function () { scrollToTopBtn() };
     // --- Gestion du Loader Canvas ---
     // function waitForPageLoadAndDelay(delay) {
     //     return new Promise((resolve) => {
@@ -144,14 +144,14 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-
-
+    
     MenuBurger_enable.addEventListener("click", function () {
 
         if (ol.style.display === "none" || ol.style.display === "") {
             ol.style.display = "flex";
             divLeft_nav.style.transform = "translateX(0%)";
             MenuBurger_enable.setAttribute("name", "close");
+            divLeft_nav.style.boxShadow = "auto"
         } else {
             divLeft_nav.style.transform = "translateX(-100%)";
             MenuBurger_enable.setAttribute("name", "menu");
@@ -159,22 +159,9 @@ document.addEventListener("DOMContentLoaded", function () {
             setTimeout(function () {
                 ol.style.display = "none";
             }, 300);
+            divLeft_nav.style.boxShadow = "none"
         }
     });
-
-    // --- Gestion Div sticky ---
-    const div_sticky = document.getElementById("div_sticky");
-
-    if (div_sticky) {
-        function checkNavbar() {
-            if (document.body.scrollTop > 200 || document.documentElement.scrollTop > 200) {
-                div_sticky.style.display = "flex";
-            } else {
-                div_sticky.style.display = "none";
-            }
-        };
-    }
-
 
     // --- Gestion Arrow Up ---
     function scrollToTopBtn() {

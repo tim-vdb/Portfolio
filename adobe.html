@@ -16,26 +16,25 @@
 
 <body>
     <header>
-        <div id="div_sticky">
+        <div id="div_fixed">
             <button class="btn_iframes_close">Ne plus Interagir</button>
-        </div>
-        <ion-icon name="menu" id="MenuBurger_enable"></ion-icon>
-        <ion-icon name="arrow-up" id="btnTop"></ion-icon>
-        <div id="first">
-            <div id="moi_barre">
-                <div id="flip_div">
-                    <div id="div_moi">
-                        <img src="images/Photo_Pro_avecOutline.webp" alt="Photo de profil de Timothée Van Den Bosch"
-                            id="moi">
-                        <p>Timothée VDB</p>
-                    </div>
-                    <div id="div_cassetete">
-                        <img src="images/cassetete.webp" alt="Logo Cassetete" loading="lazy" id="cassetete">
-                        <p class="antiwrap">Pseudo : Cassetete</p>
+            <div id="first">
+                <div id="moi_barre">
+                    <div id="flip_div">
+                        <div id="div_moi">
+                            <img src="images/Photo_Pro_avecOutline.webp" alt="Photo de profil de Timothée Van Den Bosch"
+                                id="moi">
+                        </div>
+                        <div id="div_cassetete">
+                            <img src="images/cassetete.webp" alt="Logo Cassetete" loading="lazy" id="cassetete">
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
+        <div style="height: 10svh;"></div>
+        <ion-icon name="menu" id="MenuBurger_enable"></ion-icon>
+        <ion-icon name="arrow-up" id="btnTop"></ion-icon>
         <div id="divLeft_nav">
             <nav>
                 <ol>
@@ -205,32 +204,6 @@
                     </li>
                 </ol>
             </nav>
-        </div>
-        
-        <div class="container_profil">
-            <div class="profil animTranslateLeft">
-                <img src="images/profile-pic2_sansFond.webp" alt="Photo de Timothée Van Den Bosch" loading="lazy">
-                <div class="moi_orange">
-                    <p>Timothée</p>
-                    <p class="antiwrap">Van Den Bosch</p>
-                </div>
-            </div>
-            <div class="presentation">
-                <div class="presentationText animTranslateRight">
-                    <p class="statut">Étudiant & Apprenti :</p>
-                    <p class=" statut vague"><span class="orange"><span class="antiwrap">Développeur</span> <span
-                                class="antiwrap">Full</span> <span class="antiwrap">Stack</span></span></p>
-                    <div></div>
-                    <p>Envie de découvrir mes projets Adobe Suite ?</p>
-                    <p>
-                        J'utilise plusieurs logiciel d'<span class="orange">Adobe</span> comme : PhotoShop, Illustrator,
-                        XD / Figma (conception de
-                        maquettes), InDesign, Première Pro. J'affiche ici seulement <span class="orange">mes
-                            projets</span> dont je pense être les meilleurs.
-                    </p>
-                </div>
-                <a href="images/CV_Timothée_VanDenBosch.pdf" class="animTranslateBottom commonButton" target="_blank">Voir mon CV !</a>
-            </div>
         </div>
     </header>
 
@@ -418,64 +391,50 @@
     <footer>
         <div class="infos_footer">
             <div class="icon_contact">
-                <h3>Me Contacter :</h3>
+                <h5>Me Contacter</h5>
                 <ul>
                     <li>
                         <a href="https://github.com/Timothee-VanDenBosch" target="_blank">
                             <ion-icon name="logo-github"></ion-icon>
-                            <p>Mon Github</p>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.google.com/url?sa=t&rct=j&q=&esrc=s&source=web&cd=&cad=rja&uact=8&ved=2ahUKEwiElMLW-5uEAxWlVKQEHbheDe8QFnoECBcQAQ&url=https%3A%2F%2Ffr.linkedin.com%2Fin%2Ftimoth%25C3%25A9e-van-den-bosch-097146292&usg=AOvVaw3sTRdDOyKxGpsIlhPTp7NU&opi=89978449"
                             target="_blank">
                             <ion-icon name="logo-linkedin"></ion-icon>
-                            <p>Mon LinkedIn</p>
                         </a>
                     </li>
                     <li>
                         <a href="mailto: timothee.vandenbosch@my-digital-school.org" target="_blank">
                             <ion-icon name="mail-outline"></ion-icon>
-                            <p>Envoyez un Mail</p>
                         </a>
                     </li>
                     <li>
                         <a href="https://discord.com/users/457538401407729679" target="_blank">
                             <ion-icon name="logo-discord"></ion-icon>
-                            <p>Mon Discord</p>
                         </a>
                     </li>
                     <li>
                         <a href="https://www.instagram.com/timothee_vandenbosch/" target="_blank">
                             <ion-icon name="logo-instagram"></ion-icon>
-                            <p>Mon Instagram</p>
                         </a>
                     </li>
                 </ul>
             </div>
-            <div class="liens_internes">
-                <h3>Liens Internes :</h3>
+            <nav>
+                <h5>Liens Utiles</h5>
                 <ul>
                     <li>
-                        <a href="formation.html">
-                            <ion-icon name="school-sharp"></ion-icon>
-                            <p>Formations & Expériences</p>
-                        </a>
+                        <a href="projects">Projects</a>
+                        <a href="formation">Formations & Expériences</a>
                     </li>
+
                     <li>
-                        <a href="contact.html">
-                            <ion-icon name="chatbubbles"></ion-icon>
-                            <p>Formulaire de Contacts</p>
-                        </a>
-                    </li>
-                    <li>
-                        <a href="mentions-legales.html">
-                            <ion-icon name="reader-outline"></ion-icon>
-                            <p>Mentions Légales</p>
-                        </a>
+                        <a href="contact">Formulaire de Contact</a>
+                        <a href="mentions-legales">Mentions Légales</a>
                     </li>
                 </ul>
-            </div>
+            </nav>
         </div>
         <div class="copyright">
             <p>Copyright 2024 Timothée Van Den Bosch</p>

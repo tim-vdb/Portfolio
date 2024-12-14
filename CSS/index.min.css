@@ -1,1 +1,1 @@
-section{display:flex;justify-content:start;align-items:start;flex-direction:column;max-width:1420px;margin:0 auto;width:90%}#actu_projects{display:flex;justify-content:center;align-items:center;flex-direction:column;width:100%;margin-bottom:50px}
+section{display:flex;justify-content:start;align-items:start;flex-direction:column;max-width:1420px;margin:0 auto;width:90%}#actu_projects{display:flex;justify-content:center;align-items:center;flex-direction:column;width:100%;margin-bottom:50px}header{height:100svh}@media (max-width:500px){header{height:100%}}#div_fixed{opacity:0}
