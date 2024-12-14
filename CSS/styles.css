@@ -276,7 +276,7 @@ header {
     position: relative;
     transition: color 3s;
     transition: background-color 0.8s;
-    height: 100svh;
+    /* height: 100svh; */
     border-bottom: 3px solid var(--new_color_orange);
 }
 
@@ -296,6 +296,8 @@ header {
     align-items: start;
     width: 100%;
     z-index: 9997;
+    padding: 20px;
+    box-sizing: border-box;
 }
 
 #icon_header_top {
@@ -446,18 +448,6 @@ header .presentation .presentationText div {
 
 }
 
-@media (min-width: 1024px) {
-    #first {
-        position: absolute !important;
-        top: 0;
-    }
-
-    /* #moi_orange {
-        position: absolute;
-        bottom: 0;
-    } */
-}
-
 @media (max-width: 1200px) {
     .container_profil {
         flex-direction: column;
@@ -492,13 +482,12 @@ header div#moi_barre {
     justify-content: start;
     align-items: end;
     flex-direction: column;
-    margin-right: 10px;
     border-right: 3px solid var(--new_color_orange);
-    padding-right: 30px;
+    padding-right: 20px;
     background-color: transparent;
     perspective: 1000px;
-    width: 150px;
-    height: 300px;
+    width: 75px;
+    height: 75px;
 }
 
 @keyframes flip_text {
@@ -1116,25 +1105,22 @@ footer::before {
     width: 90%;
 }
 
-footer h3 {
-    text-decoration: none;
-}
-
 footer .infos_footer {
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     align-items: start;
+    gap: 20px;
     width: 90%;
     box-sizing: border-box;
 }
 
-footer nav {
-    text-align: end;
+footer h5 {
+    margin: 20px 0 10px 0;
 }
 
 footer nav ul {
-    flex-direction: column;
-    gap: 10px;
+    gap: 30px;
+    flex-wrap: wrap;
 }
 
 footer nav a {
@@ -1143,9 +1129,9 @@ footer nav a {
 
 footer ul {
     display: flex;
-    justify-content: center;
-    align-items: end;
-    gap: 50px;
+    justify-content: start;
+    align-items: start;
+    gap: 20px;
     list-style-type: none;
     padding: 0;
     margin: 0;
@@ -1165,7 +1151,7 @@ footer nav ion-icon {
 
 footer a {
     display: flex;
-    justify-content: center;
+    justify-content: start;
     align-items: center;
     flex-direction: column;
     gap: 5px;
@@ -1194,6 +1180,7 @@ footer .copyright {
     box-sizing: border-box;
     gap: 10px;
     margin: 20px 0;
+    padding: 0 10px;
 }
 
 footer p {
@@ -1201,13 +1188,22 @@ footer p {
     margin: 0;
 }
 
-@media (max-width: 700px) {
+@media (max-width: 805px) {
     footer .infos_footer {
-        display: flex;
-        justify-content: start;
-        align-items: start;
         flex-direction: column;
-        margin: 0 10%;
-        width: 80%;
+    }
+}
+
+@media (max-width: 600px) {
+    footer .copyright {
+        flex-direction: column;
+    }
+}
+
+
+@media (max-width: 515px) {
+    footer nav ul {
+        flex-direction: column;
+        gap: 0 !important;
     }
 }
