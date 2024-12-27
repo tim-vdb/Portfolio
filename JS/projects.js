@@ -6,7 +6,8 @@ const my_projects = [
         "alt": "Page d'accueil La Cissonière",
         "title": "La Cissonière",
         "title2": "Boucherie-Charcuterie-Artisanale",
-        "tags": ["HTML", "CSS", "JS", "PHP"]
+        "tags": ["HTML", "CSS", "JS", "PHP"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/lacissoniere"
     },
     {
         "description": "Développement d'un site web pour une entreprise fictive proposant l'installation de colonies humaines sur une planète habitable, incluant une page d'inscription fictive. J'ai assuré la conception et l'intégration du site dans un délai restreint.",
@@ -306,7 +307,8 @@ const my_projects_actu = [
         "alt": "Page d'accueil La Cissonière",
         "title": "La Cissonière",
         "title2": "Boucherie-Charcuterie-Artisanale",
-        "tags": ["HTML", "CSS", "JS", "PHP"]
+        "tags": ["HTML", "CSS", "JS", "PHP"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/lacissoniere"
     },
     {
         "description": "Développement d'un site web pour une entreprise fictive proposant l'installation de colonies humaines sur une planète habitable, incluant une page d'inscription fictive. J'ai assuré la conception et l'intégration du site dans un délai restreint.",
@@ -396,7 +398,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let infos_cards = document.createElement("div");
             infos_cards.className = "infos_cards";
-            link.appendChild(infos_cards);
+            cards.appendChild(infos_cards);
 
             let content = document.createElement("div");
             content.className = "content";
@@ -415,9 +417,23 @@ document.addEventListener("DOMContentLoaded", () => {
             desc_cards.textContent = project.description;
             content.appendChild(desc_cards);
 
+            let button = document.createElement("a");
+            button.href = project.url;
+            button.textContent = "En savoir plus !"
+            content.appendChild(button);
+
             let infos_tags = document.createElement("div");
             infos_tags.className = "infos_tags";
             infos_cards.appendChild(infos_tags);
+
+            let buttonGitHub = document.createElement("a");
+            buttonGitHub.href = project.urlGitHub;
+            buttonGitHub.className = "buttonGitHub";
+            infos_tags.appendChild(buttonGitHub);
+
+            let github = document.createElement("ion-icon");
+            github.tagName = "logo-github";
+            buttonGitHub.appendChild(github);
 
             project.tags.forEach(tag => {
                 let tag_cards = document.createElement("p");
