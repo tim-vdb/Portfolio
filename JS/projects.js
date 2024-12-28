@@ -1,6 +1,6 @@
 const my_projects = [
     {
-        "description": "Un site web vitrine avec back office intégré, permettant aux admins de se connecter à un login et ensuite modifier chaque images, textes et liens sur le site web.",
+        "description": "Un site web vitrine avec back office intégré, permettant aux admins de se connecter afin de modifier chaque images, textes et liens sur le site web.",
         "url": "lacissoniere.html",
         "src": "images/lacissoniere/lacissoniere.webp",
         "alt": "Page d'accueil La Cissonière",
@@ -16,7 +16,8 @@ const my_projects = [
         "alt": "Page d'accueil Quantix Horizon",
         "title": "Quantix Horizon",
         "title2": "Projet de Partiel",
-        "tags": ["HTML", "CSS", "JS", "PHP"]
+        "tags": ["HTML", "CSS", "JS", "PHP"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/Quantix_Horizon"
     },
     {
         "description": "Conception d'un site web fictif avec un scroll horizontal sur Desktop.",
@@ -25,7 +26,8 @@ const my_projects = [
         "alt": "Page d'accueil ChocoSpace",
         "title": "ChocoSpace",
         "title2": "Projet d'Anglais",
-        "tags": ["HTML", "CSS", "JS"]
+        "tags": ["HTML", "CSS", "JS"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/ChocoSpace"
     },
     {
         "description": "Proposition d'une landing page à La Montagne Enchantée.",
@@ -34,7 +36,8 @@ const my_projects = [
         "alt": "Landing Page La Montagne Enchantée",
         "title": "La Montagne Enchantée",
         "title2": "Landing Page",
-        "tags": ["HTML", "CSS"]
+        "tags": ["HTML", "CSS"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/landing-page-LME"
     },
     {
         "description": "Site web conçu en markdown, il a pour but d'informer sur le mode de jeu Skyblock de Minecraft.",
@@ -43,7 +46,8 @@ const my_projects = [
         "alt": "Page d'accueil site web minecraft",
         "title": "Wiki Minecraft Skyblock",
         "title2": "Projet Scolaire - Lycée",
-        "tags": ["Markdown"]
+        "tags": ["Markdown"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/minecraft-skyblock"
     },
     {
         "description": "Ce projet est en réalité un jeu conçu par un groupe de 4 personnes. Ce projet final bonus de fin d'année, n'a pu être finie à temps en classe de Terminale en spécialité NSI (Numérique-Science-Informatique).",
@@ -144,7 +148,7 @@ const my_projects = [
         "forme": "paysage",
         "src": "images/jeuxDeCartes.webp",
         "alt": "Création d'un jeux de cartes - Merveilles du monde",
-        "title": "Jeux de cartes - Merveilles du monde",
+        "title": "Jeux de cartes",
         "title2": "Antique & Moderne - Projet Scolaire",
         "tags": ["Design"]
     },
@@ -284,7 +288,7 @@ const my_projects = [
         "forme": "paysage",
         "src": "images/Adobe_Suite/XD/XD_maquettage.webp",
         "alt": "Réalisation XD Site Web Sport",
-        "title": "Conception Site Web Sport",
+        "title": "Maquette Site Sport",
         "title2": "Projet Maquettage - Scolaire",
         "tags": ["Design"]
     },
@@ -293,7 +297,7 @@ const my_projects = [
         "forme": "paysage",
         "src": "images/Adobe_Suite/XD/XD_Site_touristique_dev_front.webp",
         "alt": "Réalisation XD Site Web Touristique",
-        "title": "Conception Site Web Touristique",
+        "title": "Maquette Site Touristique",
         "title2": "Projet Maquettage - Scolaire",
         "tags": ["Design"]
     },
@@ -317,7 +321,8 @@ const my_projects_actu = [
         "alt": "Page d'accueil Quantix Horizon",
         "title": "Quantix Horizon",
         "title2": "Projet de Partiel",
-        "tags": ["HTML", "CSS", "JS", "PHP"]
+        "tags": ["HTML", "CSS", "JS", "PHP"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/Quantix_Horizon"
     },
     {
         "description": "Pendant environ deux mois, j'ai travaillé à la création d'un fond d'écran animé en 3D d'une Ford Mustang GT.",
@@ -338,7 +343,8 @@ const my_projects_actu_tel = [
         "alt": "Page d'accueil La Cissonière",
         "title": "La Cissonière",
         "title2": "Boucherie-Charcuterie-Artisanale",
-        "tags": ["HTML", "CSS", "JS", "PHP"]
+        "tags": ["HTML", "CSS", "JS", "PHP"],
+        "urlGitHub": "https://github.com/Timothee-VanDenBosch/lacissoniere"
     },
     {
         "description": "Ce projet est en réalité un jeu conçu par un groupe de 4 personnes. Ce projet final bonus de fin d'année, n'a pu être finie à temps en classe de Terminale en spécialité NSI (Numérique-Science-Informatique).",
@@ -387,7 +393,7 @@ document.addEventListener("DOMContentLoaded", () => {
             img_cards.src = project.src;
             img_cards.alt = project.alt;
             if (project.forme === "portrait") {
-                img_cards.style.aspectRatio = "9/16";
+                // img_cards.style.aspectRatio = "9/16";
                 img_cards.style.objectFit = "cover";
                 img_cards.style.objectPosition = project.position;
             }
@@ -419,21 +425,31 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let button = document.createElement("a");
             button.href = project.url;
-            button.textContent = "En savoir plus !"
+            button.textContent = "En savoir plus !";
             content.appendChild(button);
 
             let infos_tags = document.createElement("div");
             infos_tags.className = "infos_tags";
             infos_cards.appendChild(infos_tags);
+            
 
-            let buttonGitHub = document.createElement("a");
-            buttonGitHub.href = project.urlGitHub;
-            buttonGitHub.className = "buttonGitHub";
-            infos_tags.appendChild(buttonGitHub);
+            if (project.urlGitHub) {
+                infos_tags.style.justifyContent = "space-between";
+                
+                let buttonGitHub = document.createElement("a");
+                buttonGitHub.href = project.urlGitHub;
+                buttonGitHub.target = "_blank";
+                buttonGitHub.className = "buttonGitHub";
+                infos_tags.appendChild(buttonGitHub);
 
-            let github = document.createElement("ion-icon");
-            github.tagName = "logo-github";
-            buttonGitHub.appendChild(github);
+                let github = document.createElement("ion-icon");
+                github.setAttribute("name", "logo-github");
+                buttonGitHub.appendChild(github);
+            }
+
+            let all_tags = document.createElement("div");
+                all_tags.className = "all_tags";
+                infos_tags.appendChild(all_tags);
 
             project.tags.forEach(tag => {
                 let tag_cards = document.createElement("p");
@@ -475,8 +491,9 @@ document.addEventListener("DOMContentLoaded", () => {
                         tag_cards.style.backgroundColor = "gray";
                         break;
                 }
-
-                infos_tags.appendChild(tag_cards);
+                
+                
+                all_tags.appendChild(tag_cards);
             });
 
             filter_cards.appendChild(cards)

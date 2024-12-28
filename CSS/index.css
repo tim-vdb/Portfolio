@@ -31,6 +31,12 @@ header {
 #div_fixed {
     opacity: 0;
 }
+/* Optionnel : style pour le texte dans le bouton */
+.button-text {
+    display: inline-block;
+    text-wrap: nowrap;
+    padding: 0 20px;
+}
 
 #filter_cards {
     display: grid;
@@ -53,12 +59,13 @@ header {
     justify-content: space-between;
     flex-direction: column;
     width: 100%;
-    height: 100%;
+    /* height: 100%; */
     box-sizing: border-box;
     padding: 10px;
     border-top: 3px dashed var(--new_color_orange);
     position: relative;
     overflow: hidden;
+    height: 500px;
 }
 
 .infos_cards::after {
@@ -82,6 +89,22 @@ header {
     z-index: 2;
 }
 
+.infos_cards .content a {
+    width: fit-content;
+    background-color: var(--new_color_gris);
+    border: 3px solid var(--new_color_orange);
+    padding: 10px;
+    border-radius: 10px;
+    transition: 0.4s all;
+}
+
+.infos_cards .content a:hover {
+    background-color: rgb(58, 58, 58);
+}
+
+#filter_cards li:hover .infos_cards .content a {
+    border: 3px solid white;
+}
 
 #filter_cards li a {
     display: flex;
@@ -89,8 +112,13 @@ header {
     flex-direction: column;
     color: white;
     text-decoration: none;
-    height: 100%;
     box-sizing: border-box;
+}
+
+.infos_tags ion-icon {
+    font-size: 3rem;
+    clip-path: circle(40%);
+    background-color: var(--new_color_gris);
 }
 
 #filter_cards .infos_tags {
@@ -98,6 +126,13 @@ header {
     justify-content: end;
     align-items: center;
     flex-wrap: wrap;
+    padding: 10px;
+}
+
+.all_tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     padding: 10px;
     gap: 10px;
     margin: 0;
@@ -111,17 +146,12 @@ header {
 
 #filter_cards img {
     width: 100%;
-    height: 50%;
+    max-height: 300px;
     object-fit: cover;
     aspect-ratio: 16/9;
 }
 
-@media (max-width: 1200px) {
-    #filter {
-        display: flex;
-        gap: 20px;
-    }
-
+@media (max-width: 1300px) {
     #filter_cards {
         display: grid;
         grid-template-columns: repeat(2, 1fr);
@@ -129,27 +159,9 @@ header {
         gap: 20px;
         padding: 0;
     }
-
-    #filter_cards .cards {
-        height: 650px;
-    }
-
-    .custom-button {
-        min-width: 0;
-    }
 }
 
-@media (max-width: 950px) {
-    #filter_cards {
-        display: grid;
-        grid-template-columns: repeat(1, 1fr);
-        width: 100%;
-        gap: 20px;
-        padding: 0;
-    }
-}
-
-@media (max-width: 700px) {
+@media (max-width: 900px) {
     #filter {
         display: flex;
         flex-direction: column;
@@ -174,7 +186,12 @@ header {
         justify-content: center;
     }
 
-    #filter_cards .cards {
+    #filter_cards .infos_tags {
+        padding: 0px;
+        margin-top: 20px;
+    }
+
+    #filter_cards .infos_cards {
         height: fit-content;
     }
 }

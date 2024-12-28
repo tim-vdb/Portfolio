@@ -11,7 +11,7 @@
         rel="stylesheet">
     <link rel="icon" href="images/cassetete.webp" type="image/x-icon">
     <title>Portfolio Timothée Van Den Bosch</title>
-    
+
 </head>
 
 <body>
@@ -22,11 +22,15 @@
                 <div id="moi_barre">
                     <div id="flip_div">
                         <div id="div_moi">
-                            <img src="images/Photo_Pro_avecOutline.webp" alt="Photo de profil de Timothée Van Den Bosch"
-                                id="moi">
+                            <a href="index.html">
+                                <img src="images/Photo_Pro_avecOutline.webp"
+                                    alt="Photo de profil de Timothée Van Den Bosch" id="moi">
+                            </a>
                         </div>
                         <div id="div_cassetete">
-                            <img src="images/cassetete.webp" alt="Logo Cassetete" loading="lazy" id="cassetete">
+                            <a href="index.html">
+                                <img src="images/cassetete.webp" alt="Logo Cassetete" loading="lazy" id="cassetete">
+                            </a>
                         </div>
                     </div>
                 </div>
@@ -209,43 +213,45 @@
     <main>
         <section>
             <h1>La Cissonière</h1>
-            <div class="animTranslateLeft">
-                <h2 class="vague">Boucherie - Charcuterie - Artisanale depuis 1988</h2>
-                <h3>Mon Premier Stage :</h3>
-                <p>Dans le cadre de ma première année à MyDigitalSchool, nous devons effectuer un
-                    stage de deux mois minimums. Le but de ce stage est de nous familiariser dans une vie
-                    professionnelle et de mettre en pratique toutes les connaissances acquises durant notre
-                    cursus de cette année. Cependant, un stage n'est pas quelque chose déjà pré-écrit comme
-                    un programme scolaire, mais il faut savoir saisir les connaissances et les bienfaits de ce stage
-                    pour progresser, voilà donc ce que signifie à mon sens un stage</p>
-
-                <p>J'ai effectué mon premier stage chez La Cissonière, c'est une Boucherie - Charcuterie -
-                    Artisanale, elle effectue la fabrication, la vente sur place et
-                    ambulant de charcuterie et boucherie ainsi que tout autre
-                    objet se rattachant à ces activités. De plus, La Cissonière pratique la
-                    vente sédentaire et ambulante de fromages ainsi que du vin
-                    et pour finir l'activité sédentaire et ambulante de traiteur et
-                    d'épicerie fine.</p>
-
-                <p>La Cissonière était en possesion d'aucun site web, ma tâche a été donc de leur créer un site web
-                    vitrine, non marchand. Il a pour but d'informer et de faire découvrir la Cissonière via ses produits
-                    proposés en magasin et sur les marchés.</p>
-
-                <p>Vous avez la possibilité de visualiser le site web ci-dessous en cliquant sur le bouton "Interagir"
-                    ou via le lien suivant : <a target="_blank"
-                        href="https://lacissoniere.fr">La Cissonière</a></p>
-            </div>
-            <div class="animTranslateLeft">
-                <h3>Visualisation du site web "La Cissonière" :</h3>
-                <div class="div_iframes">
-                    <iframe src="https://lacissoniere.fr" class="iframes_container" width="100%" height="700"
-                    style="border: double 5px var(--new_color_orange);"></iframe>
-                    <button class="btn_iframes_open">Interagir</button>
+            <div class="container_infosProject">
+                <div>
+                    <a href="https://github.com/Timothee-VanDenBosch/lacissoniere" target="_blank"><ion-icon name="logo-github"></ion-icon></a>
+                    <a href="https://lacissoniere.fr" target="_blank"><ion-icon name="open-outline"></ion-icon></a>
                 </div>
-                <p>Vous constaterez que le titre du site web stipule être en création. Cela vient du fait que le
-                    propriétaire du site web peut se connecter et changer certains textes tel que le titre ou encore des
-                    images, ce qui n'a visiblement pas été finalisé, pour ma part la partie code du site web est fini.
-                </p>
+                <div class="container_tags">
+                    <p class="tags HTML">HTML</p>
+                    <p class="tags CSS">CSS</p>
+                    <p class="tags JS">JS</p>
+                    <p class="tags PHP">PHP</p>
+                </div>
+            </div>
+            <h2 class="vague">Boucherie, Charcuterie, Artisanale depuis 1988</h2>
+            <img src="images/lacissoniere/lacissoniere.webp" alt="Page d'accueil La Cissonière">
+            <div class="animTranslateLeft">
+                <h3>Contexte :</h3>
+                <p>Dans le cadre de ma première année à MyDigitalSchool, j'ai réalisé un stage de deux mois chez La
+                    Cissonière, une boucherie-charcuterie artisanale active depuis 1988. L'entreprise propose des
+                    produits locaux en magasin et sur les marchés : charcuterie, fromages, vins, traiteur, et épicerie
+                    fine.</p>
+                <h3>Mission :</h3>
+                <p>La Cissonière ne disposant pas de site web, j'ai conçu un site vitrine non marchand pour :</p>
+                <ul>
+                    <li>Présenter son savoir-faire et ses produits</li>
+                    <li>Se renseigner sur les marchés effectués</li>
+                    <li>Acquérir une identité sur le web</li>
+                </ul>
+                <p>Le site est interactif, disposant d'un back office permettant au propriétaire de personnaliser
+                    certains contenus du site web notamment du texte et des images.</p>
+                <div class="animTranslateLeft">
+                    <h2>Résultat :</h2>
+                    <p>Le site est fonctionnel et finalisé côté développement. Certains contenus, comme le titre,
+                        restent en attente de mise à jour par le propriétaire.</p>
+                    <div class="div_iframes">
+                        <iframe src="https://lacissoniere.fr" class="iframes_container" width="100%" height="700"
+                            style="border: double 5px var(--new_color_orange);"></iframe>
+                        <button class="btn_iframes_open">Interagir</button>
+                    </div>
+                </div>
             </div>
         </section>
     </main>

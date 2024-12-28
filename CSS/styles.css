@@ -56,7 +56,7 @@
 
 html {
     scroll-behavior: smooth;
-    cursor: url('/images/curseur_petit.png'), auto;
+    cursor: url('/images/curseur_petit.webp'), auto;
 }
 
 /* --------------------------Body--------------------------- */
@@ -1077,6 +1077,77 @@ ion-icon#language {
     overflow: hidden;
     pointer-events: none;
     filter: blur(4px);
+}
+
+.container_infosProject {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    width: 100%;
+}
+
+.container_infosProject a {
+    color: white;
+}
+
+.container_infosProject ion-icon {
+    font-size: 3rem;
+}
+
+.container_tags {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+    width: fit-content;
+}
+
+.tags {
+    padding: 7px;
+    border-radius: 5px;
+    width: fit-content;
+    margin: 0;
+}
+
+.HTML {
+    background-color: #E54C21;
+}
+
+.CSS {
+    background-color: #254BDE;
+}
+
+.JS {
+    background-color: #EFD81D;
+    color: var(--new_color_gris);
+}
+
+.PHP {
+    background-color: #6C7AA8;
+}
+
+.Markdown {
+    background-color: black;
+}
+
+.Blender {
+    background-color: #EB7700;
+}
+
+.Design {
+    background-color: purple;
+}
+
+.WordPress {
+    background-color: #21759B;
+}
+
+.Python {
+    background-color: green;
+}
+
+.In-Progress {
+    background-color: gray;
 }
 
 /* --------------------------Footer--------------------------- */
