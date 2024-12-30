@@ -80,10 +80,6 @@ header {
     transition: bottom 0.4s ease-in-out;
 }
 
-#filter_cards li:hover .infos_cards::after {
-    bottom: 0;
-}
-
 .infos_cards > * {
     position: relative;
     z-index: 2;
@@ -98,12 +94,18 @@ header {
     transition: 0.4s all;
 }
 
-.infos_cards .content a:hover {
-    background-color: rgb(58, 58, 58);
-}
+@media (hover: hover) {
+    #filter_cards li:hover .infos_cards::after {
+        bottom: 0;
+    }
 
-#filter_cards li:hover .infos_cards .content a {
-    border: 3px solid white;
+    .infos_cards .content a:hover {
+        background-color: rgb(58, 58, 58);
+    }
+
+    #filter_cards li:hover .infos_cards .content a {
+        border: 3px solid white;
+    }
 }
 
 #filter_cards li a {

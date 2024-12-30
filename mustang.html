@@ -37,8 +37,8 @@
                     <div id="flip_div">
                         <div id="div_moi">
                             <a href="index.html">
-                                <img src="images/Photo_Pro_avecOutline.webp" alt="Photo de profil de Timothée Van Den Bosch"
-                                id="moi">
+                                <img src="images/Photo_Pro_avecOutline.webp"
+                                    alt="Photo de profil de Timothée Van Den Bosch" id="moi">
                             </a>
                         </div>
                         <div id="div_cassetete">
@@ -228,52 +228,37 @@
     <main>
         <section>
             <h1>Fond d'écran 3D animé</h1>
+            <div class="container_infosProject">
+                <div></div>
+                <div class="container_tags">
+                    <p class="tags Blender">Blender</p>
+                </div>
+            </div>
             <div class="animTranslateLeft">
                 <h2 class="vague">Fond d'écran - Mustang GT</h2>
                 <h3>Ma première expérience dans la conception d'un fond d'écran :</h3>
-                <p>
-                    Pendant environ <span class="orange">deux mois</span>, j'ai travaillé à la création d'un fond
-                    d'écran
-                    <span class="orange">animé</span> en <span class="orange">3D</span> d'une
-                    <span class="orange">Ford Mustang GT</span>. On pourrait aussi dire que j'ai passé une <span
-                        class="orange">semaine entière</span>, sans interruption, à travailler dessus,
-                    pour montrer l'intensité de l'effort concentré sur mon projet.
-                </p>
-                <p>Ci-dessous vous pourrez visualiser le fond d'écran animé et générer le modèle de la Mustang GT, il
-                    est
-                    possible que le modèle mette entre quelques secondes et 1min à charger selon votre appareil.</p>
+                <p>Voici ma première expérience dans la création d'un fond d'écran animé en 3D. Pendant environ deux
+                    mois, j'ai travaillé sur la modélisation d'une Ford Mustang GT. J'ai consacré une semaine entière à
+                    ce projet, mettant en évidence mon investissement et ma concentration.</p>
+                <p>Vous pouvez visualiser l'animation ci-dessous, ainsi que manipuler le modèle 3D de la Mustang GT,
+                    avec un temps de chargement variant en fonction de votre appareil.</p>
             </div>
-            <video class="animTranslateLeft" id="video" autoplay loop controls muted>
+            <video id="video" autoplay loop controls muted>
                 <source src="images/mustang.mp4" type="video/mp4">
                 Your browser does not support the video tag.
             </video>
             <div class="animTranslateLeft">
-                <p>Lorsque je regarde mon fond d'écran, je le vois imparfait, on peut remarquer notamment la couleur
-                    bleu de
-                    nuit trop clair à mon goût, on aperçoit aussi le vide du décor à certains endroits. Malheuresement,
-                    avec
-                    le temps dont je disposais pour réaliser ce projet, il a été difficile de combler les trous et les
-                    imperfections, malgré tout je suis très fier de ce projet.</p>
-                <p>Je tiens à préciser que la plupart sont des modèles récupérer de la communauté de Blender. J'ai pour
-                    ma
-                    part construit presque entièrement la Mustang GT. Certains modèles ne sont pas de moi tels que : les
-                    freins sur les roues, le nitro dont j'aurais voulu personnaliser davantage par manque de temps, les
-                    phares principaux et le logo de cheval à l'avant du véhicule. De plus, j'ai eu l'occasion de
-                    personnaliser certains modèles dont j'ai utilisé pour le fond d'écran.</p> Bien que la plupart des
-                modèles
-                utilisés ne sont pas compliqué à réaliser, mon but dans ce projet était de faire un fond d'écran qui
-                tient
-                la route avec un effet d'immersion autour de cette voiture.</p>
+                <p>Bien que le fond d'écran présente quelques imperfections, comme la couleur bleue trop claire et des
+                    zones vides dans le décor, je suis fier du résultat final. La Mustang GT a été construite presque
+                    entièrement par mes soins, bien que certains éléments, comme les freins et le logo, proviennent de
+                    la communauté Blender. J'ai également personnalisé plusieurs modèles pour enrichir l'animation.</p>
+                <p>Mon objectif principal était de créer un fond d'écran immersif mettant en valeur la voiture.</p>
             </div>
             <div class="animTranslateLeft">
                 <h3>Visualisation du Modèle 3D - Mustang GT :</h3>
-
-                <p>Il est possible de manipuler le modèle en cliquant/glissant votre curseur/doigt sur la voiture et il
-                    est
-                    également possible de zoomer.</p>
-
+                <p>Vous pouvez manipuler le modèle en cliquant et glissant sur la voiture, ainsi qu'en zoomant.</p>
             </div>
-            <div class="animTranslateLeft" id="div_mustang" style="display: block; position: relative;" width="500px"
+            <div id="div_mustang" style="display: block; position: relative;" width="500px"
                 height="500px">
                 <button id="active_Mustang3D">Générer le Modèle !</button>
                 <canvas id="mustang"></canvas>

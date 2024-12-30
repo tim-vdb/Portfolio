@@ -60,13 +60,19 @@ document.addEventListener("DOMContentLoaded", function () {
     //----------------------Audio-------------------------------
     const monAudio = document.getElementById('musique_jeu');
     const button_audio = document.getElementById("button_audio");
-    // Modifier le volume (de 0 à 1)
+    let audioOFF = true; // Utilisez 'let' pour pouvoir modifier la valeur
 
+    // Modifier le volume (de 0 à 1)
     button_audio.addEventListener("click", function () {
         monAudio.volume = 0.5; // Met le volume à 50%
-        monAudio.play();
         monAudio.muted = false;
-
+        if (audioOFF) {
+            monAudio.play();
+            audioOFF = false;
+        } else {
+            monAudio.pause();
+            monAudio.currentTime = 0; // Remet au début
+            audioOFF = true; // Met audioOFF à true lorsque la musique est mise en pause
+        }
     });
-
 });

@@ -25,7 +25,7 @@ const my_projects = [
         "src": "images/ChocoSpace_img.webp",
         "alt": "Page d'accueil ChocoSpace",
         "title": "ChocoSpace",
-        "title2": "Projet d'Anglais",
+        "title2": "Site web horizontal, Prototype",
         "tags": ["HTML", "CSS", "JS"],
         "urlGitHub": "https://github.com/Timothee-VanDenBosch/ChocoSpace"
     },
@@ -95,7 +95,7 @@ const my_projects = [
         "tags": ["Blender"]
     },
     {
-        "description": "Nous avons procédée à une refonte du site web du Lycée Edouard Herriot",
+        "description": "Nous avons procédée à une proposition de refonte du site web du Lycée Edouard Herriot",
         "url": "Wordpress.html",
         "src": "images/Wordpress/lycée_accueil_1.webp",
         "alt": "Page d'accueil Lycée Edouard Herriot",
@@ -105,7 +105,7 @@ const my_projects = [
     },
     {
         "description": "Je suis en train de réalisé un fond d'écran animé en 3D d'une Ferrari Portofino.",
-        "url": "projects.html",
+        "url": "",
         "src": "images/ferrari.png",
         "alt": "Fond d'écran Ferrari Portofino",
         "title": "Fond d'écran 3D",
@@ -115,7 +115,7 @@ const my_projects = [
     },
     {
         "description": "Association culturelle et cultuelle chrétienne",
-        "url": "graceetgloire.html",
+        "url": "",
         "src": "images/graceetgloire.png",
         "alt": "Page d'accueil Grace & Gloire",
         "title": "Grace & Gloire",
@@ -425,7 +425,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
             let button = document.createElement("a");
             button.href = project.url;
-            button.textContent = "En savoir plus !";
+            button.textContent = "Découvrir le Projet !";
             content.appendChild(button);
 
             let infos_tags = document.createElement("div");
