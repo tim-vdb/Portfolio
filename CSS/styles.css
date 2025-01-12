@@ -93,10 +93,10 @@ h1 {
     text-decoration: 3px underline var(--new_color_orange);
 }
 
-h2,
-.profil .moi_orange p {
-    font-size: var(--type-heading-h2-font-size);
+h2 {
+    
 }
+
 
 h3,
 .presentationText .statut {
@@ -256,7 +256,6 @@ p {
     transform: translateX(0);
 }
 
-/* --------------------------Main--------------------------- */
 main {
     display: flex;
     justify-content: center;
@@ -264,7 +263,6 @@ main {
     flex-direction: column;
     width: 100%;
 }
-
 
 /* --------------------------Header--------------------------- */
 header {
@@ -281,16 +279,6 @@ header {
     /* height: 100svh; */
     border-bottom: 3px solid var(--new_color_orange);
 }
-
-/* header::before {
-    content: '';
-    position: absolute;
-    bottom: 10%;
-    left: 10%;
-    right: 10%;
-    border-bottom: 3px solid var(--new_color_orange);
-    width: 80%;
-} */
 
 #first {
     display: flex;
@@ -352,18 +340,6 @@ header .profil img {
     max-height: 400px;
     object-fit: contain;
     filter: drop-shadow(5px 5px 10px black);
-}
-
-header .profil .moi_orange {
-    margin-top: 20px;
-    text-align: center;
-}
-
-header .profil .moi_orange p {
-    display: inline !important;
-    color: var(--new_color_orange) !important;
-    margin: 0px 5px;
-    text-align: center;
 }
 
 header .presentation {
@@ -454,6 +430,7 @@ header .presentation .presentationText div {
     .container_profil {
         flex-direction: column;
         width: 100%;
+        border-bottom: 0px !important;
     }
 
     header {
@@ -617,30 +594,22 @@ header img#cassetete {
 }
 
 /* --------------------------Présentation--------------------------- */
-header #moi_orange {
+header .moi_orange {
     display: flex;
     justify-content: center;
     align-items: center;
     flex-wrap: wrap;
+    margin-top: 20px;
     width: 100%;
 }
 
-header #moi_orange h1 {
+header .moi_orange h1 {
     display: inline !important;
     color: var(--new_color_orange) !important;
-    animation: 2s linear 0s infinite alternate h1_shadow !important;
-    margin: 20px 5px;
+    font-size: var(--type-heading-h2-font-size);
+    margin: 0px 5px;
     text-align: center;
-}
-
-@keyframes h1_shadow {
-    from {
-        text-shadow: none;
-    }
-
-    to {
-        text-shadow: 1px 1px 15px var(--orange_shadow);
-    }
+    text-decoration: none;
 }
 
 /* --------------------------Nav--------------------------- */
@@ -1225,6 +1194,11 @@ footer a {
     flex-direction: column;
     gap: 5px;
     text-decoration: none;
+    transition: all 0.4s;
+}
+
+footer a:hover {
+    color: white;
 }
 
 footer .icon_contact {

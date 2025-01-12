@@ -1,3 +1,106 @@
+const coding = [
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/html-logo.png",
+        "alt": "Logo HTML",
+        "skill": "HTML",
+    },
+    {
+        "src": "https://cdn.worldvectorlogo.com/logos/css-3.svg",
+        "alt": "Logo CSS",
+        "skill": "CSS",
+    },
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/sass-logo.png",
+        "alt": "Logo Sass",
+        "skill": "Sass",
+    },
+    {
+        "src": "https://thumbs.dreamstime.com/b/javascript-icon-logo-javascript-often-abbreviated-as-js-programming-language-conforms-to-ecmascript-specification-204759326.jpg",
+        "alt": "Logo Javascript",
+        "skill": "JS",
+    },
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/php-logo.png",
+        "alt": "Logo PHP",
+        "skill": "PHP",
+    },
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/mysql-logo.png",
+        "alt": "Logo MySQL",
+        "skill": "MySQL",
+    },
+    {
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRhUyPLMCrdBvL7byu5KkMnOssbQigrkiRxZw&s",
+        "alt": "Logo Three.js",
+        "skill": "Three.js",
+    },
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/git-logo.png",
+        "alt": "Logo Git",
+        "skill": "Git",
+    },
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/node-js-logo.png",
+        "alt": "Logo Node.js",
+        "skill": "Node.js",
+    },
+    {
+        "src": "https://adware-technologies.s3.amazonaws.com/uploads/technology/thumbnail/20/express-js.png",
+        "alt": "Logo Express.js",
+        "skill": "Express.js",
+    },
+    {
+        "src": "https://grafikart.fr/uploads/icons/markdown.svg",
+        "alt": "Logo Markdown",
+        "skill": "Markdown",
+    },
+    {
+        "src": "https://www.lycee-en-foret.fr/wp-content/uploads/2022/09/python.png",
+        "alt": "Logo Python",
+        "skill": "Python",
+    }
+]
+const design = [
+    {
+        "src": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQaTlRTVHi3l7nOcFO4cni11SqS6oSVh0aRRg&s",
+        "alt": "Logo Blender",
+        "skill": "Blender",
+    },
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/photoshop-logo.png",
+        "alt": "Logo Photoshop",
+        "skill": "Photoshop",
+    },
+    {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/f/fb/Adobe_Illustrator_CC_icon.svg/1200px-Adobe_Illustrator_CC_icon.svg.png",
+        "alt": "Logo Illustrator",
+        "skill": "Illustrator",
+    },
+    {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/4/40/Adobe_Premiere_Pro_CC_icon.svg/800px-Adobe_Premiere_Pro_CC_icon.svg.png",
+        "alt": "Logo Premiere Pro",
+        "skill": "Premiere Pro",
+    },
+    {
+        "src": "https://upload.wikimedia.org/wikipedia/commons/thumb/3/33/Figma-logo.svg/1200px-Figma-logo.svg.png",
+        "alt": "Logo Figma",
+        "skill": "Figma",
+    }
+]
+
+const CMS = [
+    {
+        "src": "https://www.logiquetechno.com/wp-content/uploads/2023/07/wordpress-logo.png",
+        "alt": "Logo WordPress",
+        "skill": "WordPress",
+    },
+    {
+        "src": "https://florianjourde.com/ressources/images/logos/elementor-logo.png",
+        "alt": "Logo Elementor",
+        "skill": "Elementor",
+    }
+]
+
 document.addEventListener("DOMContentLoaded", function () {
     const divLeft_nav = document.getElementById("divLeft_nav");
     const btnTop = document.getElementById("btnTop")
@@ -117,7 +220,7 @@ document.addEventListener("DOMContentLoaded", function () {
     const container_links = document.querySelectorAll("li.container_links > div > .nav_links");
     const MenuBurger_enable = document.getElementById("MenuBurger_enable");
     const ol = document.querySelector("header nav ol");
-    
+
     container_links.forEach(link => {
         link.addEventListener("click", function (e) {
             e.preventDefault();  // Empêche le comportement par défaut du lien
@@ -144,7 +247,7 @@ document.addEventListener("DOMContentLoaded", function () {
             }
         });
     });
-    
+
     MenuBurger_enable.addEventListener("click", function () {
 
         if (ol.style.display === "none" || ol.style.display === "") {
@@ -277,4 +380,89 @@ document.addEventListener("DOMContentLoaded", function () {
         }, 1000);
     });
 
+    // skills
+    const skills_cards = document.getElementById("skills_cards");
+
+    function create_cards(tab_skills) {
+        tab_skills.forEach(tab_skill => {
+            let cards = document.createElement("li");
+            cards.className = "cards";
+
+            let img_cards = document.createElement("img");
+            img_cards.src = tab_skill.src;
+            img_cards.alt = tab_skill.alt;
+            cards.appendChild(img_cards);
+
+            let skillName = tab_skill.skill; // `skill` is a single string
+            let name = document.createElement("h4");
+            name.textContent = skillName;
+            name.className = "tags_cards";
+
+            switch (skillName) {
+                case "HTML":
+                    name.style.color = "#E54C21";
+                    break;
+                case "CSS":
+                    name.style.color = "#1B73BA";
+                    break;
+                case "Sass":
+                    name.style.color = "#CD6799";
+                    break;
+                case "JS":
+                    name.style.color = "#EFD81D";
+                    break;
+                case "PHP":
+                    name.style.color = "#6C7AA8";
+                    break;
+                case "MySQL":
+                    name.style.color = "#00758F";
+                    break;
+                case "Three.js":
+                    name.style.color = "black";
+                    break;
+                case "Git":
+                    name.style.color = "#E0672D";
+                    break;
+                case "Node.js":
+                    name.style.color = "#3F873F";
+                    break;
+                case "Express.js":
+                    name.style.color = "#323232";
+                    break;
+                case "Markdown":
+                    name.style.color = "black";
+                    break;
+                case "Python":
+                    name.style.color = "#3774A8";
+                    break;
+                case "Blender":
+                    name.style.color = "#EB7700";
+                    break;
+                case "Photoshop":
+                    name.style.color = "#001E36";
+                    break;
+                case "Illustrator":
+                    name.style.color = "#300000";
+                    break;
+                case "Premiere Pro":
+                    name.style.color = "#220049";
+                    break;
+                case "Figma":
+                    name.style.color = "black";
+                    break;
+                case "WordPress":
+                    name.style.color = "#21759B";
+                    break;
+                case "Elementor":
+                    name.style.color = "#7F2E40";
+                    break;
+            }
+            cards.appendChild(name);
+            skills_cards.appendChild(cards)
+        });
+    };
+
+    create_cards(coding);
+    create_cards(design);
+    create_cards(CMS);
 });
