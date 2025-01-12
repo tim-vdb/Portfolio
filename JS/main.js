@@ -17,7 +17,7 @@ const coding = [
     {
         "src": "https://thumbs.dreamstime.com/b/javascript-icon-logo-javascript-often-abbreviated-as-js-programming-language-conforms-to-ecmascript-specification-204759326.jpg",
         "alt": "Logo Javascript",
-        "skill": "JS",
+        "skill": "JavaScript",
     },
     {
         "src": "https://florianjourde.com/ressources/images/logos/php-logo.png",
@@ -408,8 +408,8 @@ document.addEventListener("DOMContentLoaded", function () {
                 case "Sass":
                     name.style.color = "#CD6799";
                     break;
-                case "JS":
-                    name.style.color = "#EFD81D";
+                case "JavaScript":
+                    name.style.color = "#D4B830";
                     break;
                 case "PHP":
                     name.style.color = "#6C7AA8";
