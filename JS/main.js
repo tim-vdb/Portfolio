@@ -1,88 +1,88 @@
 const coding = [
     {
-        "src": "/images/compétences/html.webp",
+        "src": "images/compétences/html.webp",
         "alt": "Logo HTML",
         "skill": "HTML",
     },
     {
-        "src": "/images/compétences/css-3.svg",
+        "src": "images/compétences/css-3.svg",
         "alt": "Logo CSS",
         "skill": "CSS",
     },
     {
-        "src": "/images/compétences/sass-logo.webp",
+        "src": "images/compétences/sass-logo.webp",
         "alt": "Logo Sass",
         "skill": "Sass",
     },
     {
-        "src": "/images/compétences/javascript-icon-logo-javascript-often-abbreviated-as-js-programming-language-conforms-to-ecmascript-specification-204759326.webp",
+        "src": "images/compétences/javascript-icon-logo-javascript-often-abbreviated-as-js-programming-language-conforms-to-ecmascript-specification-204759326.webp",
         "alt": "Logo Javascript",
         "skill": "JavaScript",
     },
     {
-        "src": "/images/compétences/php-logo.webp",
+        "src": "images/compétences/php-logo.webp",
         "alt": "Logo PHP",
         "skill": "PHP",
     },
     {
-        "src": "/images/compétences/mysql-logo.webp",
+        "src": "images/compétences/mysql-logo.webp",
         "alt": "Logo MySQL",
         "skill": "MySQL",
     },
     {
-        "src": "/images/compétences/threeJS.webp",
+        "src": "images/compétences/threeJS.webp",
         "alt": "Logo Three.js",
         "skill": "Three.js",
     },
     {
-        "src": "/images/compétences/git-logo.webp",
+        "src": "images/compétences/git-logo.webp",
         "alt": "Logo Git",
         "skill": "Git",
     },
     {
-        "src": "/images/compétences/node-js-logo.webp",
+        "src": "images/compétences/node-js-logo.webp",
         "alt": "Logo Node.js",
         "skill": "Node.js",
     },
     {
-        "src": "/images/compétences/express-js.webp",
+        "src": "images/compétences/express-js.webp",
         "alt": "Logo Express.js",
         "skill": "Express.js",
     },
     {
-        "src": "/images/compétences/markdown.svg",
+        "src": "images/compétences/markdown.svg",
         "alt": "Logo Markdown",
         "skill": "Markdown",
     },
     {
-        "src": "/images/compétences/python.webp",
+        "src": "images/compétences/python.webp",
         "alt": "Logo Python",
         "skill": "Python",
     }
 ]
 const design = [
     {
-        "src": "/images/compétences/blender.webp",
+        "src": "images/compétences/blender.webp",
         "alt": "Logo Blender",
         "skill": "Blender",
     },
     {
-        "src": "/images/compétences/photoshop-logo.webp",
+        "src": "images/compétences/photoshop-logo.webp",
         "alt": "Logo Photoshop",
         "skill": "Photoshop",
     },
     {
-        "src": "/images/compétences/Adobe_Illustrator_CC_icon.svg.webp",
+        "src": "images/compétences/Adobe_Illustrator_CC_icon.svg.webp",
         "alt": "Logo Illustrator",
         "skill": "Illustrator",
     },
     {
-        "src": "/images/compétences/Adobe_Premiere_Pro_CC_icon.svg.webp",
+        "src": "images/compétences/Adobe_Premiere_Pro_CC_icon.svg.webp",
         "alt": "Logo Premiere Pro",
         "skill": "Premiere Pro",
     },
     {
-        "src": "/images/compétences/Figma-logo.svg.webp",
+        "src": "images/compétences/Figma-logo.svg.webp",
         "alt": "Logo Figma",
         "skill": "Figma",
     }
@@ -90,12 +90,12 @@ const design = [
 
 const CMS = [
     {
-        "src": "/images/compétences/wordpress-logo.webp",
+        "src": "images/compétences/wordpress-logo.webp",
         "alt": "Logo WordPress",
         "skill": "WordPress",
     },
     {
-        "src": "/images/compétences/elementor-logo.webp",
+        "src": "images/compétences/elementor-logo.webp",
         "alt": "Logo Elementor",
         "skill": "Elementor",
     }
