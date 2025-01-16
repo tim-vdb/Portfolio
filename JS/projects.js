@@ -1,7 +1,7 @@
 const my_projects = [
     {
         "description": "Un site web vitrine avec back office intégré, permettant aux admins de se connecter afin de modifier chaque images, textes et liens sur le site web.",
-        "url": "lacissoniere ",
+        "url": "lacissoniere",
         "src": "images/lacissoniere/lacissoniere.webp",
         "alt": "Page d'accueil La Cissonière",
         "title": "La Cissonière",
@@ -11,7 +11,7 @@ const my_projects = [
     },
     {
         "description": "Développement d'un site web pour une entreprise fictive proposant l'installation de colonies humaines sur une planète habitable, incluant une page d'inscription fictive. J'ai assuré la conception et l'intégration du site dans un délai restreint.",
-        "url": "quantix-horizon ",
+        "url": "quantix-horizon",
         "src": "images/Quantix_Horizon.webp",
         "alt": "Page d'accueil Quantix Horizon",
         "title": "Quantix Horizon",
@@ -21,7 +21,7 @@ const my_projects = [
     },
     {
         "description": "Conception d'un site web fictif avec un scroll horizontal sur Desktop.",
-        "url": "chocospace ",
+        "url": "chocospace",
         "src": "images/ChocoSpace_img.webp",
         "alt": "Page d'accueil ChocoSpace",
         "title": "ChocoSpace",
@@ -31,7 +31,7 @@ const my_projects = [
     },
     {
         "description": "Proposition d'une landing page à La Montagne Enchantée.",
-        "url": "montagneLandingPage ",
+        "url": "montagneLandingPage",
         "src": "images/landing_page_MontEnchant.webp",
         "alt": "Landing Page La Montagne Enchantée",
         "title": "La Montagne Enchantée",
@@ -365,20 +365,34 @@ const my_projects_actu_tel = [
         "tags": ["Blender"]
     },
 ]
-
+console.log(my_projects, my_projects_actu, my_projects_actu_tel);
 document.addEventListener("DOMContentLoaded", () => {
     const filter_cards = document.getElementById("filter_cards");
     const tags_input = document.querySelectorAll(".input_filter_tags");
     const all_input = document.getElementById("input_filter_all");
-    const currentPage = window.location.pathname;
     let displayAll = null;
     let checked = new Set();
 
+    //Configuration hors hébergement GitHub
+    // const currentPage = window.location.pathname;
+    
+    // if (window.matchMedia("(max-width: 1300px)").matches) {
+    //     currentPage.endsWith('projects') ? create_cards(my_projects) : create_cards(my_projects_actu_tel);
+    // } else {
+    //     currentPage.endsWith('projects') ? create_cards(my_projects) : create_cards(my_projects_actu);
+    // }
+
+    // Récupère le slug sans extension ni slash final
+    const pathSegments = window.location.pathname.split("/").filter(Boolean);
+    const currentSlug = pathSegments[pathSegments.length - 1] || "index"; // Par défaut, "index" si le chemin est vide
+
+    // Ajustement des projets en fonction de l'écran et du slug
     if (window.matchMedia("(max-width: 1300px)").matches) {
-        currentPage.endsWith('projects ') ? create_cards(my_projects) : create_cards(my_projects_actu_tel);
+        currentSlug === 'projects' ? create_cards(my_projects) : create_cards(my_projects_actu_tel);
     } else {
-        currentPage.endsWith('projects ') ? create_cards(my_projects) : create_cards(my_projects_actu);
+        currentSlug === 'projects' ? create_cards(my_projects) : create_cards(my_projects_actu);
     }
+
 
     function create_cards(projects) {
         projects.forEach(project => {
@@ -431,11 +445,11 @@ document.addEventListener("DOMContentLoaded", () => {
             let infos_tags = document.createElement("div");
             infos_tags.className = "infos_tags";
             infos_cards.appendChild(infos_tags);
-            
+
 
             if (project.urlGitHub) {
                 infos_tags.style.justifyContent = "space-between";
-                
+
                 let buttonGitHub = document.createElement("a");
                 buttonGitHub.href = project.urlGitHub;
                 buttonGitHub.target = "_blank";
@@ -448,8 +462,8 @@ document.addEventListener("DOMContentLoaded", () => {
             }
 
             let all_tags = document.createElement("div");
-                all_tags.className = "all_tags";
-                infos_tags.appendChild(all_tags);
+            all_tags.className = "all_tags";
+            infos_tags.appendChild(all_tags);
 
             project.tags.forEach(tag => {
                 let tag_cards = document.createElement("p");
@@ -491,8 +505,8 @@ document.addEventListener("DOMContentLoaded", () => {
                         tag_cards.style.backgroundColor = "gray";
                         break;
                 }
-                
-                
+
+
                 all_tags.appendChild(tag_cards);
             });
 

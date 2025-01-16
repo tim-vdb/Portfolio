@@ -93,9 +93,7 @@ h1 {
     text-decoration: 3px underline var(--new_color_orange);
 }
 
-h2 {
-    
-}
+h2 {}
 
 
 h3,
@@ -1078,7 +1076,7 @@ ion-icon#language {
     margin: 0;
 }
 
-  {
+.HTML {
     background-color: #E54C21;
 }
 

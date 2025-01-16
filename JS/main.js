@@ -383,6 +383,7 @@ document.addEventListener("DOMContentLoaded", function () {
     // skills
     const skills_cards = document.getElementById("skills_cards");
 
+if (skills_cards) {
     function create_cards(tab_skills) {
         tab_skills.forEach(tab_skill => {
             let cards = document.createElement("li");
@@ -393,7 +394,7 @@ document.addEventListener("DOMContentLoaded", function () {
             img_cards.alt = tab_skill.alt;
             cards.appendChild(img_cards);
 
-            let skillName = tab_skill.skill; // `skill` is a single string
+            let skillName = tab_skill.skill; // skill is a single string
             let name = document.createElement("h4");
             name.textContent = skillName;
             name.className = "tags_cards";
@@ -465,4 +466,6 @@ document.addEventListener("DOMContentLoaded", function () {
     create_cards(coding);
     create_cards(design);
     create_cards(CMS);
+}
+
 });
