@@ -1,7 +1,7 @@
 const my_projects = [
     {
         "description": "Un site web vitrine avec back office intégré, permettant aux admins de se connecter afin de modifier chaque images, textes et liens sur le site web.",
-        "url": "lacissoniere.html",
+        "url": "lacissoniere ",
         "src": "images/lacissoniere/lacissoniere.webp",
         "alt": "Page d'accueil La Cissonière",
         "title": "La Cissonière",
@@ -11,7 +11,7 @@ const my_projects = [
     },
     {
         "description": "Développement d'un site web pour une entreprise fictive proposant l'installation de colonies humaines sur une planète habitable, incluant une page d'inscription fictive. J'ai assuré la conception et l'intégration du site dans un délai restreint.",
-        "url": "quantix-horizon.html",
+        "url": "quantix-horizon ",
         "src": "images/Quantix_Horizon.webp",
         "alt": "Page d'accueil Quantix Horizon",
         "title": "Quantix Horizon",
@@ -21,7 +21,7 @@ const my_projects = [
     },
     {
         "description": "Conception d'un site web fictif avec un scroll horizontal sur Desktop.",
-        "url": "chocospace.html",
+        "url": "chocospace ",
         "src": "images/ChocoSpace_img.webp",
         "alt": "Page d'accueil ChocoSpace",
         "title": "ChocoSpace",
@@ -31,7 +31,7 @@ const my_projects = [
     },
     {
         "description": "Proposition d'une landing page à La Montagne Enchantée.",
-        "url": "montagneLandingPage.html",
+        "url": "montagneLandingPage ",
         "src": "images/landing_page_MontEnchant.webp",
         "alt": "Landing Page La Montagne Enchantée",
         "title": "La Montagne Enchantée",
@@ -41,7 +41,7 @@ const my_projects = [
     },
     {
         "description": "Site web conçu en markdown, il a pour but d'informer sur le mode de jeu Skyblock de Minecraft.",
-        "url": "Wiki-MC-SB.html",
+        "url": "Wiki-MC-SB ",
         "src": "images/siteweb_Minecraft_img.webp",
         "alt": "Page d'accueil site web minecraft",
         "title": "Wiki Minecraft Skyblock",
@@ -51,7 +51,7 @@ const my_projects = [
     },
     {
         "description": "Ce projet est en réalité un jeu conçu par un groupe de 4 personnes. Ce projet final bonus de fin d'année, n'a pu être finie à temps en classe de Terminale en spécialité NSI (Numérique-Science-Informatique).",
-        "url": "pygame-tiled.html",
+        "url": "pygame-tiled ",
         "src": "images/pygame/map_final_pygame_jeu_bateau-683x1024.webp",
         "alt": "Carte du jeu",
         "title": "À Bon Port",
@@ -60,7 +60,7 @@ const my_projects = [
     },
     {
         "description": "Pendant environ deux mois, j'ai travaillé à la création d'un fond d'écran animé en 3D d'une Ford Mustang GT.",
-        "url": "mustang.html",
+        "url": "mustang ",
         "src": "images/test1_mustang_img.webp",
         "alt": "Image fond d'écran Mustang GT",
         "title": "Fond d'écran 3D",
@@ -69,7 +69,7 @@ const my_projects = [
     },
     {
         "description": "En lien avec le projet \"La Montagne Enchantée\", nous devions créer quelque chose qui permettrait aux enfants de découvrir la montagne sans y être allés. J'ai donc créé un modèle 3D pour l'illustrer.",
-        "url": "montagne3D.html",
+        "url": "montagne3D ",
         "src": "images/montagneEnchantée3D.webp",
         "alt": "Image modèle 3D La Montagne Enchantée",
         "title": "La Montagne Enchantée",
@@ -78,7 +78,7 @@ const my_projects = [
     },
     {
         "description": "En lien avec le projet \"Quantix Horizon\", j'ai créé un modèle 3D pour illustrer la maison futuriste/bunker.",
-        "url": "quantixH3D.html",
+        "url": "quantixH3D ",
         "src": "images/quantix3D.webp",
         "alt": "Image modèle 3D Quantix Horizon",
         "title": "Quantix Horizon",
@@ -87,7 +87,7 @@ const my_projects = [
     },
     {
         "description": "J'ai créé une modélisation de paysage 3D de manière procédural.",
-        "url": "champis.html",
+        "url": "champis ",
         "src": "images/fond_écran_procédural.webp",
         "alt": "Fond d'écran 3D procédural",
         "title": "Fond d'écran 3D procédural",
@@ -96,7 +96,7 @@ const my_projects = [
     },
     {
         "description": "Nous avons procédée à une proposition de refonte du site web du Lycée Edouard Herriot",
-        "url": "Wordpress.html",
+        "url": "Wordpress ",
         "src": "images/Wordpress/lycée_accueil_1.webp",
         "alt": "Page d'accueil Lycée Edouard Herriot",
         "title": "Lycée Edouard Herriot",
@@ -124,7 +124,7 @@ const my_projects = [
         // "tags": ["HTML", "CSS", "JS", "PHP"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "position": "top",
         "src": "images/postal_World.webp",
@@ -134,7 +134,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "position": "top",
         "src": "images/Adobe_Suite/Photoshop/Exercice_2_magazine_archi_Timothee_VDB_B1_A-scaled-1.webp",
@@ -144,7 +144,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/jeuxDeCartes.webp",
         "alt": "Création d'un jeux de cartes - Merveilles du monde",
@@ -153,7 +153,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "position": "top",
         "src": "images/Adobe_Suite/Photoshop/Pub_Eau_1-scaled-1-724x1024.webp",
@@ -163,7 +163,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "position": "top",
         "src": "images/Adobe_Suite/Photoshop/Affiche_chat_gpt_Timothee_VDB_B1_A-1-724x1024.webp",
@@ -173,7 +173,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/Photoshop/Exercice_3_pub_touristique_Timothee_VDB_B1_A-1024x576.webp",
         "alt": "Affiche publicitaire Avignon",
@@ -182,7 +182,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/Photoshop/Moodboard_City_Commerce-scaled-1-1024x724.webp",
         "alt": "MoodBoard",
@@ -191,7 +191,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/Photoshop/Inesis-scaled-1-1024x724.webp",
         "alt": "Inesis - Décathlon",
@@ -200,7 +200,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "position": "top",
         "src": "images/Adobe_Suite/Illustrator/keyvisual_Portrait.webp",
@@ -210,7 +210,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "position": "top",
         "src": "images/Adobe_Suite/Illustrator/Affiche-04.webp",
@@ -220,7 +220,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "position": "top",
         "src": "images/Adobe_Suite/Illustrator/Affiche-03.webp",
@@ -230,7 +230,7 @@ const my_projects = [
         "tags": ["Design"],
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/Illustrator/Keyvisual_paysage.webp",
         "alt": "Affiche Star Wars Outlaws 4",
@@ -239,7 +239,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "src": "images/Adobe_Suite/Illustrator/Goodies_dark_avecFond.webp",
         "alt": "Goodies Dark Star Wars Outlaws",
@@ -248,7 +248,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "src": "images/Adobe_Suite/Illustrator/Goodies_light_avecFond.webp",
         "alt": "Goodies Light Star Wars Outlaws",
@@ -257,7 +257,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "portrait",
         "src": "images/Adobe_Suite/Illustrator/Bannière-StarWars-Outlaws.webp",
         "alt": "Bannière Star Wars Outlaws",
@@ -266,7 +266,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/Illustrator/Logo-Tiktok_amélioré_Plan-de-travail-1.webp",
         "alt": "Projet Tiktok",
@@ -275,7 +275,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/Illustrator/Plakatstil_Timothee_VDB_B1_A-768x543.webp",
         "alt": "Affiche Poster Allemand",
@@ -284,7 +284,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/XD/XD_maquettage.webp",
         "alt": "Réalisation XD Site Web Sport",
@@ -293,7 +293,7 @@ const my_projects = [
         "tags": ["Design"]
     },
     {
-        "url": "adobe.html",
+        "url": "adobe ",
         "forme": "paysage",
         "src": "images/Adobe_Suite/XD/XD_Site_touristique_dev_front.webp",
         "alt": "Réalisation XD Site Web Touristique",
@@ -306,7 +306,7 @@ const my_projects = [
 const my_projects_actu = [
     {
         "description": "Un site web vitrine avec back office intégré, permettant aux admins de se connecter à un login et ensuite modifier chaque images, textes et liens sur le site web.",
-        "url": "lacissoniere.html",
+        "url": "lacissoniere ",
         "src": "images/lacissoniere/lacissoniere.webp",
         "alt": "Page d'accueil La Cissonière",
         "title": "La Cissonière",
@@ -316,7 +316,7 @@ const my_projects_actu = [
     },
     {
         "description": "Développement d'un site web pour une entreprise fictive proposant l'installation de colonies humaines sur une planète habitable, incluant une page d'inscription fictive. J'ai assuré la conception et l'intégration du site dans un délai restreint.",
-        "url": "quantix-horizon.html",
+        "url": "quantix-horizon ",
         "src": "images/Quantix_Horizon.webp",
         "alt": "Page d'accueil Quantix Horizon",
         "title": "Quantix Horizon",
@@ -326,7 +326,7 @@ const my_projects_actu = [
     },
     {
         "description": "Pendant environ deux mois, j'ai travaillé à la création d'un fond d'écran animé en 3D d'une Ford Mustang GT.",
-        "url": "mustang.html",
+        "url": "mustang ",
         "src": "images/test1_mustang_img.webp",
         "alt": "Image fond d'écran Mustang GT",
         "title": "Fond d'écran 3D",
@@ -338,7 +338,7 @@ const my_projects_actu = [
 const my_projects_actu_tel = [
     {
         "description": "Un site web vitrine avec back office intégré, permettant aux admins de se connecter à un login et ensuite modifier chaque images, textes et liens sur le site web.",
-        "url": "lacissoniere.html",
+        "url": "lacissoniere ",
         "src": "images/lacissoniere/lacissoniere.webp",
         "alt": "Page d'accueil La Cissonière",
         "title": "La Cissonière",
@@ -348,7 +348,7 @@ const my_projects_actu_tel = [
     },
     {
         "description": "Ce projet est en réalité un jeu conçu par un groupe de 4 personnes. Ce projet final bonus de fin d'année, n'a pu être finie à temps en classe de Terminale en spécialité NSI (Numérique-Science-Informatique).",
-        "url": "pygame-tiled.html",
+        "url": "pygame-tiled ",
         "src": "images/pygame/map_final_pygame_jeu_bateau-683x1024.webp",
         "alt": "Carte du jeu",
         "title": "À Bon Port",
@@ -357,7 +357,7 @@ const my_projects_actu_tel = [
     },
     {
         "description": "Pendant environ deux mois, j'ai travaillé à la création d'un fond d'écran animé en 3D d'une Ford Mustang GT.",
-        "url": "mustang.html",
+        "url": "mustang ",
         "src": "images/test1_mustang_img.webp",
         "alt": "Image fond d'écran Mustang GT",
         "title": "Fond d'écran 3D",
@@ -375,9 +375,9 @@ document.addEventListener("DOMContentLoaded", () => {
     let checked = new Set();
 
     if (window.matchMedia("(max-width: 1300px)").matches) {
-        currentPage.endsWith('projects.html') ? create_cards(my_projects) : create_cards(my_projects_actu_tel);
+        currentPage.endsWith('projects ') ? create_cards(my_projects) : create_cards(my_projects_actu_tel);
     } else {
-        currentPage.endsWith('projects.html') ? create_cards(my_projects) : create_cards(my_projects_actu);
+        currentPage.endsWith('projects ') ? create_cards(my_projects) : create_cards(my_projects_actu);
     }
 
     function create_cards(projects) {
